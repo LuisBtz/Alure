@@ -29,11 +29,6 @@ export default {
         type: 'singleText'
       },
       {
-        name: 'callToActionHero',
-        title: 'Call To Action Hero',
-        type: 'singleText'
-      },
-      {
         name: 'heroSmallTextHero',
         title: 'Hero Small Text Hero',
         type: 'singleText'

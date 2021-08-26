@@ -53,6 +53,7 @@ export const GlobalStyle = createGlobalStyle`
     --headline-2: 2.18rem;
     --headline-3: 1.875rem;
     --headline-4: 1.3125rem;
+    --width-l: calc(100% - 50px);
     --paragraph: 1rem;
     --green: #06262D;
     --gray: #E0DEDB;
@@ -66,9 +67,9 @@ export const GlobalStyle = createGlobalStyle`
       scroll-behavior: smooth;
     }
     body {
-        background-color: var(--white);
+        background-color: var(--gray);
         font-family: var(--reg);
-        color: var(--black);
+        color: var(--white);
         font-size: 16px;
         -webkit-font-smoothing: antialiased;
         -ms-overflow-style: none;  /* IE and Edge */
@@ -77,7 +78,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     main {
-      background: var(--white) !important;
+      background: var(--gray) !important;
     }
     * {
       box-sizing: border-box;
@@ -103,7 +104,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
 a {
-    color: var(--black);
+    color: white;
 }
 
 h1 {
@@ -124,5 +125,16 @@ p, a, li, .paragraph {
 
 .hide {
   display: none !important;
+}
+
+.column {
+  position: relative;
+  .line-b {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+  }
 }
 `
