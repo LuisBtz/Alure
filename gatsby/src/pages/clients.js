@@ -6,7 +6,7 @@ import Seo from '../components/layout/seo'
 const ClientsPage = () => {
   return (
     <Layout>
-      <Seo /* title={data.sanityHomePage.seo && data.sanityHomePage.seo.es.titleSeo} description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} */ />
+      <Seo title='clients' /* description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} */ />
       <h1>Clients Page</h1>
     </Layout>
   )

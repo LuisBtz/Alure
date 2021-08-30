@@ -26,44 +26,50 @@ const Header = () => {
 
     return(
         <HeaderContainer>
-            <div className='column'>
-                <Link to='/' className='home'>
-                    <img src={data.sanitySettingsPage.alure.asset.url} alt={data.sanitySettingsPage.alure.enAlt} />
-                </Link>
-                <div className='line-b line' data-sal="slide-up"></div>
-            </div>
-            <div className='column'>
-                <Link to='/' className='home'>
-                    <img src={data.sanitySettingsPage.agency.asset.url} alt={data.sanitySettingsPage.agency.enAlt} />
-                </Link>
-                <div className='line-b line' data-sal="slide-up"></div>
-            </div>
-            <div className='column'>
-                <ul>
-                    <li><Link to='/about'>About</Link></li>
-                    <li><Link to='/services'>Services</Link></li>
-                    <li><Link to='/clients'>Clients</Link></li>
-                    <li><Link to='/blog'>Blog</Link></li>
-                    <li><Link to='contact'>Contact</Link></li>
-                </ul>
-                <div className='line-b line' data-sal="slide-up" data-sal-delay="3000"></div>
+            <div className='cont'>
+                <div className='column'>
+                    <Link to='/' className='home'>
+                        <img src={data.sanitySettingsPage.alure.asset.url} alt={data.sanitySettingsPage.alure.enAlt} />
+                    </Link>
+                    <div className='line-b line' ></div>
+                </div>
+                <div className='column'>
+                    <Link to='/' className='home'>
+                        <img src={data.sanitySettingsPage.agency.asset.url} alt={data.sanitySettingsPage.agency.enAlt} />
+                    </Link>
+                    <div className='line-b line' ></div>
+                </div>
+                <div className='column'>
+                    <ul>
+                        <li><Link to='/about'>About</Link></li>
+                        <li><Link to='/services'>Services</Link></li>
+                        <li><Link to='/clients'>Clients</Link></li>
+                        <li><Link to='/blog'>Blog</Link></li>
+                        <li><Link to='contact'>Contact</Link></li>
+                    </ul>
+                    <div className='line-b line' ></div>
+                </div>
             </div>
         </HeaderContainer>
     )
 }
 
 const HeaderContainer = styled.nav`
-    width: var(--width-l);
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7740138291644783) 100%);
+    width: 100%;
     position: fixed;
     z-index: 1;
-    left: 50%;
-    transform: translateX(-50%);
     height: 50px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 100px;
-    padding-left: 50px;
-    padding-right: 50px;
+    .cont {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: var(--width-l);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 100px;
+        height: 50px;
     .column {
         display: flex;
         a.home {
@@ -85,6 +91,8 @@ const HeaderContainer = styled.nav`
             justify-content: flex-end;
         }
     }
+    }
+    
 `
 
 export default Header;

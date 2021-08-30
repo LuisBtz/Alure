@@ -53,7 +53,9 @@ export const GlobalStyle = createGlobalStyle`
     --headline-2: 2.18rem;
     --headline-3: 1.875rem;
     --headline-4: 1.3125rem;
-    --width-l: calc(100% - 50px);
+    --width-l: calc(100% - 100px);
+    --width-2: calc(100% - 0px);
+    --width-3: calc(100% - 50px);
     --paragraph: 1rem;
     --green: #06262D;
     --gray: #E0DEDB;
@@ -118,6 +120,10 @@ h3 {
     font-size: var(--headline-3);
     font-weight: normal;
 }
+
+h1, h2 {
+  font-family: var(--bold);
+}
 p, a, li, .paragraph {
   font-size: var(--paragraph);
   line-height: 132%;
@@ -129,12 +135,71 @@ p, a, li, .paragraph {
 
 .column {
   position: relative;
-  .line-b {
+}
+
+.line-b {
     width: 100%;
     height: 1px;
     background-color: white;
     position: absolute;
     bottom: 0;
   }
+.line-t {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    top: 25px;
+  }
+
+.line-r {
+    width: 1px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    right: -50px;
+    top: 0;
+  }
+
+.line-l {
+    width: 1px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    left: -50px;
+    top: 0;
+  }
+
+.absolute.line-l {
+  position: absolute;
+  left: 25px;
+  top: 0;
 }
+.absolute.line-r {
+  position: absolute;
+  right: 25px;
+  top: 0;
+}
+
+.padding-top-50 {
+  margin-top: 50px;
+}
+
+.bottom-25 {
+  bottom: 25px;
+}
+
+.background-white {
+  background-color: #FFFFFF;
+  color: var(--dark-gray);
+  a {
+    color: var(--dark-gray);
+  }
+}
+
+.dark-gray {
+  color: var(--dark-gray);
+  background-color: var(--dark-gray) !important;
+}
+
 `
