@@ -139,21 +139,22 @@ p, a, li, .paragraph {
 
 .line-b {
     width: 100%;
-    height: 1px;
+    border-bottom: thin solid white;
     background-color: white;
     position: absolute;
     bottom: 0;
   }
 .line-t {
     width: 100%;
-    height: 1px;
+    border-top: thin solid white;
     background-color: white;
     position: absolute;
     top: 25px;
+    z-index: 1;
   }
 
 .line-r {
-    width: 1px;
+    border-right: thin solid white;
     height: 100%;
     background-color: white;
     position: absolute;
@@ -162,7 +163,7 @@ p, a, li, .paragraph {
   }
 
 .line-l {
-    width: 1px;
+    border-left: thin solid white;
     height: 100%;
     background-color: white;
     position: absolute;
@@ -174,11 +175,13 @@ p, a, li, .paragraph {
   position: absolute;
   left: 25px;
   top: 0;
+  z-index: 2;
 }
 .absolute.line-r {
   position: absolute;
   right: 25px;
   top: 0;
+  z-index: 2;
 }
 
 .padding-top-50 {
@@ -202,4 +205,28 @@ p, a, li, .paragraph {
   background-color: var(--dark-gray) !important;
 }
 
+.line-l-width-50 {
+  width: 50px;
+}
+.line-r-width-50 {
+  width: 50px;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.margin-top-50 {
+  margin-top: 50px;
+}
+
+.green-background {
+    background-color: var(--green);
+    border-color: var(--green);
+    color: white;
+}
+
+.no-bg {
+  background-color: transparent;
+}
 `

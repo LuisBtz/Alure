@@ -80,6 +80,7 @@ p {
 }
 form {
     display: flex;
+    width: 100%;
     input {
         padding: 5px 0;
         background: none;
@@ -87,7 +88,7 @@ form {
         border: none;
         border-bottom: solid 1px white;
         color: white;
-        width: 80%;
+        width: 70%;
         ::placeholder,
         ::-webkit-input-placeholder {
             color: white;
@@ -103,8 +104,8 @@ form {
     }
     
     button {
-        width: 20%;
-        text-align: center;
+        width: 30%;
+        text-align: right;
         color: white;
         border-bottom: solid 1px white;
     }

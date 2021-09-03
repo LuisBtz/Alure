@@ -40,8 +40,8 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
     return(
         <FooterContainer>
             <div className='content'>
-                <div className='line-r line absolute'></div>
-                <div className='line-l line absolute'></div>
+                <div className='line-r line absolute no-bg'></div>
+                <div className='line-l line absolute no-bg'></div>
                 <div className='grid'>
                     <div className='column'>
                         <div className='text'>
@@ -52,7 +52,7 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
                                 />
                             </div>
                         </div>
-                        <div className='line-r line' ></div>
+                        <div className='line-r line no-bg' ></div>
                     </div>
                     <div className='column'>
                         <div className='text'>
@@ -63,7 +63,7 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
                                 <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.facebook}>Facebook ↗</a></li>
                             </ul>
                         </div>
-                        <div className='line-r line' ></div>
+                        <div className='line-r line no-bg' ></div>
                     </div>
                     <div className='column last'>
                         <div className='text'>
@@ -122,13 +122,15 @@ const FooterContainer = styled.footer`
         }
         .text {
             height: 100%;
+            width: auto;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             ul {
                 display: flex;
-                a {
-                    margin-right: 25px;
+                li {
+                    padding-right: 20px;
                 }
             }
         }
@@ -137,7 +139,7 @@ const FooterContainer = styled.footer`
             flex-direction: row;
             justify-content: space-between;
             .image {
-                width: 100px;
+                width: 70px;
             }
             .links {
                 align-self: flex-end;

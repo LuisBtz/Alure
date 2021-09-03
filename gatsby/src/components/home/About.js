@@ -100,7 +100,7 @@ const AboutContainer = styled.section`
                 line-height: 1;
             }
         }
-        .solo .line {
+        .solo .line-b {
             bottom: 25px;
         }
     }
