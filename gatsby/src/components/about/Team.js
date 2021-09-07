@@ -91,6 +91,9 @@ const Team = () => {
 
     return(
         <TeamContainer> 
+            <div className='line-r line absolute no-bg'></div>
+            <div className='line-l line absolute no-bg dark-gray'></div>
+
             <div className='iz'>
                 <div className='grid'>
                     <div className='column'>
@@ -100,6 +103,7 @@ const Team = () => {
                     <div className='column bottom'>
                         <div className='line-t line dark-gray no-bg'></div>
                         <p>{description}</p>
+                        <div className='line-b line no-bg dark-gray'></div>
                     </div>
                 </div>
             </div>
@@ -157,6 +161,7 @@ const TeamContainer = styled.section`
     position: relative;
     background-color: var(--gray);
     .column {
+        position: relative;
         height: 50vh;
         h3 {
             margin-top: 50px;
@@ -182,10 +187,14 @@ const TeamContainer = styled.section`
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+                    .line-t {
+                        top: 0;
+                    }
+                    .line-b {
+                        bottom: 25px;
+                    }
                 }
-                .line-t {
-                    top: 0;
-                }
+                
         }
     }
 

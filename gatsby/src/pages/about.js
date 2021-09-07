@@ -6,6 +6,7 @@ import Hero from '../components/about/Hero'
 import Connect from '../components/about/Connect'
 import WhyUs from '../components/about/WhyUs'
 import Team from '../components/about/Team'
+import Next from '../components/about/Next'
 
 
 export const data = graphql`
@@ -100,6 +101,7 @@ const AboutPage = ({data}) => {
       <Connect data={data} />
       <WhyUs data={data} />
       <Team />
+      <Next />
     </Layout>
   )
 }
