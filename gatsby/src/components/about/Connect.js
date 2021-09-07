@@ -14,16 +14,16 @@ const Connect = ({data}) => {
         <ConnectContainer>
             <div className='content'>
                 <div className='line-r line absolute no-bg'></div>
-                <div className='line-l line absolute green-background'></div>
+                <div className='line-l line absolute green-background no-bg'></div>
                 <div className='grid'>
                     <div className='column solo'>
-                        <div className='green-background line-t line'></div>
+                        <div className='green-background line-t line no-bg'></div>
                     </div>
                     <div className='column solo'>
-                        <div className='green-background line-t line'></div>
+                        <div className='green-background line-t line no-bg'></div>
                     </div>
                     <div className='column solo'>
-                        <div className=' line-t line'></div>
+                        <div className=' line-t line no-bg'></div>
                     </div>
                     <div className='column two'>
                         <div className='text'>
@@ -37,16 +37,16 @@ const Connect = ({data}) => {
                         <h3 className='margin-top-50'>{mission}</h3>
                     </div>
                     <div className='column'>
-                        <div className='line-t line top-0 green-background'></div>
+                        <div className='line-t line top-0 green-background no-bg'></div>
                         <div className='text'>
                             <h3>{inspireTitle}</h3>
                             <p>{inspireText}</p>
                         </div>
-                        <div className='line-r line green-background' ></div>
+                        <div className='line-r line green-background no-bg' ></div>
                         <div className='line-b line green-background no-bg'></div>
                     </div>
                     <div className='column'>
-                        <div className='line-t line top-0 green-background'></div>
+                        <div className='line-t line top-0 green-background no-bg'></div>
                         <div className='text'>
                             <h3>{impactTitle}</h3>
                             <p>{impactText}</p>
@@ -54,7 +54,7 @@ const Connect = ({data}) => {
                         <div className='line-b line green-background no-bg'></div>
                     </div>
                     <div className='column green-background'>
-                        <div className='line-t line top-0'></div>
+                        <div className='line-t line top-0 no-bg'></div>
                         <div className='line-l line line-l-width-50 green-background' ></div>
                         <div className='line-r line line-r-width-50 green-background' ></div>
                         <div className='line-b line no-bg'></div>
@@ -75,6 +75,7 @@ position: relative;
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        top: -1px;
         .two {
             grid-column: 1/3;
             .text {

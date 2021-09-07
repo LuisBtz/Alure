@@ -148,7 +148,7 @@ p, a, li, .paragraph {
     width: 100%;
     border-top: thin solid white;
     background-color: white;
-    position: absolute;
+    position: relative;
     top: 25px;
     z-index: 1;
   }
@@ -202,7 +202,8 @@ p, a, li, .paragraph {
 
 .dark-gray {
   color: var(--dark-gray);
-  background-color: var(--dark-gray) !important;
+  background-color: var(--dark-gray);
+  border-color: var(--dark-gray);
 }
 
 .line-l-width-50 {
@@ -228,5 +229,9 @@ p, a, li, .paragraph {
 
 .no-bg {
   background-color: transparent;
+}
+
+.color-white {
+  color: white;
 }
 `

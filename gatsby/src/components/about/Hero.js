@@ -25,7 +25,7 @@ const link = data.sanityAboutPage.linksTextHero.en;
             </div>
             <div className='content'>
                 <div className='line-r line absolute no-bg'></div>
-                <div className='line-l line absolute'></div>
+                <div className='line-l line absolute no-bg'></div>
                 <div className='grid'>
                     <div className='column two'>
                         <h3>{text}</h3>

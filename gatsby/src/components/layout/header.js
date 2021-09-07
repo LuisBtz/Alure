@@ -32,14 +32,12 @@ const Header = () => {
                         <img src={data.sanitySettingsPage.alure.asset.url} alt={data.sanitySettingsPage.alure.enAlt} />
                     </Link>
                     <div className='line-b line' ></div>
-                    <div className='line-r line no-bg' ></div>
                 </div>
                 <div className='column'>
                     <Link to='/' className='home'>
                         <img src={data.sanitySettingsPage.agency.asset.url} alt={data.sanitySettingsPage.agency.enAlt} />
                     </Link>
                     <div className='line-b line' ></div>
-                    <div className='line-r line no-bg' ></div>
                 </div>
                 <div className='column'>
                     <ul>
