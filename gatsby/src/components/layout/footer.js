@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import BlockContent from '@sanity/block-content-to-react';
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import NewsletterFooter from './newsletterFooter';
+import NewsletterFooter from './NewsletterFooter';
 
 const Footer = () => {
 
