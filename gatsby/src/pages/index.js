@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import Video from '../components/home/video'
+import Video from '../components/home/Video'
 import About from '../components/home/About'
 import Layout from '../components/layout/layout'
 import Seo from '../components/layout/seo'
