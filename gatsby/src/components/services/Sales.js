@@ -2,21 +2,25 @@ import React from 'react';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 
-const WhyUs = ({data}) => {
+const Sales = ({data}) => {
 
-    const altImage = data.sanityAboutPage.whyUsBackgroundImage.enAlt;
-    const getDataImage = getImage(data.sanityAboutPage.whyUsBackgroundImage.asset);
-    const whyUsTitle = data.sanityAboutPage.whyUsTitle.en;
-    const ourPhilosophyTitle = data.sanityAboutPage.ourPhilosophyTitle.en;
-    const ourPhilosophyText = data.sanityAboutPage.ourPhilosophyText.en;
-    const commitmentTitle = data.sanityAboutPage.commitmentTitle.en;
-    const commitmentText = data.sanityAboutPage.commitmentText.en;
-    const teamworkTitle = data.sanityAboutPage.teamworkTitle.en;
-    const teamworkText = data.sanityAboutPage.teamworkText.en;
+    const altImage = data.sanityServicesPage.salesServicesImages.enAlt;
+    const getDataImage = getImage(data.sanityServicesPage.salesServicesImages.asset);
+    const salesServicesTitle = data.sanityServicesPage.salesServicesTitle.en;
+    const salesServicesText = data.sanityServicesPage.salesServicesText.en;
+    const salesServicesService1 = data.sanityServicesPage.salesServicesService1.en;
+    const salesServicesService2 = data.sanityServicesPage.salesServicesService2.en;
+    const salesServicesService3 = data.sanityServicesPage.salesServicesService3.en;
+    const salesServicesService4 = data.sanityServicesPage.salesServicesService4.en;
+    const salesServicesService5 = data.sanityServicesPage.salesServicesService5.en;
+    const salesServicesService6 = data.sanityServicesPage.salesServicesService6.en;
+    const salesServicesService7 = data.sanityServicesPage.salesServicesService7.en;
+    const salesServicesService8 = data.sanityServicesPage.salesServicesService8.en;
+    const link = data.sanityServicesPage.linksTextPublicRelationsSection1.en;
 
 
     return(
-        <WhyUsContainer>
+        <SalesContainer>
             <div className='image'>
                 <GatsbyImage
                     style={{ height: "100%", width: "100%" }}
@@ -39,13 +43,13 @@ const WhyUs = ({data}) => {
                     </div>
                     <div className='column'>
                         <div className='text'>
-                            <h3 className='color-white'>{whyUsTitle}</h3>
+                            <h4 className='color-white'>{salesServicesText}</h4>
                         </div>
                     </div>
                     <div className='column two'>
-                        <div className='text'>
-                            <h3>{ourPhilosophyTitle}</h3>
-                            <p>{ourPhilosophyText}</p>
+                        <div className='text height-100'>
+                            <h3>{salesServicesTitle}</h3>
+                            <p className="padding-bottom25">{link}</p>
                         </div>
                     </div>
                     <div className='column '>
@@ -55,27 +59,31 @@ const WhyUs = ({data}) => {
                     <div className='column '>
                         <div className='line-t line dark-gray no-bg'></div>
                         <div className='line-b line dark-gray no-bg' ></div>
-                        <div className='text'>
-                            <h3>{commitmentTitle}</h3>
-                            <p>{commitmentText}</p>
+                        <div className='text height-25 list'>
+                            <p>{salesServicesService1}</p>
+                            <p>{salesServicesService2}</p>
+                            <p>{salesServicesService3}</p>
+                            <p>{salesServicesService4}</p>
                         </div>
                         <div className='line-r line dark-gray no-bg' ></div>
                     </div>
                     <div className='column '>
                         <div className='line-t line dark-gray no-bg'></div>
                         <div className='line-b line dark-gray no-bg' ></div>
-                        <div className='text'>
-                            <h3>{teamworkTitle}</h3>
-                            <p>{teamworkText}</p>
+                        <div className='text height-25 list'>
+                            <p>{salesServicesService5}</p>
+                            <p>{salesServicesService6}</p>
+                            <p>{salesServicesService7}</p>
+                            <p>{salesServicesService8}</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </WhyUsContainer>
+        </SalesContainer>
     )
 }
 
-const WhyUsContainer = styled.section`
+const SalesContainer = styled.section`
     position: relative;
     height: 100vh;
     width: 100%;
@@ -114,10 +122,26 @@ const WhyUsContainer = styled.section`
         .text {
                 display: flex;
                 flex-direction: column;
-                height: 100%;
                 justify-content: space-between;
-                padding-bottom: 50px;
+                h3, h4 {
+                    margin-top: 50px;
+                }
+                h4 {
+                    font-size: 1.2rem;
+                }
             }
+        .list {
+            p {
+                border-bottom: solid 1px #575D63;
+                height: 25%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
     }
     .solo {
         height: auto;
@@ -125,15 +149,12 @@ const WhyUsContainer = styled.section`
             top: 25px;
         }
     }
-    h3 {
-        margin-top: 50px;
-    }
+
     .two {
             grid-column: 2/4;
             .text {
-                padding-top: 0 !important;
             }
         }
 `
 
-export default WhyUs;
+export default Sales;

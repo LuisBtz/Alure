@@ -124,6 +124,9 @@ h3 {
 h1, h2 {
   font-family: var(--bold);
 }
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
 p, a, li, .paragraph {
   font-size: var(--paragraph);
   line-height: 132%;
@@ -187,6 +190,24 @@ p, a, li, .paragraph {
 .padding-top-50 {
   margin-top: 50px;
 }
+.padding-bottom-50 {
+  margin-bottom: 50px;
+}
+
+.padding-bottom25 {
+  margin-bottom: 25px;
+}
+.padding-top25 {
+  margin-top: 25px;
+}
+
+.height-25 {
+    height: calc(100% - 25px);
+}
+
+.height-100 {
+  height: 100%;
+}
 
 .bottom-25 {
   bottom: 25px;
@@ -233,5 +254,16 @@ p, a, li, .paragraph {
 
 .color-white {
   color: white;
+}
+
+
+
+.b-50 {
+  height: calc(100% - 50px);
+}
+
+.t-50 {
+  height: calc(100% - 50px);
+  top: 50px;
 }
 `

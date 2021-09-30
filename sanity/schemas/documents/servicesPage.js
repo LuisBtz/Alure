@@ -58,7 +58,7 @@ export default {
             type: 'longText'
         },
         {
-            name: 'SalesSectionSalesTitle',
+            name: 'salesSectionSalesTitle',
             title: 'Sales Section Sales Title',
             type: 'singleText'
         },
