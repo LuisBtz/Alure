@@ -10,24 +10,24 @@ import Slider from "react-slick";
 function SampleNextArrow(props) {
     const { className, onClick } = props;
     return (
-      <img
-        alt='arrow'
-        src='./arrowRig.png'
-        className={className}
-        onClick={onClick}
-      />
+        <button className={className} onClick={onClick} onKeyDown={onClick}>
+            <img
+                alt='arrow'
+                src='./arrowRig.png'
+            />
+        </button>
     );
   }
   
   function SamplePrevArrow(props) {
     const { className, onClick } = props;
     return (
-      <img
-        alt='arrow'
-        src='./arrowLeft.png'
-        className={className}
-        onClick={onClick}
-      />
+        <button className={className} onClick={onClick} onKeyDown={onClick}>
+            <img
+                alt='arrow'
+                src='./arrowLeft.png'
+            />
+        </button>
     );
   }
 
@@ -253,11 +253,17 @@ const SliderContainer = styled(Slider)`
     justify-content: space-between;
     width: 100%;
     position: relative;
-    img.slick-arrow {
-        position: absolute;
+    button.slick-arrow {
         width: 35px;
         height: 35px;
         z-index: 1;
+        position: absolute;
+    }
+    .slick-prev:before {
+        display: none;
+    }
+    .slick-next:before {
+        display: none;
     }
     .slick-prev {
         left: -20px
@@ -305,7 +311,7 @@ margin-left: 50px;
     box-sizing: border-box;
     width: 100%;
     .columnn {
-        height: 30vh;
+        height: 210px   ;
         .imagee {
             margin-top: 25px;
             margin-bottom: 15px;

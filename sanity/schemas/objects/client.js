@@ -13,5 +13,12 @@ export default {
             title: 'Link',
             type: 'string'
         }
-    ]
+    ],
+    preview: {
+        select: {
+          title: 'logo.enAlt',
+          subtitle: 'link',
+          media: 'logo'
+        }
+      }
 }
