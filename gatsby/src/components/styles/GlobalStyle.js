@@ -266,4 +266,13 @@ p, a, li, .paragraph {
   height: calc(100% - 50px);
   top: 50px;
 }
+
+.mid {
+  position: absolute;
+  top: 50%;
+  left: -25px;
+  width: calc(100% + 50px);
+  height: 1px;
+  background-color: #FFFFFF;
+}
 `
