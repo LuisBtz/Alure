@@ -54,6 +54,11 @@ export default {
             name: 'facebook',
             title: 'Facebook Url',
             type: 'url'
+        },
+        {
+            name: 'blogBackgroundImage',
+            title: 'Blog Background Image',
+            type: 'imageType'
         }
     ],
 }

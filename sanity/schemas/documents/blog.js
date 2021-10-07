@@ -35,4 +35,11 @@ export default {
       }
 
     ],
+    preview: {
+      select: {
+        title: 'title',
+        subtitle: 'author',
+        media: 'blogImage'
+      }
+    }
   }
