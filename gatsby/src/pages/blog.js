@@ -4,6 +4,7 @@ import Hero from '../components/blog/Hero'
 import Layout from '../components/layout/layout'
 import Seo from '../components/layout/seo'
 import Posts from '../components/blog/Posts'
+import Next from '../components/blog/Next'
 
 export const data = graphql`
   query {
@@ -51,6 +52,7 @@ const BlogPage = ({data}) => {
       <Seo title='blog' /*  description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} */ />
       <Hero data={data} />
       <Posts data={data} />
+      <Next />
     </Layout>
   )
 }

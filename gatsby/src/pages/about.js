@@ -91,7 +91,6 @@ export const data = graphql`
   }
   `
 
-
 // markup
 const AboutPage = ({data}) => {
   return (

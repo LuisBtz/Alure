@@ -91,7 +91,7 @@ const Team = () => {
 
     return(
         <TeamContainer> 
-            <div className='line-r line absolute no-bg'></div>
+            <div className='line-r line absolute no-bg dark-gray'></div>
             <div className='line-l line absolute no-bg dark-gray'></div>
 
             <div className='iz'>

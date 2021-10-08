@@ -6,16 +6,16 @@ import Footer from "./footer"
 
 
 
-function Layout({ children }) {
+function Layout({ children, solidHeader, greenFooter }) {
 
   
   return (
     <>
       <Normalizer />
       <GlobalStyle />
-      <Header />
+      <Header solidHeader={solidHeader}/>
         <main>{children}</main>
-      <Footer />
+      <Footer greenFooter={greenFooter}/>
     </>
   )
 }

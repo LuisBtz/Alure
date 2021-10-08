@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from 'styled-components'
 
-const Header = () => {
+const Header = ({solidHeader}) => {
 
     const data = useStaticQuery(graphql`
     query  {
@@ -26,28 +26,30 @@ const Header = () => {
 
     return(
         <HeaderContainer>
-            <div className='cont'>
-                <div className='column'>
-                    <Link to='/' className='home'>
-                        <img src={data.sanitySettingsPage.alure.asset.url} alt={data.sanitySettingsPage.alure.enAlt} />
-                    </Link>
-                    <div className='line-b line' ></div>
-                </div>
-                <div className='column'>
-                    <Link to='/' className='home'>
-                        <img src={data.sanitySettingsPage.agency.asset.url} alt={data.sanitySettingsPage.agency.enAlt} />
-                    </Link>
-                    <div className='line-b line' ></div>
-                </div>
-                <div className='column'>
-                    <ul>
-                        <li><Link to='/about'>About</Link></li>
-                        <li><Link to='/services'>Services</Link></li>
-                        <li><Link to='/clients'>Clients</Link></li>
-                        <li><Link to='/blog'>Blog</Link></li>
-                        <li><Link to='contact'>Contact</Link></li>
-                    </ul>
-                    <div className='line-b line' ></div>
+            <div className={solidHeader ? 'contenedor green-back' : 'contenedor transparent'}>
+                <div className='cont'>
+                    <div className='column'>
+                        <Link to='/' className='home'>
+                            <img src={data.sanitySettingsPage.alure.asset.url} alt={data.sanitySettingsPage.alure.enAlt} />
+                        </Link>
+                        <div className='line-b line' ></div>
+                    </div>
+                    <div className='column'>
+                        <Link to='/' className='home'>
+                            <img src={data.sanitySettingsPage.agency.asset.url} alt={data.sanitySettingsPage.agency.enAlt} />
+                        </Link>
+                        <div className='line-b line' ></div>
+                    </div>
+                    <div className='column'>
+                        <ul>
+                            <li><Link to='/about'>About</Link></li>
+                            <li><Link to='/services'>Services</Link></li>
+                            <li><Link to='/clients'>Clients</Link></li>
+                            <li><Link to='/blog'>Blog</Link></li>
+                            <li><Link to='contact'>Contact</Link></li>
+                        </ul>
+                        <div className='line-b line' ></div>
+                    </div>
                 </div>
             </div>
         </HeaderContainer>
@@ -55,12 +57,34 @@ const Header = () => {
 }
 
 const HeaderContainer = styled.nav`
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7740138291644783) 100%);
-    width: 100%;
-    position: fixed;
-    z-index: 2;
-    height: 50px;
+    .transparent {
+        background: rgb(0,0,0);
+        background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7740138291644783) 100%);
+        .line-r.absolute {
+            display: none;
+        }
+        .line-l.absolute {
+            display: none;
+        }
+    }
+    .green-back {
+        background-color: var(--green);
+        .line-b {
+            display: none;
+        }
+        .line-r.absolute {
+            right: -25px;
+        }
+        .line-l.absolute {
+            left: -25px;
+        }
+    }
+    .contenedor {
+        width: 100%;
+        position: fixed;
+        z-index: 3;
+        height: 50px;
+    
     .cont {
         position: absolute;
         left: 50%;
@@ -92,7 +116,7 @@ const HeaderContainer = styled.nav`
         }
     }
     }
-    
+}
 `
 
 export default Header;

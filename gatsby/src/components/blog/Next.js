@@ -6,16 +6,18 @@ const Next = () => {
     return(
         <NextContainer>
             <div className='content'>
-                <div className='line-r line dark-gray absolute'></div>
-                <div className='line-l line dark-gray absolute'></div>
+                <div className='line-r line absolute no-bg dark-gray'></div>
+                <div className='line-l line absolute no-bg dark-gray'></div>
                 <div className='grid'>
                     <div className='column'>
-                        <p>Next Up</p>
-                        <Link to='/services'>services</Link>
-                        <div className='line-r dark-gray line' ></div>
+                        <div className='text'>
+                            <p>Next Up</p>
+                            <Link to='/blog'>BLOG</Link>
+                        </div>
+                        <div className='line-r line dark-gray no-bg' ></div>
                     </div>
                     <div className='column'>
-                        <div className='line-r dark-gray line' ></div>
+                        <div className='line-r line dark-gray no-bg' ></div>
                     </div>
                     <div className='column'>
                     </div>
@@ -48,15 +50,22 @@ const NextContainer = styled.section`
             padding-top: 25px;
         }
         .column {
-            height: 165px;
+            height: 280px;
             h2 {
                 font-size: 4rem;
                 text-transform: uppercase;
                 padding-bottom: 25px;
             }
-        }
-        .solo .line {
-            bottom: 25px;
+            .line-t {
+                top: 0;
+            }
+            .text {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding-bottom: 25px;
+            }
         }
     }
 `

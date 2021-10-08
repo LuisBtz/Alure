@@ -5,7 +5,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import NewsletterFooter from './NewsletterFooter';
 
-const Footer = () => {
+const Footer = ({greenFooter}) => {
 
 
     const data = useStaticQuery(graphql`
@@ -39,56 +39,58 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
 
     return(
         <FooterContainer>
-            <div className='content'>
-                <div className='line-r line absolute no-bg'></div>
-                <div className='line-l line absolute no-bg'></div>
-                <div className='grid'>
-                    <div className='column'>
-                        <div className='text'>
-                            <p>{description}</p>
-                            <div className='copy'>
-                                <BlockContent 
-                                    blocks={data.sanitySettingsPage._rawCopyright}
-                                />
-                            </div>
-                        </div>
-                        <div className='line-r line no-bg' ></div>
-                    </div>
-                    <div className='column'>
-                        <div className='text'>
-                            <NewsletterFooter />
-                            <ul>
-                                <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.email}>Email ↗</a></li>
-                                <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.instagram}>Instagram ↗</a></li>
-                                <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.facebook}>Facebook ↗</a></li>
-                            </ul>
-                        </div>
-                        <div className='line-r line no-bg' ></div>
-                    </div>
-                    <div className='column last'>
-                        <div className='text'>
-                            <ul>
-                                <li><Link to='/about'>About</Link></li>
-                                <li><Link to='/services'>Services</Link></li>
-                                <li><Link to='/clients'>Clients</Link></li>
-                                <li><Link to='/blog'>Blog</Link></li>
-                                <li><Link to='contact'>Contact</Link></li>
-                            </ul>
-                            <div className='terms'>
-                                <div className='image'>
-                                    <GatsbyImage
-                                        style={{ height: "100%", width: "100%" }}
-                                        image={getDataImage}
-                                        alt={altImage}
+            <div className={greenFooter ? 'contenedor green' : 'contenedor white'}>
+                <div className='content'>
+                    <div className='line-r line absolute no-bg'></div>
+                    <div className='line-l line absolute no-bg'></div>
+                    <div className='grid'>
+                        <div className='column'>
+                            <div className='text'>
+                                <p>{description}</p>
+                                <div className='copy'>
+                                    <BlockContent 
+                                        blocks={data.sanitySettingsPage._rawCopyright}
                                     />
                                 </div>
-                                <div className='links'>
-                                    <Link to='/terms' >Terms & Conditions /</Link>
-                                    <Link to='/privacy'>Privacy Policy</Link>
+                            </div>
+                            <div className='line-r line no-bg' ></div>
+                        </div>
+                        <div className='column'>
+                            <div className='text'>
+                                <NewsletterFooter />
+                                <ul>
+                                    <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.email}>Email ↗</a></li>
+                                    <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.instagram}>Instagram ↗</a></li>
+                                    <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.facebook}>Facebook ↗</a></li>
+                                </ul>
+                            </div>
+                            <div className='line-r line no-bg' ></div>
+                        </div>
+                        <div className='column last'>
+                            <div className='text'>
+                                <ul>
+                                    <li><Link to='/about'>About</Link></li>
+                                    <li><Link to='/services'>Services</Link></li>
+                                    <li><Link to='/clients'>Clients</Link></li>
+                                    <li><Link to='/blog'>Blog</Link></li>
+                                    <li><Link to='contact'>Contact</Link></li>
+                                </ul>
+                                <div className='terms'>
+                                    <div className='image'>
+                                        <GatsbyImage
+                                            style={{ height: "100%", width: "100%" }}
+                                            image={getDataImage}
+                                            alt={altImage}
+                                        />
+                                    </div>
+                                    <div className='links'>
+                                        <Link to='/terms' >Terms & Conditions /</Link>
+                                        <Link to='/privacy'>Privacy Policy</Link>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -97,7 +99,21 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
 }
 
 const FooterContainer = styled.footer`
-    background-color: var(--green);
+    .green {
+        background-color: var(--green);
+        color: white;
+    }
+    .white {
+        background-color: white;
+        color: var(--dark-gray);
+        a {
+            color: var(--dark-gray);
+        }
+        .line {
+            border-color: var(--dark-gray);
+        }
+    }
+.contenedor {
     position: relative;
     .grid {
         width: var(--width-l);
@@ -146,6 +162,7 @@ const FooterContainer = styled.footer`
             }
         }
     }
+}
 `
 
 export default Footer;

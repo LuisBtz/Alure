@@ -100,13 +100,14 @@ export const data = graphql`
   }
 `
 
+const greenFooter = true
 
 // markup
 const IndexPage = ({data}) => {
 
 
   return (
-    <Layout>
+    <Layout greenFooter={greenFooter}>
       <Seo  title='home' /*description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} */ />
       <Video data={data} />
       <About data={data} />

@@ -22,8 +22,10 @@ export default function SinglePostPage({ data: { post } }) {
   
     const url = typeof window !== 'undefined' ? window.location.href : '';
 
+    const solidHeader = true
+    
     return (
-        <Layout>
+        <Layout solidHeader={solidHeader}>
             <Seo title='about' /* description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} */ />
             <PostContainer>
                 {share ?
