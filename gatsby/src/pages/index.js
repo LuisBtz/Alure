@@ -103,6 +103,8 @@ export const data = graphql`
 
 // markup
 const IndexPage = ({data}) => {
+
+
   return (
     <Layout>
       <Seo  title='home' /*description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} */ />

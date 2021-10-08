@@ -59,7 +59,7 @@ const HeaderContainer = styled.nav`
     background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7740138291644783) 100%);
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     height: 50px;
     .cont {
         position: absolute;
