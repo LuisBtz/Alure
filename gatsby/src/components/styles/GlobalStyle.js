@@ -108,6 +108,10 @@ export const GlobalStyle = createGlobalStyle`
 a {
     color: white;
 }
+b,
+strong {
+  font-family: var(--custom);
+}
 
 h1 {
     font-weight: normal;

@@ -38,16 +38,21 @@ export default function SinglePostPage({ data: { post } }) {
                         </div>
                     </div>
                     <div className='grid co'>
-                        <div className='column'>
-                            <div className='line-t line dark-gray'></div>
-                            <div className='img'>
-                            <GatsbyImage
-                                style={{ height: "100%", width: "100%" }}
-                                image={getDataImage}
-                                alt={alt}
-                            />
+                        <div className='column left'>
+                            <div className='top'>
+                                <div className='line-t line dark-gray'></div>
+                                <div className='img'>
+                                    <GatsbyImage
+                                        style={{ height: "100%", width: "100%" }}
+                                        image={getDataImage}
+                                        alt={alt}
+                                    />
+                                </div>
                             </div>
-                            <div className='line-b line dark-gray'></div>
+                            <div className='bot'>
+                                <p>Share this article ↗</p>
+                                <div className='line-b line dark-gray'></div>
+                            </div>
                         </div>
                         <div className='column two'>
                             <div className='line-t line dark-gray'></div>
@@ -117,6 +122,14 @@ const PostContainer = styled.section`
                 line-height: 0.9;
             }
         }
+        .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .bot {
+                margin-bottom: 25px;
+            }
+        }
         .column {
             display: flex;
             flex-direction: column;
@@ -132,7 +145,10 @@ const PostContainer = styled.section`
                 z-index: 1;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: space-between;\
+                h2 {
+                    margin-top: 25px;
+                }
             }
         }
     }

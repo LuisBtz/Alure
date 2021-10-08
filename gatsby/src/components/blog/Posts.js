@@ -19,11 +19,13 @@ const Posts = ({data}) => {
                                 <div className='top'>
                                     <div className='line-t line dark-gray no-bg'></div>
                                     <div className='img'>
-                                        <GatsbyImage
-                                            style={{ height: "100%", width: "100%" }}
-                                            image={getDataImage}
-                                            alt={altImage}
-                                        />
+                                        <Link to={`/blog/${node.slug.current}`}>
+                                            <GatsbyImage
+                                                style={{ height: "100%", width: "100%" }}
+                                                image={getDataImage}
+                                                alt={altImage}
+                                            />
+                                        </Link>
                                         <div className='line'></div>
                                     </div>
                                     <Link to={`/blog/${node.slug.current}`} className='text'>
