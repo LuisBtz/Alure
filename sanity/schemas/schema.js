@@ -14,6 +14,7 @@ import members from './objects/members'
 import testimonial from './objects/testimonial'
 import client from './objects/client'
 import blockModule from './objects/blockModule'
+import postObject from './objects/postObject'
 
 import settingsPage from './documents/settingsPage'
 import homePage from './documents/homePage'
@@ -39,6 +40,7 @@ export default createSchema({
     testimonial,
     client,
     blockModule,
+    postObject,
 
     settingsPage,
     homePage,

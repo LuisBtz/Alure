@@ -32,6 +32,24 @@ export default {
         title: 'blockModule', 
         name: 'Editor',
         type: 'blockModule', 
+      },
+      {
+        name: 'relatedPosts',
+        title: 'Realted Post', 
+        validation: Rule => Rule.required().min(3).max(3),
+        type: 'array', 
+        of: [
+          {
+            type: 'postObject'
+          }
+        ],
+        preview: {
+          select: {
+            title: 'blog.title',
+            subtitle: 'author',
+            media: 'blogImage'
+          }
+        }
       }
 
     ],
