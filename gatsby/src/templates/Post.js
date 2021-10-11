@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import BlockContent from '@sanity/block-content-to-react';
+import { Link } from 'gatsby';
 
 
 export default function SinglePostPage({ data: { post } }) {
@@ -84,6 +85,35 @@ export default function SinglePostPage({ data: { post } }) {
                                     blocks={text}
                                 />
                             </div>
+                        </div>
+                    </div>
+                    <div className='content re'>
+                        <div className='line-r line absolute no-bg dark-gray'></div>
+                        <div className='line-l line absolute no-bg dark-gray'></div>
+                        <div className='grid'>
+                        {post.relatedPosts.map(({_key, _createdAt, title, slug}) => {
+                            const date = _createdAt;
+                            
+                                return (
+                                    <div className='column' key={_key} >
+                                        <div className='line-t line dark-gray no-bg'></div>
+                                        <Link to={`/blog/${slug.current}`}>
+                                            <div className='text'>
+                                                <div className='up'>
+                                                    <p>{date}</p>
+                                                    <h2>{title}</h2>
+                                                </div>
+                                                <div className='bot'>
+                                                    <p>Read More ↗</p>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                        <div className='line-r line no-bg dark-gray no-bg' ></div>
+                                        <div className='line-b line no-bg dark-gray no-bg'></div>
+                                    </div>
+
+                                    )
+                                })}
                         </div>
                     </div>
                 </div>
@@ -196,6 +226,7 @@ const PostContainer = styled.section`
             }
             .content {
                 padding-top: 25px;
+                padding-bottom: 50px;
                 position: relative;
                 z-index: 1;
                 display: flex;
@@ -204,6 +235,68 @@ const PostContainer = styled.section`
                 h2 {
                     margin-top: 25px;
                 }
+            }
+        }
+    }
+    .content.re{
+        background-color: white;
+        position: relative;
+        .grid {
+            width: var(--width-l);
+            margin: 0 auto;   
+            display: grid ;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0 100px;
+            position: relative;
+            a {
+                color: var(--dark-gray);
+                height: 100%;
+            }
+            .two {
+                grid-column: 2/4;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                h3 {
+                    padding-bottom: 50px;
+                }
+            }
+            .column {
+                height: 50vh;
+                .icon {
+                    margin-top: 25px;
+                    width: 70px;
+                }
+                .text {
+                    padding-top: 50px;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding-bottom: 25px;
+                    .up {
+                        p {
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+                a {
+                    display: block;
+                }
+                h2 {
+                    font-size: 3rem;
+                    line-height: 0.9;
+                    font-family: var(--reg);
+                }
+            }
+            .solo {
+                height: auto;
+            }
+            .solo .line-b {
+                bottom: 25px;
+            }
+            .solo .line-t {
+                top: 0;
             }
         }
     }
@@ -227,6 +320,14 @@ export const query = graphql`
                     outputPixelDensities: 1.5
                     placeholder: DOMINANT_COLOR
                     )
+                }
+            }
+            relatedPosts {
+                _key
+                _createdAt(formatString: "MMMM DD YYYY")
+                title
+                slug {
+                    current
                 }
             }
         }

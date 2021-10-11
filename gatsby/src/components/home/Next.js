@@ -6,16 +6,16 @@ const Next = () => {
     return(
         <NextContainer>
             <div className='content'>
-                <div className='line-r line absolute'></div>
-                <div className='line-l line absolute'></div>
+                <div className='line-r line absolute dark-gray'></div>
+                <div className='line-l line absolute dark-gray'></div>
                 <div className='grid'>
                     <div className='column'>
                         <p>Next Up</p>
                         <Link to='/about'>about us</Link>
-                        <div className='line-r line' ></div>
+                        <div className='line-r line dark-gray' ></div>
                     </div>
                     <div className='column'>
-                        <div className='line-r line' ></div>
+                        <div className='line-r line dark-gray' ></div>
                     </div>
                     <div className='column'>
                     </div>

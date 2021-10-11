@@ -1,17 +1,10 @@
 export default {
     name: 'postObject',
     title: 'Post',
-    type: 'object',
-    fields: [
+    type: 'reference',
+    to: [
         {
-            name: 'post',
-            title: 'Post',
-            type: 'reference',
-            to: [
-                {
-                    type: 'blog'
-                }
-            ],
-          }
-    ]
+            type: 'blog'
+        }
+    ],
 }
