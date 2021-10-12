@@ -159,6 +159,8 @@ const FooterContainer = styled.footer`
             }
             .links {
                 align-self: flex-end;
+                display: block;
+                word-wrap: break-word;
             }
         }
     }

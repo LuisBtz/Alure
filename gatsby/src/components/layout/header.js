@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from 'styled-components'
 
@@ -23,10 +23,21 @@ const Header = ({solidHeader}) => {
     }
     `)
 
+const [menu, showMenu] = useState(false);
+
 
     return(
         <HeaderContainer>
             <div className={solidHeader ? 'contenedor green-back' : 'contenedor transparent'}>
+                
+                    <div className={menu ? 'menu-mov show' : 'menu-mov'} >
+                        <ul>
+                            <li><Link to='/about'>About</Link></li>
+                            <li><Link to='/services'>Services</Link></li>
+                            <li><Link to='/clients'>Clients</Link></li>
+                            <li><Link to='/blog'>Blog</Link></li>
+                            <li><Link to='contact'>Contact</Link></li>                    </ul>
+                    </div>
                 <div className='cont'>
                     <div className='column'>
                         <Link to='/' className='home'>
@@ -41,6 +52,11 @@ const Header = ({solidHeader}) => {
                         <div className='line-b line' ></div>
                     </div>
                     <div className='column'>
+                        <button className='ham' onClick={() => showMenu(!menu)}>
+                            <div className='line'></div>
+                            <div className='line'></div>
+                            <div className='line'></div>
+                        </button>
                         <ul>
                             <li><Link to='/about'>About</Link></li>
                             <li><Link to='/services'>Services</Link></li>
@@ -84,6 +100,37 @@ const HeaderContainer = styled.nav`
         position: fixed;
         z-index: 3;
         height: 50px;
+    .show {
+        right: 0 !important;
+    }
+    .menu-mov {
+        position: absolute;
+        height: 100vh;
+        right: -100%;
+        top: 0;
+        background-color: var(--green);
+        width: 100vw;
+        transition: right 350ms ease-in-out;
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            padding-right: 50px;
+            li {
+                text-align: right;
+                a {
+                    font-size: 3rem;
+                    font-family: var(--bold);
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
     
     .cont {
         position: absolute;
@@ -92,10 +139,30 @@ const HeaderContainer = styled.nav`
         width: var(--width-l);
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 100px;
+        gap: 30px;
         height: 50px;
+        @media (max-width: 860px) {
+            width: var(--width-l-m);
+        }
     .column {
         display: flex;
+        .ham {
+            display: none;
+            @media (max-width: 860px) {
+                display: block;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 15px;
+                right: 0;
+                .line {
+                    width: 100%;
+                    height: 1px;
+                    margin-bottom: 9px;
+                    background-color: white;
+                }
+            }
+        }
         a.home {
             width: auto;
             align-self: center;
@@ -110,6 +177,9 @@ const HeaderContainer = styled.nav`
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            @media (max-width: 860px) {
+                display: none;
+            }
         }
         &:nth-child(2) {
             justify-content: flex-end;

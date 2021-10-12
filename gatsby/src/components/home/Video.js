@@ -19,30 +19,31 @@ const Video = ({ data }) => {
             <div className='texto'>
                 <div className='column'>
                     <img src={data.sanitySettingsPage.icon.asset.url} alt={data.sanitySettingsPage.icon.enAlt} />
-                    <div className='line-b line' data-sal="slide-up"></div>
-                    <div className='line-r line' data-sal="slide-up"></div>
+                    <div className='line-b line hide-m' ></div>
+                    <div className='line-r line hide-m' ></div>
                 </div>
                 <div className='column'>
                     <p>{smallText}</p>
-                    <div className='line-b line' data-sal="slide-up"></div>
-                    <div className='line-r line' data-sal="slide-up"></div>
+                    <div className='line-b line' ></div>
+                    <div className='line-r line hide-m' ></div>
                 </div>
-                <div className='column'>
-                    <div className='line-b line' data-sal="slide-up"></div>
+                <div className='column hide-m'>
+                    <div className='line-b line' ></div>
                 </div>
                 <div className='column lead'>
                     <h1>{mainText}</h1>
-                    <div className='line-r line' data-sal="slide-up"></div>
+                    <div className='line-b line hide-d' ></div>
+                    <div className='line-r line hide-m' ></div>
                 </div>
-                <div className='column'></div>
-                <div className='solo'>
-                    <div className='line-b line' data-sal="slide-up"></div>
+                <div className='column hide-m'></div>
+                <div className='solo hide-m'>
+                    <div className='line-b line' ></div>
                 </div>
-                <div className='solo'>
-                    <div className='line-b line' data-sal="slide-up"></div>
+                <div className='solo hide-m'>
+                    <div className='line-b line' ></div>
                 </div>
-                <div className='solo'>
-                    <div className='line-b line' data-sal="slide-up"></div>
+                <div className='solo hide-m'>
+                    <div className='line-b line' ></div>
                 </div>
             </div>
             <div className='line-r line absolute'></div>
@@ -69,12 +70,24 @@ video {
     grid-template-columns: repeat(3, 1fr);
     gap: 0 100px;
     position: relative;
+    @media (max-width: 860px) {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+        grid-auto-flow: dense
+    }
     .lead {
         grid-column: 1/3;
+        @media (max-width: 860px) {
+            grid-column: auto;
+            grid-row: 1;
+        }
         h1 {
             margin-top: 50px;
             font-size: 4.5vw;
             text-transform: uppercase;
+            @media (max-width: 860px) {
+                font-size: 4rem;
+            }
         }
     }
     .solo {
@@ -85,6 +98,9 @@ video {
     }
     .column {
         height: 50vh;
+        @media (max-width: 860px) {
+            height: auto;
+        }
         img {
             width: 70px;
             position: absolute;

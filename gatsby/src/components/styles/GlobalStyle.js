@@ -54,6 +54,7 @@ export const GlobalStyle = createGlobalStyle`
     --headline-3: 1.875rem;
     --headline-4: 1.3125rem;
     --width-l: calc(100% - 100px);
+    --width-l-m: calc(100% - 60px);
     --width-2: calc(100% - 0px);
     --width-3: calc(100% - 50px);
     --paragraph: 1rem;
@@ -183,12 +184,18 @@ p, a, li, .paragraph {
   left: 25px;
   top: 0;
   z-index: 2;
+  @media (max-width: 860px) {
+    left: 15px;
+  }
 }
 .absolute.line-r {
   position: absolute;
   right: 25px;
   top: 0;
   z-index: 2;
+  @media (max-width: 860px) {
+    right: 15px;
+  }
 }
 
 .padding-top-50 {
@@ -278,5 +285,17 @@ p, a, li, .paragraph {
   width: calc(100% + 50px);
   height: 1px;
   background-color: #FFFFFF;
+}
+
+.hide-d {
+  @media (min-width: 860px) {
+    display: none;
+  }
+}
+
+.hide-m {
+  @media (max-width: 860px) {
+    display: none;
+  }
 }
 `
