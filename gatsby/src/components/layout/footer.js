@@ -53,7 +53,7 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
                                     />
                                 </div>
                             </div>
-                            <div className='line-r line no-bg' ></div>
+                            <div className='line-r line no-bg hide-m' ></div>
                         </div>
                         <div className='column newsletter'>
                             <div className='text'>
@@ -64,7 +64,7 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
                                     <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.facebook}>Facebook ↗</a></li>
                                 </ul>
                             </div>
-                            <div className='line-r line no-bg' ></div>
+                            <div className='line-r line no-bg hide-m' ></div>
                         </div>
                         <div className='column last'>
                             <div className='text'>
@@ -124,8 +124,10 @@ const FooterContainer = styled.footer`
         position: relative;
         height: 250px;
         @media (max-width: 960px) {
+            width: var(--width-l-m);
             grid-template-columns: 1fr;
             height: auto;
+            text-align: center;
             .newsletter .text ul {
                 margin-top: 50px;
             }
