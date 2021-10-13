@@ -55,9 +55,9 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
                             </div>
                             <div className='line-r line no-bg' ></div>
                         </div>
-                        <div className='column'>
+                        <div className='column newsletter'>
                             <div className='text'>
-                                <NewsletterFooter />
+                                <NewsletterFooter className='newsletter' />
                                 <ul>
                                     <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.email}>Email ↗</a></li>
                                     <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.instagram}>Instagram ↗</a></li>
@@ -123,11 +123,24 @@ const FooterContainer = styled.footer`
         gap: 0 100px;
         position: relative;
         height: 250px;
+        @media (max-width: 960px) {
+            grid-template-columns: 1fr;
+            height: auto;
+            .newsletter .text ul {
+                margin-top: 50px;
+            }
+        }
         .column {
             padding-top: 25px;
             padding-bottom: 25px;
         }
         .last {
+            @media (max-width: 960px) {
+                margin-top: 50px;
+                .text {
+                    margin-bottom: 50px;
+                }
+            }
             ul {
                 align-self: center;
                 width: 100%;
@@ -145,8 +158,11 @@ const FooterContainer = styled.footer`
             justify-content: space-between;
             ul {
                 display: flex;
-                li {
-                    padding-right: 20px;
+                flex-direction: row;
+                justify-content: space-between;
+                @media (max-width: 960px) {
+                    align-self: center;
+                    width: 300px;
                 }
             }
         }
@@ -154,13 +170,36 @@ const FooterContainer = styled.footer`
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            @media (max-width: 1180px) {
+                flex-direction: column;
+                align-content: flex-end;
+            }
             .image {
-                width: 70px;
+                align-self: flex-end;
+                margin-bottom: 20px;
+                width: 60px;
+            }
+            @media (max-width: 960px) {
+                flex-direction: column;
+                align-content: center;
+                justify-content: center !important;
+                .image {
+                    align-self: center;
+                }
             }
             .links {
                 align-self: flex-end;
-                display: block;
+                display: flex;
                 word-wrap: break-word;
+                @media (max-width: 1000px) {
+                    flex-direction: column;
+                    text-align: right;
+                    align-self: center;
+                }
+                @media (max-width: 960px) {
+                    flex-direction: row;
+                    text-align: center;
+                }
             }
         }
     }

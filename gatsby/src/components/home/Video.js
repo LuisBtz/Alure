@@ -23,8 +23,8 @@ const Video = ({ data }) => {
                     <div className='line-r line hide-m' ></div>
                 </div>
                 <div className='column'>
-                    <p>{smallText}</p>
-                    <div className='line-b line' ></div>
+                    <a href='#about'>{smallText}</a>
+                    <div className='line-b line bottom-25-m' ></div>
                     <div className='line-r line hide-m' ></div>
                 </div>
                 <div className='column hide-m'>
@@ -71,6 +71,7 @@ video {
     gap: 0 100px;
     position: relative;
     @media (max-width: 860px) {
+        width: var(--width-l-m);
         grid-template-columns: 1fr;
         padding-top: 50px;
         grid-auto-flow: dense
@@ -80,13 +81,14 @@ video {
         @media (max-width: 860px) {
             grid-column: auto;
             grid-row: 1;
+            height: 70vh !important;
         }
         h1 {
             margin-top: 50px;
             font-size: 4.5vw;
             text-transform: uppercase;
             @media (max-width: 860px) {
-                font-size: 4rem;
+                font-size: 13vw;
             }
         }
     }
@@ -106,9 +108,12 @@ video {
             position: absolute;
             bottom: 20px;
         }
-        p {
+        a {
             position: absolute;
             bottom: 20px;
+            @media (max-width: 860px ) {
+                position: static;
+            }
         }
     }
 }

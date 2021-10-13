@@ -57,6 +57,7 @@ export const GlobalStyle = createGlobalStyle`
     --width-l-m: calc(100% - 60px);
     --width-2: calc(100% - 0px);
     --width-3: calc(100% - 50px);
+    --width-4: calc(100% - 30px);
     --paragraph: 1rem;
     --green: #06262D;
     --gray: #E0DEDB;
@@ -204,6 +205,11 @@ p, a, li, .paragraph {
 .padding-bottom-50 {
   margin-bottom: 50px;
 }
+.padding-bottom-50-m {
+  @media (max-width: 860px) {
+    padding-bottom: 50px;
+  } 
+}
 
 .padding-bottom25 {
   margin-bottom: 25px;
@@ -222,6 +228,12 @@ p, a, li, .paragraph {
 
 .bottom-25 {
   bottom: 25px;
+}
+
+.bottom-25-m {
+  @media (max-width: 860px) {
+    bottom: 25px;
+  }
 }
 
 .background-white {
@@ -298,4 +310,6 @@ p, a, li, .paragraph {
     display: none;
   }
 }
+
+
 `

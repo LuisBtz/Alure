@@ -38,23 +38,23 @@ const Services = ({data}) => {
                         <Link className='padding-top-50' to='/services'>{link}</Link>
                         <div className='line-r line' data-sal="slide-up"></div>
                     </div>
-                    <div className='column two'>
+                    <div className='column two padding-bottom-50-m'>
                         <h3 className='padding-top-50' >{title}</h3>
                     </div>
-                    <div className='column solo'>
+                    <div className='column solo hide-m'>
                         <div className='line-b line' data-sal="slide-up"></div>
                     </div>
-                    <div className='column solo'>
+                    <div className='column solo hide-m'>
                         <div className='line-b line' data-sal="slide-up"></div>
                     </div>
-                    <div className='column solo'>
+                    <div className='column solo hide-m'>
                         <div className='line-b line' data-sal="slide-up"></div>
                     </div>
-                    <div className='column'>
+                    <div className='column hide-m'>
                         <div className='line-r line' data-sal="slide-up"></div>
                         <div className='line-b line bottom-25' data-sal="slide-up"></div>
                     </div>
-                    <div className='column'>
+                    <div className='column hide-m'>
                         <div className='line-r line' data-sal="slide-up"></div>
                         <div className='line-b line bottom-25' data-sal="slide-up"></div>
                     </div>
@@ -71,8 +71,19 @@ const Services = ({data}) => {
 const ServicesContainer = styled.section`
 position: relative;
     height: 100vh;
+    @media (max-width: 860px) {
+        height: 100%;
+    }
     .image {
         height: 100vh;
+        @media (max-width: 860px) {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
     }
     .content {
         position: absolute;
@@ -80,6 +91,9 @@ position: relative;
         left: 0;
         right: 0;
         bottom: 0;
+        @media (max-width: 860px) {
+            position: static;
+        }
     }
 
     .grid {
@@ -89,8 +103,15 @@ position: relative;
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        @media (max-width: 860px) {
+            grid-template-columns: 1fr;
+            width: var(--width-l-m);
+        }
         .column {
             height: 50vh;
+            @media (max-width: 860px) {
+                height: auto;
+            }
             a {
                 display: block;
             }
@@ -104,6 +125,9 @@ position: relative;
         }
         .two {
             grid-column: 2/4;
+            @media (max-width: 860px) {
+                grid-column: auto;
+            }
         }
         .solo {
             height: 0 !important;

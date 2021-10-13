@@ -52,7 +52,7 @@ const [menu, showMenu] = useState(false);
                         <div className='line-b line' ></div>
                     </div>
                     <div className='column'>
-                        <button className='ham' onClick={() => showMenu(!menu)}>
+                        <button className={menu ? 'ham click' : 'ham'} onClick={() => showMenu(!menu)}>
                             <div className='line'></div>
                             <div className='line'></div>
                             <div className='line'></div>
@@ -146,6 +146,23 @@ const HeaderContainer = styled.nav`
         }
     .column {
         display: flex;
+        .click {
+            .line {
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:nth-child(1) {
+                    position: relative;
+                    top: 10px;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(3) {
+                    position: relative;
+                    bottom: 10px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
         .ham {
             display: none;
             @media (max-width: 860px) {
@@ -160,6 +177,7 @@ const HeaderContainer = styled.nav`
                     height: 1px;
                     margin-bottom: 9px;
                     background-color: white;
+                    transition: all 250ms ease-in-out;
                 }
             }
         }
