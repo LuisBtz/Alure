@@ -137,12 +137,6 @@ const FooterContainer = styled.footer`
             padding-bottom: 25px;
         }
         .last {
-            @media (max-width: 960px) {
-                margin-top: 50px;
-                .text {
-                    margin-bottom: 50px;
-                }
-            }
             ul {
                 align-self: center;
                 width: 100%;
@@ -187,6 +181,8 @@ const FooterContainer = styled.footer`
                 justify-content: center !important;
                 .image {
                     align-self: center;
+                    margin-bottom: 50px;
+                    margin-top: 50px;
                 }
             }
             .links {
@@ -196,11 +192,11 @@ const FooterContainer = styled.footer`
                 @media (max-width: 1000px) {
                     flex-direction: column;
                     text-align: right;
-                    align-self: center;
                 }
                 @media (max-width: 960px) {
                     flex-direction: row;
                     text-align: center;
+                    align-self: center;
                 }
             }
         }

@@ -81,7 +81,6 @@ video {
         @media (max-width: 860px) {
             grid-column: auto;
             grid-row: 1;
-            height: 70vh !important;
         }
         h1 {
             margin-top: 50px;
