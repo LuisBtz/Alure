@@ -103,9 +103,12 @@ position: relative;
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        /* @media (max-width: 1000px) {
+            width: var(--width-l-m);
+            gap: 0 30px;
+        } */
         @media (max-width: 860px) {
             grid-template-columns: 1fr;
-            width: var(--width-l-m);
         }
         .column {
             height: 50vh;
@@ -116,10 +119,10 @@ position: relative;
                 display: block;
             }
             h3 {
-                font-size: 2.5rem;
+                font-size: 2.8vw;
             }
             p {
-                font-size: 2.5rem;
+                font-size: 2.5vw;
                 line-height: 1;
             }
         }

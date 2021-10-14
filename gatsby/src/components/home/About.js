@@ -99,6 +99,10 @@ const AboutContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        /* @media (max-width: 1000px) {
+            width: var(--width-l-m);
+            gap: 0 30px;
+        } */
         @media (max-width: 860px) {
             grid-template-columns: 1fr;
             width: var(--width-l-m);
@@ -112,11 +116,11 @@ const AboutContainer = styled.section`
                 display: block;
             }
             h2 {
-                font-size: 4rem;
+                font-size: 3rem;
                 text-transform: uppercase;
             }
             p {
-                font-size: 2.5rem;
+                font-size: 2.5vw;
                 line-height: 1;
             }
         }

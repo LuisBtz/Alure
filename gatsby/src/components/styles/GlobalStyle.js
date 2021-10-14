@@ -187,7 +187,7 @@ p, a, li, .paragraph {
   left: 25px;
   top: 0;
   z-index: 2;
-  @media (max-width: 860px) {
+  @media (max-width: 1000px) {
     left: 15px;
   }
 }
@@ -196,7 +196,7 @@ p, a, li, .paragraph {
   right: 25px;
   top: 0;
   z-index: 2;
-  @media (max-width: 860px) {
+  @media (max-width: 1000px) {
     right: 15px;
   }
 }
@@ -313,5 +313,11 @@ p, a, li, .paragraph {
   }
 }
 
+
+/* @media (max-width: 1000px) {
+    .line-r {
+        right: -15px;
+    }
+} */
 
 `

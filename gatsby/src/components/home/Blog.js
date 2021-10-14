@@ -39,7 +39,7 @@ const Blog = ({data}) => {
                         <div className='line-t line'></div>
                     </div>
                     <div className='column background-white left'>
-                        <div className='line-t line'></div>
+                        <div className='line-t line dark-gray'></div>
                         <div className='text'>
                             <h2>{title}</h2>
                         </div>
@@ -102,6 +102,9 @@ const BlogContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         box-sizing: border-box;
         position: relative;
+        /* @media (max-width: 1000px) {
+            width: calc(100% - 30px);
+        } */
         @media (max-width: 860px) {
             width: var(--width-4);
             grid-template-columns: 1fr;
@@ -115,9 +118,9 @@ const BlogContainer = styled.section`
                 left: 50%;
                 transform: translateX(-50%);
                 width: 80%;
-                @media (max-width: 860px) {
+                /* @media (max-width: 1000px) {
                     width: calc(100% - 30px);
-                }
+                } */
             }
             .text {
                 width: 80%;
@@ -127,6 +130,9 @@ const BlogContainer = styled.section`
                 flex-direction: column;
                 justify-content: space-between;
                 height: 100%;
+                @media (max-width: 1000px) {
+                    width: calc(100% - 30px);
+                }
                 @media (max-width: 860px) {
                     width: var(--width-4) !important;
                     padding-bottom: 50px;
@@ -136,6 +142,10 @@ const BlogContainer = styled.section`
         .left {
             width: calc(100% - 25px);
             margin-left: 25px;
+            /* @media (max-width: 1000px) {
+                width: calc(100%);
+                margin-left: 0;
+            } */
             @media (max-width: 860px) {
                 background: none;
                 margin-left: 0;
@@ -151,6 +161,9 @@ const BlogContainer = styled.section`
                 left: 50%;
                 transform: translateX(-50%);
                 width: 80%;
+                /* @media (max-width: 1000px) {
+                    width: calc(100% - 30px);
+                } */
             }
             .line-l {
                 left: -1px;
@@ -189,9 +202,9 @@ const BlogContainer = styled.section`
                 left: 50%;
                 transform: translateX(-50%);
                 width: 80%;
-                @media (max-width: 860px) {
+                /* @media (max-width: 1000px) {
                     width: calc(100% - 30px);
-                }
+                } */
             }
         }
         .column-50 {
@@ -202,6 +215,9 @@ const BlogContainer = styled.section`
                 left: 50%;
                 transform: translateX(-50%);
                 width: 80%;
+                /* @media (max-width: 1000px) {
+                    width: calc(100% - 30px);
+                } */
             }
             .line-l {
                 left: -1px;

@@ -139,10 +139,11 @@ const HeaderContainer = styled.nav`
         width: var(--width-l);
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        gap: 100px;
         height: 50px;
-        @media (max-width: 860px) {
+        @media (max-width: 1000px) {
             width: var(--width-l-m);
+            gap: 30px
         }
     .column {
         display: flex;
