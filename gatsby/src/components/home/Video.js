@@ -60,6 +60,10 @@ video {
     position: absolute;
     top: 0;
     left: 0;
+    @media (max-width: 860px) {
+        height: 100vh;
+        min-height: -webkit-fill-available;
+    }
 }
 
 .texto {
@@ -77,7 +81,9 @@ video {
     @media (max-width: 860px) {
         grid-template-columns: 1fr;
         padding-top: 50px;
-        grid-auto-flow: dense
+        grid-auto-flow: dense;
+        height: 100vh;
+        min-height: -webkit-fill-available;
     }
     .lead {
         grid-column: 1/3;

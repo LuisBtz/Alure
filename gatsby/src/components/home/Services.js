@@ -103,10 +103,10 @@ position: relative;
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
-        /* @media (max-width: 1000px) {
+        @media (max-width: 860px) {
             width: var(--width-l-m);
             gap: 0 30px;
-        } */
+        }
         @media (max-width: 860px) {
             grid-template-columns: 1fr;
         }
