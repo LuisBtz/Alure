@@ -101,7 +101,7 @@ const Team = () => {
                         <h3>{title}</h3>
                     </div>
                     <div className='column bottom'>
-                        <div className='line-t line dark-gray no-bg'></div>
+                        <div className='line-t line dark-gray no-bg hide-m'></div>
                         <p>{description}</p>
                         <div className='line-b line no-bg dark-gray'></div>
                     </div>
@@ -119,7 +119,7 @@ const Team = () => {
                                 <div className='line-r line dark-gray no-bg' ></div>
                             </div>
                             <div className='column'>
-                                <div className='line-t line dark-gray no-bg'></div>
+                                <div className='line-t line dark-gray no-bg hide-m'></div>
                                 <div className='image'>
                                     <GatsbyImage
                                         style={{ height: "100%", width: "100%" }}
@@ -128,7 +128,7 @@ const Team = () => {
                                     />
                                 </div>
                             </div>
-                            <div className='solo'>
+                            <div className='solo hide-m'>
                                 <div className='line-t line dark-gray no-bg'></div>
                             </div>
                             <div className='solo'>
@@ -139,7 +139,7 @@ const Team = () => {
                                 <strong>{membersPosition.en}</strong>
                                 <p>{membersDescription.en}</p>
                             </div>
-                            <div className='solo'>
+                            <div className='solo hide-m'>
                                 <div className='line-b line no-bg dark-gray'></div>
                             </div>
                             <div className='solo'>
@@ -160,9 +160,15 @@ const TeamContainer = styled.section`
     height: 100vh;
     position: relative;
     background-color: var(--gray);
+    @media (max-width: 860px) {
+        height: 100% !important;
+    }
     .column {
         position: relative;
         height: 50vh;
+        @media (max-width: 860px) {
+                height: auto;
+            }
         h3 {
             margin-top: 50px;
         }
@@ -178,15 +184,28 @@ const TeamContainer = styled.section`
         height: 100%;
         background-color: white;
         color: var(--dark-gray);
+        @media (max-width: 860px) {
+            position: static;
+            width: 100%;
+        }
         .grid {
             width: var(--width-l);
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr;
+            @media (max-width: 860px) {
+                width: var(--width-l-m);
+                gap: 0 30px;
+                grid-template-columns: 1fr;
+
+            }
             .bottom {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+                    @media (max-width: 860px) {
+                        padding-top: 20px;
+                    }
                     .line-t {
                         top: 0;
                     }
@@ -199,20 +218,33 @@ const TeamContainer = styled.section`
     }
 
     .de {
-            position: absolute;
-            width: 66.666%;
-            top: 0;
-            right: 0;
-            height: 100%;
-            .grid {
-                width: var(--width-l);
-                margin: 0 auto;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0 100px;
+        position: absolute;
+        width: 66.666%;
+        top: 0;
+        right: 0;
+        height: 100%;
+        @media (max-width: 860px) {
+            position: static;
+            width: 100%;
+        }
+        .grid {
+            width: var(--width-l);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0 100px;
+            @media (max-width: 860px) {
+                width: var(--width-l-m);
+                gap: 0 30px;
+                grid-template-columns: 1fr;
+
             }
+        }
             .two {
                 grid-column: 1/3;
+                @media (max-width: 860px) {
+                grid-column: auto;
+            }
             }
         }
 `
@@ -231,6 +263,9 @@ const SliderContainer = styled(Slider)`
         &::before {
             display: none;
         }
+        @media (max-width: 680px) {
+            display: none;
+        }
     }
     .slick-prev {
         left: 50px;
@@ -246,6 +281,9 @@ color: var(--dark-gray);
     width: 100%;
     height: calc(50vh - 75px);
     margin-top: 50px;
+    @media (max-width: 860px) {
+        padding-bottom: 25px;
+    }
 }
 .solo {
     position: relative;
@@ -270,6 +308,11 @@ color: var(--dark-gray);
         top: 30px;
         left: calc(50% + 50px);
         font-weight: normal;
+        @media (max-width: 860px) {
+            position: static;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
     }
 }
 

@@ -41,6 +41,7 @@ const NextContainer = styled.section`
         } */
         @media (max-width: 860px) {
             grid-template-columns: 1fr;
+            
         }
         a {
             color: var(--dark-gray);

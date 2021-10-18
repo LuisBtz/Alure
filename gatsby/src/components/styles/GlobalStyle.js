@@ -252,6 +252,21 @@ p, a, li, .paragraph {
   border-color: var(--dark-gray);
 }
 
+.white-m {
+  @media (max-width: 860px) {
+    color: white;
+    background-color: white;
+    border-color: white;
+  }
+}
+.dark-gray-m {
+  @media (max-width: 860px) {
+    color: var(--dark-gray);
+    background-color: var(--dark-gray);
+    border-color: var(--dark-gray);
+  }
+}
+
 .line-l-width-50 {
   width: 50px;
 }

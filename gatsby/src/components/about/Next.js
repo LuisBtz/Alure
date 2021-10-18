@@ -12,12 +12,12 @@ const Next = () => {
                     <div className='column'>
                         <p>Next Up</p>
                         <Link to='/services'>services</Link>
+                        <div className='line-r dark-gray line hide-m' ></div>
+                    </div>
+                    <div className='column hide-m'>
                         <div className='line-r dark-gray line' ></div>
                     </div>
-                    <div className='column'>
-                        <div className='line-r dark-gray line' ></div>
-                    </div>
-                    <div className='column'>
+                    <div className='column hide-m'>
                     </div>
                 </div>
                 
@@ -36,6 +36,9 @@ const NextContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        @media (max-width: 860px) {
+            grid-template-columns: 1fr;
+        }
         a {
             color: var(--dark-gray);
             font-family: var(--bold);
