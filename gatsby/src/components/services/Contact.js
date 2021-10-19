@@ -29,23 +29,23 @@ const Contact = ({data}) => {
                             <h3>{salesSectionNetworkTitle}</h3>
                             <p>{salesSectionNetworkText}</p>
                          </div>
-                         <div className='line-r line dark-gray no-bg' ></div>
+                         <div className='line-r line dark-gray no-bg hide-m' ></div>
                          <div className='line-b line dark-gray no-bg' ></div>
                     </div>
-                    <div className='column'>
+                    <div className='column hide-m'>
                         <div className='line-t line dark-gray no-bg'></div>
                         <div className='line-r line dark-gray no-bg' ></div>
                         <div className='line-b line dark-gray no-bg' ></div>
                     </div>
-                    <div className='column'>
-                        <div className='line-t line dark-gray no-bg'></div>
-                        <div className='line-b line dark-gray no-bg' ></div>
+                    <div className='column sales'>
+                        <div className='line-t line dark-gray no-bg hide-m'></div>
+                        <div className='line-b line dark-gray no-bg hide-m' ></div>
                         <div className='text'>
                             <h3>{salesSectionSalesTitle}</h3>
                         </div>
                     </div>
                     <div className='column'>
-                        <div className='line-r line dark-gray no-bg' ></div>
+                        <div className='line-r line dark-gray no-bg hide-m' ></div>
                         <div className='line-b line dark-gray no-bg' ></div>
                         <div className='image'>
                             <GatsbyImage
@@ -81,6 +81,9 @@ const ContactContainer = styled.section`
     height: 100vh;
     width: 100%;
     color: var(--dark-gray);
+    @media (max-width: 860px) {
+        height: 100% !important;
+    }
     .de {
         background-color: white;
         position: absolute;
@@ -88,6 +91,10 @@ const ContactContainer = styled.section`
         right: 0;
         bottom: 0;
         width: 33.33%;
+        @media (max-width: 860px) {
+            position: static;
+            width: 100%;
+        }
     }
 
     .content {
@@ -96,6 +103,9 @@ const ContactContainer = styled.section`
         left: 0;
         right: 0;
         bottom: 0;
+        @media (max-width: 860px) {
+            position: static;
+        }
     }
 
     .grid {
@@ -105,10 +115,18 @@ const ContactContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        @media (max-width: 860px) {
+            width: var(--width-l-m);
+            gap: 0 30px;
+            grid-template-columns: 1fr;
+        }
     }
     .column {
         height: 50vh;
         position: relative;
+        @media (max-width: 860px) {
+            height: auto;
+        }
         .line-b {
             bottom: 25px;
         }
@@ -123,7 +141,20 @@ const ContactContainer = styled.section`
                 justify-content: space-between;
                 padding-bottom: 50px;
             }
+        
     }
+    .sales .text h3 {
+            @media (max-width: 860px) {
+            margin-top: 0;
+        }
+    }
+
+.sales .text {
+    @media (max-width: 860px) {
+        padding-bottom: 25px;
+    }
+}
+
     .solo {
         .line-t {
             top: 25px;
@@ -134,9 +165,13 @@ const ContactContainer = styled.section`
     }
     h3 {
         margin-top: 50px;
+        
     }
     .two {
             grid-column: 1/3;
+            @media (max-width: 860px) {
+                grid-column: auto;
+            }
             .text {
                 padding-top: 0 !important;
             }

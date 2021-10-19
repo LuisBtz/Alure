@@ -24,23 +24,23 @@ const Public = ({data}) => {
             </div>
             <div className='content'>
                 <div className='line-r line absolute no-bg'></div>
-                <div className='line-l line absolute dark-gray no-bg'></div>
+                <div className='line-l line absolute dark-gray no-bg white-m'></div>
                 <div className='grid'>
                     <div className='column '>
-                        <div className='line-t line dark-gray no-bg'></div>
+                        <div className='line-t line dark-gray no-bg white-m'></div>
                         <div className='text height-100'>
                             <h3>{salesServicesTitle}</h3>
                             <p className='padding-bottom25'>{linksTextPublicRelationsSection1}</p>
                         </div>
-                        <div className='line-r line dark-gray no-bg' ></div>
-                        <div className='line-b line dark-gray no-bg' ></div>
+                        <div className='line-r line dark-gray no-bg hide-m' ></div>
+                        <div className='line-b line dark-gray no-bg hide-m' ></div>
                     </div>
                     <div className='column'>
-                        <div className='line-t line dark-gray no-bg'></div>
-                        <div className='line-b line dark-gray no-bg' ></div>
+                        <div className='line-t line dark-gray no-bg hide-m'></div>
+                        <div className='line-b line dark-gray no-bg white-m' ></div>
                     </div>
                     <div className='column '>
-                        <div className='line-t line no-bg'></div>
+                        <div className='line-t line no-bg hide-m'></div>
                         <p className='color-white padding-top-50'>{salesServicesText}</p>
                         <div className='line-b line no-bg' ></div>
                     </div>
@@ -78,11 +78,23 @@ const PublicContainer = styled.section`
     width: 100%;
     background-color: var(--gray);
     color: var(--dark-gray);
+    @media (max-width: 860px) {
+        height: 100% !important;
+    }
     .image {
         width: 33.33%;
         height: 100%;
         position: absolute;
         right: 0;
+        @media (max-width: 860px) {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
     }
     .content {
         position: absolute;
@@ -90,6 +102,9 @@ const PublicContainer = styled.section`
         left: 0;
         right: 0;
         bottom: 0;
+        @media (max-width: 860px) {
+            position: static;
+        }
     }
 
     .grid {
@@ -99,10 +114,19 @@ const PublicContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        @media (max-width: 860px) {
+            width: var(--width-l-m);
+            gap: 0 30px;
+            grid-template-columns: 1fr;
+        }
     }
     .column {
         height: 50vh;
         position: relative;
+        @media (max-width: 860px) {
+            height: auto;
+            color: white;
+        }
         .line-t {
             top: 25px;
         }
@@ -143,6 +167,9 @@ const PublicContainer = styled.section`
 
     .two {
             grid-column: 1/3;
+            @media (max-width: 860px) {
+                grid-column: auto;
+            }
             .text {
                 p {
                     margin-top: 25px;

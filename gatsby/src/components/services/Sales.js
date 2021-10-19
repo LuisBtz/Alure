@@ -29,7 +29,7 @@ const Sales = ({data}) => {
                 />
             </div>
             <div className='content'>
-                <div className='line-r line absolute dark-gray no-bg'></div>
+                <div className='line-r line absolute dark-gray no-bg white-m'></div>
                 <div className='line-l line absolute no-bg'></div>
                 <div className='grid'>
                     <div className='column solo'>
@@ -53,12 +53,12 @@ const Sales = ({data}) => {
                         </div>
                     </div>
                     <div className='column '>
-                        <div className='line-t line no-bg'></div>
+                        <div className='line-t line no-bg hide-m'></div>
                         <div className='line-b line no-bg' ></div>
                     </div>
-                    <div className='column '>
-                        <div className='line-t line dark-gray no-bg'></div>
-                        <div className='line-b line dark-gray no-bg' ></div>
+                    <div className='column list-l'>
+                        <div className='line-t line dark-gray no-bg hide-m'></div>
+                        <div className='line-b line dark-gray no-bg white-m' ></div>
                         <div className='text height-25 list'>
                             <p>{salesServicesService1}</p>
                             <p>{salesServicesService2}</p>
@@ -67,9 +67,9 @@ const Sales = ({data}) => {
                         </div>
                         <div className='line-r line dark-gray no-bg' ></div>
                     </div>
-                    <div className='column '>
-                        <div className='line-t line dark-gray no-bg'></div>
-                        <div className='line-b line dark-gray no-bg' ></div>
+                    <div className='column list'>
+                        <div className='line-t line dark-gray no-bg hide-m'></div>
+                        <div className='line-b line dark-gray no-bg white-m' ></div>
                         <div className='text height-25 list'>
                             <p>{salesServicesService5}</p>
                             <p>{salesServicesService6}</p>
@@ -89,9 +89,21 @@ const SalesContainer = styled.section`
     width: 100%;
     background-color: white;
     color: var(--dark-gray);
+    @media (max-width: 860px) {
+        height: 100% !important;
+    }
     .image {
         width: 33.33%;
         height: 100%;
+        @media (max-width: 860px) {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
     }
     .content {
         position: absolute;
@@ -99,6 +111,9 @@ const SalesContainer = styled.section`
         left: 0;
         right: 0;
         bottom: 0;
+        @media (max-width: 860px) {
+            position: static;
+        }
     }
 
     .grid {
@@ -108,10 +123,29 @@ const SalesContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        @media (max-width: 860px) {
+            width: var(--width-l-m);
+            gap: 0 30px;
+            grid-template-columns: 1fr;
+        }
+    }
+    .list-l {
+        @media (max-width: 860px) {
+            margin-top: 40px;
+        }
+    }
+    .list {
+        @media (max-width: 860px) {
+            margin-top: -10px;
+        }
     }
     .column {
         height: 50vh;
         position: relative;
+        @media (max-width: 860px) {
+            height: auto;
+            color: white;
+        }
         .line-t {
             top: 0;
         }
@@ -128,6 +162,12 @@ const SalesContainer = styled.section`
                 }
                 h4 {
                     font-size: 1.2rem;
+                    
+                }
+                h3 {
+                    @media (max-width: 860px) {
+                        margin-bottom: 50px;
+                    }
                 }
             }
         .list {
@@ -139,6 +179,11 @@ const SalesContainer = styled.section`
                 justify-content: center;
                 &:last-child {
                     border-bottom: none;
+                }
+                @media (max-width: 860px) {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    border-bottom: solid 1px white;
                 }
             }
         }
@@ -152,6 +197,9 @@ const SalesContainer = styled.section`
 
     .two {
             grid-column: 2/4;
+            @media (max-width: 860px) {
+                grid-column: auto;
+            }
             .text {
             }
         }

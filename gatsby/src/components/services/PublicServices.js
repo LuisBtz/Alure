@@ -22,9 +22,9 @@ const PublicServices = ({data}) => {
                 <div className='line-l line absolute dark-gray no-bg'></div>
                 <div className='grid'>
                     <div className='column solo'>
-                            <div className='line-t line no-bg dark-gray'></div>
+                            <div className='line-t line no-bg dark-gray hide-m'></div>
                     </div>
-                    <div className='colum solo'>
+                    <div className='colum solo hide-m'>
                         <div className='line-t line dark-gray no-bg'></div>
                     </div>
                     <div className='column solo'>
@@ -42,23 +42,23 @@ const PublicServices = ({data}) => {
                             <p className="padding-bottom25">{linksTextPublicRelationsServices}</p>
                         </div>
                     </div>
-                    <div className='column '>
+                    <div className='column hide-m'>
                         <div className='line-t line no-bg dark-gray'></div>
                         <div className='line-b line no-bg dark-gray' ></div>
                         <div className='line-r line dark-gray no-bg' ></div>
                     </div>
-                    <div className='column '>
-                        <div className='line-t line dark-gray no-bg'></div>
+                    <div className='column list-l'>
+                        <div className='line-t line dark-gray no-bg hide-m'></div>
                         <div className='line-b line dark-gray no-bg' ></div>
                         <div className='text height-25 list'>
                             <p>{publicRelationsServicesService1}</p>
                             <p>{publicRelationsServicesService2}</p>
                             <p>{publicRelationsServicesService3}</p>
                         </div>
-                        <div className='line-r line dark-gray no-bg' ></div>
+                        <div className='line-r line dark-gray no-bg hide-m' ></div>
                     </div>
-                    <div className='column '>
-                        <div className='line-t line dark-gray no-bg'></div>
+                    <div className='column list'>
+                        <div className='line-t line dark-gray no-bg hide-m'></div>
                         <div className='line-b line dark-gray no-bg' ></div>
                         <div className='text height-25 list'>
                             <p>{publicRelationsServicesService4}</p>
@@ -78,6 +78,9 @@ const PublicServicesContainer = styled.section`
     width: 100%;
     background-color: white;
     color: var(--dark-gray);
+    @media (max-width: 860px) {
+        height: 100% !important;
+    }
     .image {
         width: 33.33%;
         height: 100%;
@@ -89,6 +92,9 @@ const PublicServicesContainer = styled.section`
         left: 0;
         right: 0;
         bottom: 0;
+        @media (max-width: 860px) {
+            position: static;
+        }
     }
 
     .grid {
@@ -98,10 +104,31 @@ const PublicServicesContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        @media (max-width: 860px) {
+            width: var(--width-l-m);
+            gap: 0 30px;
+            grid-template-columns: 1fr;
+        }
+    }
+    .list-l {
+        @media (max-width: 860px) {
+            margin-top: 40px;
+            p:first-child {
+                border-top: solid 1px var(--dark-gray);
+            }
+        }
+    }
+    .list {
+        @media (max-width: 860px) {
+            margin-top: -10px;
+        }
     }
     .column {
         height: 50vh;
         position: relative;
+        @media (max-width: 860px) {
+            height: auto;
+        }
         .line-t {
             top: 0;
         }
@@ -130,6 +157,10 @@ const PublicServicesContainer = styled.section`
                 &:last-child {
                     border-bottom: none;
                 }
+                @media (max-width: 860px) {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                }
             }
         }
     }
@@ -142,6 +173,9 @@ const PublicServicesContainer = styled.section`
 
     .two {
             grid-column: 2/4;
+            @media (max-width: 860px) {
+                grid-column: auto;
+            }
             .text {
             }
         }
