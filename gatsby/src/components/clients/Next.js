@@ -15,13 +15,13 @@ const Next = () => {
                             <p>Next Up</p>
                             <Link to='/blog'>BLOG</Link>
                         </div>
-                        <div className='line-r line dark-gray no-bg' ></div>
+                        <div className='line-r line dark-gray no-bg hide-m' ></div>
                     </div>
-                    <div className='column'>
+                    <div className='column hide-m'>
                         <div className='line-t dark-gray line'></div>
                         <div className='line-r line dark-gray no-bg' ></div>
                     </div>
-                    <div className='column'>
+                    <div className='column hide-m'>
                         <div className='line-t dark-gray line'></div>
                     </div>
                 </div>
@@ -41,6 +41,10 @@ const NextContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        @media (max-width: 860px) {
+            grid-template-columns: 1fr;
+            width: var(--width-l-m);
+        }
         a {
             color: var(--dark-gray);
             font-family: var(--bold);
@@ -54,6 +58,9 @@ const NextContainer = styled.section`
         }
         .column {
             height: 280px;
+            @media (max-width: 860px) {
+                height: auto;
+            }
             h2 {
                 font-size: 4rem;
                 text-transform: uppercase;

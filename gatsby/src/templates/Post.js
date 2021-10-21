@@ -75,7 +75,7 @@ export default function SinglePostPage({ data: { post } }) {
                             </div>
                             <div className='bot'>
                                 <button  onClick={() => showShare(!share)} >Share this article ↗</button>
-                                <div className='line-b line dark-gray'></div>
+                                <div className='line-b line dark-gray hide-m'></div>
                             </div>
                         </div>
                         <div className='column two'>
@@ -165,11 +165,23 @@ const PostContainer = styled.section`
         gap: 0 100px;
         padding-bottom: 25px;
         position: relative;
+        @media (max-width: 860px) {
+            width: var(--width-l-m);
+            grid-template-columns: 1fr;
+        }
         .two {
             grid-column: 2/4;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            @media (max-width: 860px) {
+                grid-column: auto;
+                height: auto !important;
+                margin-top: 25px;
+                h1 {
+                    font-size: 3rem !important;
+                }
+            }
             h1 {
                 font-size: 6vw;
                 line-height: 0.9;
@@ -180,6 +192,9 @@ const PostContainer = styled.section`
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            @media (max-width: 860px) {
+                height: 100px;
+            }
             .text {
                 position: relative;
                 z-index: 1;
@@ -197,11 +212,19 @@ const PostContainer = styled.section`
         gap: 0 100px;
         padding-bottom: 25px;
         position: relative;
+        @media (max-width: 860px) {
+            grid-template-columns: 1fr;
+            width: var(--width-l-m);
+        }
         .two {
             grid-column: 2/4;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            @media (max-width: 860px) {
+                grid-column: auto;
+                height: auto !important;
+            }
             h1 {
                 font-size: 6vw;
                 line-height: 0.9;
@@ -212,6 +235,7 @@ const PostContainer = styled.section`
             flex-direction: column;
             justify-content: space-between;
             .bot {
+                margin-top: 25px;
                 margin-bottom: 25px;
             }
         }
@@ -223,6 +247,9 @@ const PostContainer = styled.section`
             }
             .img {
                 margin-top: 25px;
+                @media (max-width: 860px) {
+                    height: 250px;
+                }
             }
             .content {
                 padding-top: 25px;
@@ -248,6 +275,10 @@ const PostContainer = styled.section`
             grid-template-columns: repeat(3, 1fr);
             gap: 0 100px;
             position: relative;
+            @media (max-width: 860px) {
+                width: var(--width-l-m);
+                grid-template-columns: 1fr;
+            }
             a {
                 color: var(--dark-gray);
                 height: 100%;
@@ -263,6 +294,9 @@ const PostContainer = styled.section`
             }
             .column {
                 height: 50vh;
+                @media (max-width: 860px) {
+                    height: auto;
+                }
                 .icon {
                     margin-top: 25px;
                     width: 70px;
@@ -277,6 +311,7 @@ const PostContainer = styled.section`
                     .up {
                         p {
                             margin-bottom: 5px;
+                            
                         }
                     }
                 }
@@ -287,6 +322,10 @@ const PostContainer = styled.section`
                     font-size: 3rem;
                     line-height: 0.9;
                     font-family: var(--reg);
+                    @media (max-width: 860px) {
+                                margin-bottom: 50px;
+                                font-size: 2rem;
+                            }
                 }
             }
             .solo {

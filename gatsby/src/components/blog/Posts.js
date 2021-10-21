@@ -59,6 +59,10 @@ const PostsContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        @media (max-width: 860px) {
+                width: var(--width-l-m);
+                grid-template-columns: 1fr;
+            }
         .two {
             grid-column: 1/3;
             display: flex;
@@ -84,6 +88,11 @@ const PostsContainer = styled.section`
             }
             .img {
                 padding-top: 50px;
+                a {
+                    @media (max-width: 860px) {
+                        height: 250px;
+                    }
+                }
                 .line {
                     width: 100%;
                     height: 1px;
@@ -113,6 +122,9 @@ const PostsContainer = styled.section`
                 justify-content: space-between;
                 color: var(--dark-gray);
                 padding-bottom: 100px;
+                @media (max-width: 860px) {
+                    padding-bottom: 25px;
+                }
                 .top {
                     p {
                         margin-bottom: 10px;

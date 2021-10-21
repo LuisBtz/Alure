@@ -47,7 +47,15 @@ const Clients = () => {
         pauseOnHover: false,
         fade: false,
         nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+            {
+              breakpoint: 860,
+              settings: {
+                slidesToShow: 1,
+              }
+            },
+          ]
         };
 
         const data = useStaticQuery(graphql`
@@ -92,10 +100,10 @@ const Clients = () => {
                 <div className='line-r line absolute dark-gray no-bg'></div>
                 <div className='line-l line absolute dark-gray no-bg'></div>
                 <div className='grid'>
-                    <div className='column solo'>
+                    <div className='column solo hide-m'>
                         <div className='line-t dark-gray line'></div>
                     </div>
-                    <div className='column solo'>
+                    <div className='column solo hide-m'>
                         <div className='line-t dark-gray line'></div>
                     </div>
                     <div className='column solo'>
@@ -120,14 +128,14 @@ const Clients = () => {
                         <div className='text height-100'>
                             <p className='padding-top25'>{text}</p>
                         </div>
+                        <div className='line-r t-50 line dark-gray no-bg hide-m' ></div>
+                        <div className='line-b bottom-25 line no-bg dark-gray hide-m' ></div>
+                    </div>
+                    <div className='column hide-m'>
                         <div className='line-r t-50 line dark-gray no-bg' ></div>
                         <div className='line-b bottom-25 line no-bg dark-gray' ></div>
                     </div>
-                    <div className='column'>
-                        <div className='line-r t-50 line dark-gray no-bg' ></div>
-                        <div className='line-b bottom-25 line no-bg dark-gray' ></div>
-                    </div>
-                    <div className='column'>
+                    <div className='column hide-m'>
                         <div className='line-b bottom-25 line no-bg dark-gray' ></div>
                     </div>
                 </div>
@@ -174,6 +182,11 @@ const ClientsContainer = styled.section`
     height: 100vh;
     width: 100%;
     color: var(--dark-gray);
+    padding-bottom: 50px;
+    @media (max-width: 860px) {
+        height: 100% !important;
+        color: var(--dark-gray);
+    }
     .image {
         width: 33.33%;
         height: 100%;
@@ -186,6 +199,10 @@ const ClientsContainer = styled.section`
         left: 0;
         right: 0;
         bottom: 0;
+        @media (max-width: 860px) {
+            position: static;
+            color: var(--dark-gray);
+        }
     }
 
     .grid {
@@ -195,10 +212,19 @@ const ClientsContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        @media (max-width: 860px) {
+            width: var(--width-l-m);
+            gap: 0 30px;
+            grid-template-columns: 1fr;
+            height: auto;
+        }
     }
     .column {
         height: 50vh;
         position: relative;
+        @media (max-width: 860px) {
+            height: auto;
+        }
         .line-t {
             top: 25px;
         }
@@ -244,6 +270,11 @@ const ClientsContainer = styled.section`
         transform: translateY(-50%);
         z-index: 0;
         box-sizing: border-box;
+        @media (max-width: 860px) {
+            transform: none;
+            width: 100%;
+            position: static;
+        }
     }
 `
 
@@ -253,6 +284,10 @@ const SliderContainer = styled(Slider)`
     justify-content: space-between;
     width: 100%;
     position: relative;
+    @media (max-width: 860px) {
+            margin-top: 25px;
+            padding-bottom: 50px;
+        }
     button.slick-arrow {
         width: 35px;
         height: 35px;
@@ -266,10 +301,19 @@ const SliderContainer = styled(Slider)`
         display: none;
     }
     .slick-prev {
-        left: -20px
+        left: -20px;
+        @media (max-width: 860px) {
+            top: 100% !important;
+            left: 25px;
+        }
+        
     }
     .slick-next {
         right: calc(50% - 43px);
+        @media (max-width: 860px) {
+            top: 100% !important;
+            right: 25px;
+        }
     }
 `
 
@@ -280,6 +324,11 @@ background-color: var(--gray);
 position: relative;
 border-radius: 10px;
 margin-left: 50px;
+@media (max-width: 860px) {
+    width: 100%;
+    margin-left: 25px;
+    margin-right: auto;
+}
 .line {
     position: absolute;
     top: 50%;
@@ -288,6 +337,7 @@ margin-left: 50px;
     transform: translateX(-50%);
     border-bottom: thin solid;
     border-color: var(--dark-gray);
+   
 }
 .text {
     height: 100%;
@@ -312,6 +362,7 @@ margin-left: 50px;
     width: 100%;
     .columnn {
         height: 210px   ;
+        
         .imagee {
             margin-top: 25px;
             margin-bottom: 15px;

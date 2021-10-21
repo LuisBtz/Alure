@@ -27,9 +27,9 @@ const text = 'STAY CONNECTED STAY INSPIRED'
                 <div className='line-r line absolute no-bg'></div>
                 <div className='line-l line absolute no-bg'></div>
                 <div className='grid'>
-                    <div className='line mid'></div>
+                    <div className='line mid hide-m'></div>
                     <div className='column two'>
-                        <div className='line-r line no-bg' ></div>
+                        <div className='line-r line no-bg hide-m' ></div>
                         <h1>{text}</h1>
                     </div>
                     <div className='column'>
@@ -48,7 +48,7 @@ const text = 'STAY CONNECTED STAY INSPIRED'
                                             <p>Read More ↗</p>
                                         </div>
                                     </Link>
-                                    <div className='line-r line no-bg' ></div>
+                                    <div className='line-r line no-bg hide-m' ></div>
                                     <div className='line-b line no-bg'></div>
                                 </div>
                             )
@@ -64,8 +64,19 @@ const HeroContainer = styled.section`
     position: relative;
     height: 100vh;
     overflow: hidden;
+    @media (max-width: 860px) {
+        height: 100% !important;
+    }
     .image {
         height: 100vh;
+        @media (max-width: 860px) {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
     }
     .content {
         position: absolute;
@@ -73,8 +84,10 @@ const HeroContainer = styled.section`
         left: 0;
         right: 0;
         bottom: 0;
+        @media (max-width: 860px) {
+            position: static;
+        }
     }
-
     .grid {
         width: var(--width-l);
         margin: 0 auto;   
@@ -82,16 +95,31 @@ const HeroContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
+        @media (max-width: 860px) {
+            padding-top: 100px;
+            width: var(--width-l-m);
+            gap: 0 30px;
+            grid-template-columns: 1fr;
+            
+        }
         .two {
             grid-column: 1/3;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            @media (max-width: 860px) {
+                grid-row: 1;
+                grid-column: auto;
+            }
             h1 {
                 padding-bottom: 25px;
                 font-size: 6vw;
                 width: 50%;
                 line-height: 0.9;
+                @media (max-width: 860px) {
+                    font-size: 3rem;
+                    width: 100%;
+                }
             }
         }
         .column.blog {
@@ -106,9 +134,16 @@ const HeroContainer = styled.section`
         }
         .column {
             height: 50vh;
+            @media (max-width: 860px) {
+                height: auto;
+            }
             .icon {
                 margin-top: 25px;
                 width: 70px;
+                @media (max-width: 860px) {
+                    margin-top: 15px;
+                    padding-bottom: 30px;
+                }
             }
             a {
                 display: block;
@@ -121,6 +156,9 @@ const HeroContainer = styled.section`
             }
             p {
                 padding-top: 25px;
+                @media (max-width: 860px) {
+                    /* padding-bottom: 60px; */
+                }
             }
             &:last-child {
                 .line-r {
@@ -138,6 +176,10 @@ const HeroContainer = styled.section`
                 .top {
                     p {
                         margin-bottom: 10px;
+                        @media (max-width: 860px) {
+                            margin-bottom: 25px;
+                            padding-top: 25px;
+                        }
                     }
                 }
                 .bot {

@@ -318,13 +318,13 @@ p, a, li, .paragraph {
 
 .hide-d {
   @media (min-width: 860px) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hide-m {
   @media (max-width: 860px) {
-    display: none;
+    display: none !important;
   }
 }
 
