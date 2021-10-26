@@ -49,8 +49,8 @@ export const GlobalStyle = createGlobalStyle`
     --bold: 'Akzidenz-Grotesk BQ', sans-serif;
     --custom: 'Suisse BP Intl Antique', sans-serif;
     --reg: 'Suisse BP Intl Light', sans-serif;
-    --headline-1: 3.75rem;
-    --headline-2: 2.18rem;
+    --headline-1: 5vw;
+    --headline-2: 3vw;
     --headline-3: 1.875rem;
     --headline-4: 1.3125rem;
     --width-l: calc(100% - 100px);

@@ -119,7 +119,7 @@ position: relative;
                 display: block;
             }
             h3 {
-                font-size: 2.8vw;
+                font-size: var(--headline-2);
             }
             p {
                 font-size: 2.5vw;

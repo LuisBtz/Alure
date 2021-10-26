@@ -181,13 +181,13 @@ const BlogContainer = styled.section`
                 display: block;
             }
             h3 {
-                font-size: 2.5rem;
+                font-size: var(--headline-2);
                 @media (max-width: 860px) {
                     padding-bottom: 50px;
                 }
             }
             h2 {
-                font-size: 4rem;
+                font-size: var(--headline-1);
             }
             p {
                 font-size: 2.5rem;

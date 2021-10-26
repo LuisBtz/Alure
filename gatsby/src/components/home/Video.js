@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import Newsletter from './Newsletter';
 
 
 
@@ -48,6 +49,7 @@ const Video = ({ data }) => {
             </div>
             <div className='line-r line absolute'></div>
             <div className='line-l line absolute'></div>
+            <Newsletter />
         </VideoContenedor>
     )
 }
@@ -93,8 +95,9 @@ video {
         }
         h1 {
             margin-top: 50px;
-            font-size: 4.5vw;
+            font-size: var(--headline-1);
             text-transform: uppercase;
+            line-height: 0.9;
             @media (max-width: 860px) {
                 font-size: 13vw;
             }

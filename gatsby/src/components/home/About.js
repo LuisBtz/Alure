@@ -116,11 +116,11 @@ const AboutContainer = styled.section`
                 display: block;
             }
             h2 {
-                font-size: 3rem;
+                font-size: var(--headline-1);
                 text-transform: uppercase;
             }
             p {
-                font-size: 2.5vw;
+                font-size: var(--headline-2);
                 line-height: 1;
             }
         }

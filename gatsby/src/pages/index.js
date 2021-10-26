@@ -96,6 +96,9 @@ export const data = graphql`
           url
         }
       }
+      email
+      instagram
+      facebook
     }
   }
 `
