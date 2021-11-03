@@ -38,6 +38,7 @@ const NextContainer = styled.section`
         position: relative;
         @media (max-width: 860px) {
             grid-template-columns: 1fr;
+            width: var(--width-l-m);
         }
         a {
             color: var(--dark-gray);
@@ -53,7 +54,7 @@ const NextContainer = styled.section`
         .column {
             height: 165px;
             h2 {
-                font-size: 4rem;
+                font-size: var(--headline-2);
                 text-transform: uppercase;
                 padding-bottom: 25px;
             }

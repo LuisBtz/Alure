@@ -51,7 +51,7 @@ export const GlobalStyle = createGlobalStyle`
     --reg: 'Suisse BP Intl Light', sans-serif;
     --headline-1: 5vw;
     --headline-2: 3vw;
-    --headline-3: 1.875rem;
+    --headline-3: 2vw;
     --headline-4: 1.3125rem;
     --width-l: calc(100% - 100px);
     --width-l-m: calc(100% - 60px);

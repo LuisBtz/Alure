@@ -152,7 +152,8 @@ const WhyUsContainer = styled.section`
         }
     }
     h3 {
-        margin-top: 50px;
+        font-size: var(--headline-2);
+        margin-top: 25px;
     }
     .two {
             grid-column: 2/4;
@@ -161,6 +162,9 @@ const WhyUsContainer = styled.section`
             }
             .text {
                 padding-top: 0 !important;
+                h3 {
+                    margin-top: 50px;
+                }
             }
         }
 `

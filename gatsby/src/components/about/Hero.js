@@ -107,6 +107,7 @@ const HeroContainer = styled.section`
             }
             h3 {
                 padding-bottom: 25px;
+                font-size: var(--headline-2);
             }
         }
         .column {

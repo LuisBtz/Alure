@@ -81,6 +81,9 @@ position: relative;
             gap: 0 30px;
             grid-template-columns: 1fr;
         }
+        h3 {
+                font-size: var(--headline-2);
+            }
         .two {
             grid-column: 1/3;
             @media (max-width: 860px) {
@@ -118,7 +121,7 @@ position: relative;
                 display: block;
             }
             h2 {
-                font-size: 4rem;
+                font-size: var(--headline-2);
                 text-transform: uppercase;
             }
             p {

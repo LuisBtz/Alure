@@ -163,6 +163,9 @@ const TeamContainer = styled.section`
     @media (max-width: 860px) {
         height: 100% !important;
     }
+    h3 {
+        font-size: var(--headline-2);
+    }
     .column {
         position: relative;
         height: 50vh;
@@ -302,12 +305,14 @@ color: var(--dark-gray);
     justify-content: space-between;
     h3 {
         margin-top: 25px;
+        font-size: var(--headline-2);
     }
     strong {
         position: absolute;
         top: 30px;
         left: calc(50% + 50px);
         font-weight: normal;
+        font-size: var(--headline-3);
         @media (max-width: 860px) {
             position: static;
             margin-top: 15px;
