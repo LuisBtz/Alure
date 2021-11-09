@@ -234,6 +234,7 @@ const ClientsContainer = styled.section`
                 flex-direction: column;
                 justify-content: space-between;
                 h3, h4 {
+                    font-size: var(--headline-2);
                     margin-top: 50px;
                 }
                 h4 {
@@ -362,7 +363,9 @@ margin-left: 50px;
     width: 100%;
     .columnn {
         height: 210px   ;
-        
+        h3 {
+            font-size: var(--headline-3);
+        }
         .imagee {
             margin-top: 25px;
             margin-bottom: 15px;

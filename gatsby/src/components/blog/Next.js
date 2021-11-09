@@ -52,7 +52,7 @@ const NextContainer = styled.section`
         .column {
             height: 280px;
             h2 {
-                font-size: 4rem;
+                font-size: var(--headline-1);
                 text-transform: uppercase;
                 padding-bottom: 25px;
             }

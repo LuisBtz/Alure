@@ -49,7 +49,7 @@ const NextContainer = styled.section`
             color: var(--dark-gray);
             font-family: var(--bold);
             text-transform: uppercase;
-            font-size: 4rem;
+            font-size: var(--headline-1);
             margin-top: 25px;
             display: block;
         }

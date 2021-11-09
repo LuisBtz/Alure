@@ -113,7 +113,7 @@ const HeroContainer = styled.section`
             }
             h1 {
                 padding-bottom: 25px;
-                font-size: 6vw;
+                font-size: var(--headline-1);
                 width: 50%;
                 line-height: 0.9;
                 @media (max-width: 860px) {
@@ -150,7 +150,7 @@ const HeroContainer = styled.section`
             }
             h2 {
                 font-family: var(--reg);
-                font-size: 2rem;
+                font-size: var(--headline-2);
                 text-transform: uppercase;
                 line-height: 1;
             }
