@@ -197,6 +197,9 @@ const SalesContainer = styled.section`
 
     .two {
             grid-column: 2/4;
+            h3 {
+                font-size: var(--headline-2);
+            }
             @media (max-width: 860px) {
                 grid-column: auto;
             }

@@ -137,6 +137,7 @@ const PublicContainer = styled.section`
                 justify-content: space-between;
                 h3, h4 {
                     margin-top: 50px;
+                    font-size: var(--headline-2);
                 }
                 h4 {
                     font-size: 1.2rem;

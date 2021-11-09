@@ -60,7 +60,7 @@ const link = data.sanityServicesPage.linksTextHero.en;
                         <div className='line-b line no-bg hide-m'></div>
                     </div>
                     <div className='column two'>
-                        <h3>{text}</h3>
+                        <h1>{text}</h1>
                         <div className='line-b line hide-d' ></div>
                     </div>
                     <div className='column solo hide-m'>
@@ -129,7 +129,8 @@ const HeroContainer = styled.section`
                 grid-row: 1;
                 grid-column: auto;
             }
-            h3 {
+            h1 {
+                font-size: var(--headline-1);
                 padding-bottom: 50px;
             }
         }

@@ -160,10 +160,12 @@ const ContactContainer = styled.section`
             top: 25px;
         }
         h3 {
+            font-size: var(--headline-2);
             margin-top: 0px;
         }
     }
     h3 {
+        font-size: var(--headline-2);
         margin-top: 50px;
         
     }
