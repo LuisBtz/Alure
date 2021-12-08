@@ -30,18 +30,18 @@ const link = data.sanityClientsPage.linksTextHero.en;
                     <div className='column hide-m'>
                         <div className='line-r line no-bg' ></div>
                     </div>
-                    <div className='column two'>
+                    <div className='column two hide-m' data-aos="fade-left" data-aos-delay="1000" data-aos-duration="800">
                         <h3>{text}</h3>
                     </div>
-                    <div className='column solo'>
+                    <div className='column solo hide-m'>
                         <div className='line-t line'></div>
-                        <img className='icon' src={data.sanitySettingsPage.icon.asset.url} alt={data.sanitySettingsPage.icon.enAlt} />
+                        <img data-aos="fade-left" data-aos-delay="1100" data-aos-duration="800" className='icon' src={data.sanitySettingsPage.icon.asset.url} alt={data.sanitySettingsPage.icon.enAlt} />
                         <div className='line-r line no-bg hide-m' ></div>
                         <div className='line-b line no-bg '></div>
                     </div>
-                    <div className='column solo'>
+                    <div className='column solo hide-m'>
                         <div className='line-t line hide-m'></div>
-                        <p>{link}</p>
+                        <p data-aos="fade-left" data-aos-delay="1200" data-aos-duration="800">{link}</p>
                         <div className='line-r line hide-m' ></div>
                         <div className='line-b line no-bg '></div>
                     </div>
@@ -49,6 +49,33 @@ const link = data.sanityClientsPage.linksTextHero.en;
                         <div className='line-t line'></div>
                         <div className='line-b line no-bg'></div>
                     </div>
+                <div className='mobile-area'>
+                    <div className="m-s-one">
+                        <div className='column solo'>
+                            <div data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
+                            <img className='icon' src={data.sanitySettingsPage.icon.asset.url} alt={data.sanitySettingsPage.icon.enAlt} />
+                            </div>
+                        </div>
+                        <div className='column solo'>
+                            <div data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
+
+                            <p>{link}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="m-s-one">
+                        <div className='column'></div>
+                        <div className='column'></div>
+                    </div>
+                    <div className="m-s-three">
+                        <div className='column'>
+                             <div data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
+
+                             <h3>{text}</h3>
+                             </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </HeroContainer>
@@ -56,6 +83,70 @@ const link = data.sanityClientsPage.linksTextHero.en;
 }
 
 const HeroContainer = styled.section`
+    .mobile-area{
+        @media (min-width: 860px) {
+            display: none;
+        } 
+        .m-s-one{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+           .column{
+               overflow: hidden;
+            width: 47%;
+            height: 220px;
+            display: flex;
+            align-items: end;
+            border-bottom: 1px solid #fff;
+
+            .icon{
+                padding: 0;
+                margin: 0;
+                padding-bottom:24px ;
+            }
+            p{
+                padding: 0;
+                padding-bottom:32px ;
+            }
+           } 
+           &:before{
+                position: absolute;
+                content: "";
+                height: 200px;
+                width: 1px;
+                background: #fff !important;
+                bottom:7px;
+                left: 50%;
+                transform: translateX(50%);
+            }
+        }
+        .m-s-three{
+            position: relative;
+            overflow: hidden;
+            .column{
+                h3{
+                    font-size: 6vw;
+                    padding: 56px 0;
+                }
+                
+            }
+            &:after,
+            &:before{
+                position: absolute;
+                bottom: 0;
+                content: "";
+                width: 47%;
+                height: 1px;
+                left: 0;
+                background: #fff;
+
+            }
+            &:after{
+                right: 0 !important;
+                left: unset;
+            }
+        }
+    }
     position: relative;
     height: 100vh;
     @media (max-width: 860px) {
@@ -91,7 +182,8 @@ const HeroContainer = styled.section`
         gap: 0 100px;
         position: relative;
         @media (max-width: 860px) {
-            padding-top: 100px;
+            padding-top: 60px;
+            padding-bottom: 60px;
             width: var(--width-l-m);
             gap: 0 30px;
             grid-template-columns: 1fr;

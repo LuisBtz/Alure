@@ -23,7 +23,7 @@ const Services = ({data}) => {
             <div className='content'>
                 <div className='line-r line absolute'></div>
                 <div className='line-l line absolute'></div>
-                <div className='grid'>
+                <div className='grid hide-m'>
                     <div className='column solo'>
                         <div className='line-t line'></div>
                     </div>
@@ -35,10 +35,10 @@ const Services = ({data}) => {
                     </div>
 
                     <div className='column'>
-                        <Link className='padding-top-50' to='/services'>{link}</Link>
+                        <Link className='padding-top-50' to='/services' data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">{link}</Link>
                         <div className='line-r line' data-sal="slide-up"></div>
                     </div>
-                    <div className='column two padding-bottom-50-m'>
+                    <div className='column two padding-bottom-50-m' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
                         <h3 className='padding-top-50' >{title}</h3>
                     </div>
                     <div className='column solo hide-m'>
@@ -61,15 +61,119 @@ const Services = ({data}) => {
                     <div className='column'>
                         <div className='line-b line bottom-25' data-sal="slide-up"></div>
                     </div>
+                </div> 
+            </div>
+            <div className="service-mobile">
+                <div className="service-mobile__line">
+                        <div className='column '></div>
+                        <div className="line"></div>
+                        <div className='column ' data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+                        <Link to='/services'>{link}</Link>
+                        </div>
                 </div>
-
+                <div className="service-mobile__line">
+                        <div className='column '></div>
+                        <div className="line"></div>
+                        <div className='column '>
+                        </div>
+                </div>
+                <div className="service-mobile__line service-mobile__line--two">
+                <div className='column w-100' data-aos="fade-up" data-aos-delay="700" data-aos-duration="800">
+                        <h3>{title}</h3>
+                    </div>
+                </div>
+                <div className="b-line"></div>
             </div>
         </ServicesContainer>
     )
 }
 
 const ServicesContainer = styled.section`
-position: relative;
+.service-mobile{
+    display: block;
+    width: var(--width-l-m);
+    margin: 0 auto;
+    position: relative;
+    padding: 52px 0;
+    @media (min-width: 860px) {
+        display: none;
+    }
+    &__line{
+        display: flex;
+        height: 220px;
+        justify-content: space-between;
+        align-items:flex-end;
+        position: relative;
+        overflow: hidden;
+        &.h-0{
+            height: unset;
+        }
+        .column{
+            width: 47%;
+            padding-bottom: 32px;
+            a{
+                font-size: 14px;
+                line-height: 16px;
+            }
+            h3{
+                font-size: 24px;
+                line-height: 28px;
+            }
+            &.w-100{
+                width: 100%;
+            }
+        }
+        .line{
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(-50%,-50%);
+            background: #fff;
+            height: 192px;
+            width: 1px;
+        }
+        &:after,
+        &:before{
+            position: absolute;
+            top: 0;
+            content: "";
+            width: 47%;
+            height: 1px;
+            left: 0;
+            background: #fff;
+
+        }
+        &:after{
+            right: 0 !important;
+            left: unset;
+        }
+        &--two{
+            align-items: center;
+            .column{
+                padding: unset;
+            }
+        }
+    }
+    .b-line{
+        position: relative;
+        &:after,
+        &:before{
+            position: absolute;
+            top: 0;
+            content: "";
+            width: 47%;
+            height: 1px;
+            left: 0;
+            background: #fff;
+
+        }
+        &:after{
+            right: 0 !important;
+            left: unset;
+        }
+    }
+}
+    position: relative;
     height: 100vh;
     @media (max-width: 860px) {
         height: 100%;

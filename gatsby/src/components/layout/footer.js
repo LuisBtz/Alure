@@ -38,13 +38,13 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
 
 
     return(
-        <FooterContainer>
-            <div className={greenFooter ? 'contenedor green' : 'contenedor white'}>
+        <FooterContainer >
+            <div className={greenFooter ? 'contenedor green' : 'contenedor green-white'}>
                 <div className='content'>
-                    <div className='line-r line absolute no-bg'></div>
-                    <div className='line-l line absolute no-bg'></div>
+                    <div className='line-r line absolute'></div>
+                    <div className='line-l line absolute'></div>
                     <div className='grid'>
-                        <div className='column'>
+                        <div className='column column-m'>
                             <div className='text'>
                                 <p>{description}</p>
                                 <div className='copy'>
@@ -55,26 +55,37 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
                             </div>
                             <div className='line-r line no-bg hide-m' ></div>
                         </div>
-                        <div className='column newsletter'>
+                        <div className='column newsletter pb-mobile'>
                             <div className='text'>
                                 <NewsletterFooter className='newsletter' />
-                                <ul>
-                                    <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.email}>Email ↗</a></li>
-                                    <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.instagram}>Instagram ↗</a></li>
-                                    <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.facebook}>Facebook ↗</a></li>
-                                </ul>
+                                <div className="social-mobile-wrapper">
+                                    <div className="text">
+                                        <p>Contact</p>
+                                    </div>
+                                    <ul>
+                                        <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.email}>Email ↗</a></li>
+                                        <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.instagram}>Instagram ↗</a></li>
+                                        <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.facebook}>Facebook ↗</a></li>
+                                    </ul>
+                                </div>
                             </div>
                             <div className='line-r line no-bg hide-m' ></div>
                         </div>
                         <div className='column last'>
                             <div className='text'>
-                                <ul>
+                                <div className="mobile-wrapper">
+                                    <div className="text">
+                                        <p>Information</p>
+                                    </div>
+                                    <ul>
+                                    <li><Link to='/'>Home</Link></li>
                                     <li><Link to='/about'>About</Link></li>
                                     <li><Link to='/services'>Services</Link></li>
                                     <li><Link to='/clients'>Clients</Link></li>
                                     <li><Link to='/blog'>Blog</Link></li>
                                     <li><Link to='contact'>Contact</Link></li>
                                 </ul>
+                                </div>
                                 <div className='terms'>
                                     <div className='image'>
                                         <GatsbyImage
@@ -83,6 +94,7 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
                                             alt={altImage}
                                         />
                                     </div>
+                                    <p>Alure Agency, All Rights Reserved © 2021</p>
                                     <div className='links'>
                                         <Link to='/terms' >Terms & Conditions /</Link>
                                         <Link to='/privacy'>Privacy Policy</Link>
@@ -99,18 +111,23 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
 }
 
 const FooterContainer = styled.footer`
+overflow: hidden;
     .green {
         background-color: var(--green);
         color: white;
     }
-    .white {
+    .green-white {
         background-color: white;
         color: var(--dark-gray);
         a {
             color: var(--dark-gray);
         }
-        .line {
-            border-color: var(--dark-gray);
+        @media (max-width: 860px) {
+            background-color: var(--green);
+            color: white; 
+            a {
+            color: var(--white);
+        }
         }
     }
 .contenedor {
@@ -135,6 +152,128 @@ const FooterContainer = styled.footer`
         .column {
             padding-top: 25px;
             padding-bottom: 25px;
+            .social-mobile-wrapper{
+                display: block;
+                .text{
+                    @media (min-width: 860px) {
+                        display: none;
+                    }
+                }
+            }
+            .mobile-wrapper{
+                display: block;
+                .text{
+                    @media (min-width: 860px) {
+                        display: none;
+                    }
+                }
+            }
+            @media (max-width: 860px) {
+            &.pb-mobile{
+                padding-bottom: 0;
+            }
+            &.column-m{
+                .text{
+                    padding: 0 15px;
+                }
+                        position: relative;
+                        p{
+                            font-size: 1.5rem;
+                            font-family: var(--bold);
+                        }
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            width: 48%;
+                            background: #fff;
+                            height: 1px;
+                            left: 0;
+                        }
+                        &:before{
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            width: 48%;
+                            background: #fff;
+                            height: 1px;
+                            right: 0;
+                        }
+                    
+                }  
+                .social-mobile-wrapper{
+                    display: flex;
+                    margin-top: 16px;
+                    align-items: flex-start;
+                    .text{
+                    width: 50%;
+                    text-align: left;
+                    p{
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: rgba(255,255,255,0.4);
+                    letter-spacing: 1px;
+                    text-align: left;
+                   }
+                    }
+                    ul{
+                        margin-top: 0;
+                        width: 50%;
+                        flex-direction: column;
+                        padding-left: 7px;
+                        li{
+                            text-align: left;
+                            padding-bottom:13px;
+                        }
+                    }
+                }
+            .mobile-wrapper{
+                position:relative;
+               display: flex;
+                    &:after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    width: 48%;
+                    background: #fff;
+                    height: 1px;
+                    left: 0;
+                    }
+                    &:before{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    width: 48%;
+                    background: #fff;
+                    height: 1px;
+                    right: 0;
+                    }
+               .text{
+                   width: 50%;
+                   p{
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: rgba(255,255,255,0.4);
+                    letter-spacing: 1px;
+                    text-align: left;
+                   }
+               }
+               ul{
+                   width: 50%;
+                   flex-wrap: wrap;
+                   padding-left: 7px;
+                   li{
+                    flex-basis: 45%;
+                    text-align: left;
+                    padding-bottom: 18px;
+                    a{
+                        font-size: 16px;
+                        line-height: 19px;
+                    }
+                   }
+               }
+            }
+            }
         }
         .last {
             ul {
@@ -170,6 +309,12 @@ const FooterContainer = styled.footer`
                 flex-direction: column;
                 align-content: flex-end;
             }
+            p{
+                padding-bottom: 10px;
+                @media (min-width: 860px) {
+                    display: none;
+                }
+            }
             .image {
                 align-self: flex-end;
                 margin-bottom: 20px;
@@ -181,8 +326,8 @@ const FooterContainer = styled.footer`
                 justify-content: center !important;
                 .image {
                     align-self: center;
-                    margin-bottom: 50px;
-                    margin-top: 50px;
+                    margin-bottom: 35px;
+                    margin-top: 35px;
                 }
             }
             .links {

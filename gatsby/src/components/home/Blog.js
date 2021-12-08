@@ -30,7 +30,7 @@ const Blog = ({data}) => {
                     </div>
                     <div className='column background-white'>
                         <div className='line-t line dark-gray'></div>
-                        <div className='text'>
+                        <div className='text' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
                             <Link to='/blog'>{link}</Link>
                             <h3>{subtitle}</h3>
                         </div>
@@ -40,7 +40,7 @@ const Blog = ({data}) => {
                     </div>
                     <div className='column background-white left'>
                         <div className='line-t line dark-gray'></div>
-                        <div className='text'>
+                        <div className='text' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
                             <h2>{title}</h2>
                         </div>
                     </div>

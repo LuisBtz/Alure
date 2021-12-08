@@ -47,12 +47,12 @@ class Newsletter extends React.Component {
   render() {
 
     return (
-      <NewsletterWrapper>
+      <NewsletterWrapper >
 
-        <p className="detail">{this.state.message}</p>
+        <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="800" className="detail">{this.state.message}</p>
 
 
-        <div className='links'>
+        <div className='links' data-aos="fade-up" data-aos-delay="700" data-aos-duration="800">
             <form className="subscribe" onSubmit={this.handleSubmit}>
                 <input
                     type="email"
@@ -69,9 +69,9 @@ class Newsletter extends React.Component {
         </div>
         <div className='text'>
             <ul>
-                <li><a target='_blank' rel="noreferrer" href='HELLO@ALURE.AGENCY'>Email ↗</a></li>
-                <li><a target='_blank' rel="noreferrer" href='https://www.instagram.com/alureagency/?hl=es'>Instagram ↗</a></li>
-                <li><a target='_blank' rel="noreferrer" href='https://www.facebook.com/alureagency'>Facebook ↗</a></li>
+                <li data-aos="fade-up" data-aos-delay="800" data-aos-duration="800"><a target='_blank' rel="noreferrer" href='HELLO@ALURE.AGENCY'>Email ↗</a></li>
+                <li data-aos="fade-up" data-aos-delay="900" data-aos-duration="800"><a target='_blank' rel="noreferrer" href='https://www.instagram.com/alureagency/?hl=es'>Instagram ↗</a></li>
+                <li data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800"><a target='_blank' rel="noreferrer" href='https://www.facebook.com/alureagency'>Facebook ↗</a></li>
             </ul>
         </div>
 

@@ -21,14 +21,14 @@ const WhyUs = ({data}) => {
                 <GatsbyImage
                     style={{ height: "100%", width: "100%" }}
                     image={getDataImage}
-                    alt={altImage}
+                    alt={altImage+"w"}
                 />
             </div>
             <div className='content'>
                 <div className='line-r line absolute dark-gray no-bg white-m'></div>
                 <div className='line-l line absolute no-bg'></div>
                 <div className='grid'>
-                    <div className='column solo'>
+                    <div className='column solo hide-m'>
                             <div className='line-t line no-bg'></div>
                     </div>
                     <div className='colum solo hide-m'>
@@ -37,37 +37,70 @@ const WhyUs = ({data}) => {
                     <div className='column solo hide-m'>
                         <div className='line-t line dark-gray no-bg'></div>
                     </div>
-                    <div className='column'>
-                        <div className='text'>
+                    <div className='column hide-m'>
+                        <div className='text' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
                             <h3 className='color-white'>{whyUsTitle}</h3>
                         </div>
                         <div className='line-b line no-bg hide-d' ></div>
                     </div>
-                    <div className='column two'>
-                        <div className='text'>
+                    <div className='column two hide-m'>
+                        <div className='text' data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
                             <h3>{ourPhilosophyTitle}</h3>
                             <p>{ourPhilosophyText}</p>
                         </div>
                     </div>
-                    <div className='column '>
+                    <div className='column  hide-m'>
                         <div className='line-t line no-bg hide-m'></div>
                         <div className='line-b line no-bg' ></div>
                     </div>
-                    <div className='column '>
+                    <div className='column  hide-m'>
                         <div className='line-t line dark-gray no-bg hide-m'></div>
                         <div className='line-b line dark-gray no-bg hide-m' ></div>
-                        <div className='text'>
+                        <div className='text' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
                             <h3>{commitmentTitle}</h3>
                             <p>{commitmentText}</p>
                         </div>
                         <div className='line-r line dark-gray no-bg' ></div>
                     </div>
-                    <div className='column '>
+                    <div className='column  hide-m'>
                         <div className='line-t line dark-gray no-bg white-m'></div>
                         <div className='line-b line dark-gray no-bg white-m' ></div>
-                        <div className='text'>
+                        <div className='text' data-aos="fade-up" data-aos-delay="1100" data-aos-duration="800">
                             <h3>{teamworkTitle}</h3>
                             <p>{teamworkText}</p>
+                        </div>
+                    </div>
+                    <div className="moblie-area">
+                        <div className="moblie-area__column">
+                            <div className='column'>
+                                <div className='text' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
+                                    <h3 className='color-white'>{whyUsTitle}</h3>
+                                </div>
+                            </div>
+                            <div className='column'>
+                            </div>
+                        </div>
+                        <div className="moblie-area__column--two">
+                            <div className='column two'>
+                                <div className='text' data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
+                                    <h3>{ourPhilosophyTitle}</h3>
+                                    <p>{ourPhilosophyText}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="moblie-area__column moblie-area__column--tree">
+                            <div className='column'>
+                            <div className='text' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
+                            <h3>{commitmentTitle}</h3>
+                            <p>{commitmentText}</p>
+                            </div>
+                            </div>
+                            <div className='column'>
+                            <div className='text' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
+                            <h3>{teamworkTitle}</h3>
+                            <p>{teamworkText}</p>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,6 +110,91 @@ const WhyUs = ({data}) => {
 }
 
 const WhyUsContainer = styled.section`
+.moblie-area{
+    padding: 52px 0;
+    @media (min-width: 860px) {
+        display: none;
+    }
+    &__column{
+        overflow: hidden;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        .column{
+            height: 220px;
+            width: 47%;
+            border-top: 1px solid #FFFFFF;
+            border-bottom: 1px solid #FFFFFF;
+            .text{
+                h3{
+                    font-size: 36px;
+                    text-transform: uppercase;
+                    font-family: var(--bold);
+                   
+                }
+            }
+        }
+        &--two{
+            .column{
+                .text{
+                    padding-bottom: 32px;
+                    h3{ 
+                        font-size: 36px;
+                        font-family: var(--reg);
+                        position: relative;
+                        margin-bottom:75px;
+                        margin-top: 32px;
+                        &:before{
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 223px;
+                            height: 2px;
+                            background: white;
+                        }
+                    }
+                }
+            }
+        }
+        &--tree{
+            position: relative;
+            .column{
+                @media (max-width: 375px) {
+                    height: 300px !important;
+                }
+            }
+            .text{
+                justify-content: unset !important;
+                h3{
+                    margin-top: 32px;
+                    margin-bottom: 15px;
+                    text-transform: capitalize !important;
+                    font-family: var(--reg) !important;
+                    position: relative;
+                    &:before{
+                        position: absolute;
+                        bottom:0;
+                        background: #fff;
+                        width: 104px;
+                        content: "";
+                        height: 2px;
+                    }
+                }
+            }
+            &:before{
+                position: absolute;
+                content: "";
+                height: 85%;
+                width: 1px;
+                background: #fff !important;
+                top:50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+    }
+}
     position: relative;
     height: 100vh;
     width: 100%;

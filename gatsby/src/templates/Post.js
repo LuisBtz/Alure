@@ -48,24 +48,24 @@ export default function SinglePostPage({ data: { post } }) {
                 <div className='content'>
                     <div className='line-r line absolute no-bg dark-gray'></div>
                     <div className='line-l line absolute no-bg dark-gray'></div>
-                    <div className='grid ti'>
+                    <div className='grid ti hide-m'>
                         <div className='column'>
-                            <div className='text'>
+                            <div className='text' data-aos="fade-left" data-aos-delay="800" data-aos-duration="800">
                                 <p>{date}</p>
                                 <strong>By {author}</strong>
                             </div>
                         </div>
                         <div className='column two'>
-                            <div className='text'>
+                            <div className='text' data-aos="fade-left" data-aos-delay="1000" data-aos-duration="800">
                                 <h1>{title}</h1>
                             </div>
                         </div>
                     </div>
                     <div className='grid co'>
-                        <div className='column left'>
+                        <div className='column left hide-m'>
                             <div className='top'>
                                 <div className='line-t line dark-gray'></div>
-                                <div className='img'>
+                                <div className='img' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
                                     <GatsbyImage
                                         style={{ height: "100%", width: "100%" }}
                                         image={getDataImage}
@@ -78,7 +78,7 @@ export default function SinglePostPage({ data: { post } }) {
                                 <div className='line-b line dark-gray hide-m'></div>
                             </div>
                         </div>
-                        <div className='column two'>
+                        <div className='column two hide-m'>
                             <div className='line-t line dark-gray'></div>
                             <div className='content'>
                                 <BlockContent
@@ -86,34 +86,68 @@ export default function SinglePostPage({ data: { post } }) {
                                 />
                             </div>
                         </div>
+                        <div className="mobie-area">
+                            <div className='column left'>
+                                <div className='top'>
+                                    <div className='img'>
+                                        <GatsbyImage
+                                            style={{ height: "100%", width: "100%" }}
+                                            image={getDataImage}
+                                            alt={alt}
+                                        />
+                                    </div>
+                                    <div className='text' data-aos="fade-left" data-aos-delay="800" data-aos-duration="800">
+                                        <h1>{title}</h1>
+                                    </div>
+                                </div>
+                                    <div className='text' data-aos="fade-left" data-aos-delay="900" data-aos-duration="800">
+                                        <p>{date}</p>
+                                        <strong>By <span>{author}</span></strong>
+                                    </div>
+                            </div>
+                            <div className='column two'>
+                                <div className='d-line'></div>
+                                <div className='content' >
+                                    <BlockContent
+                                        blocks={text}
+                                    />
+                                </div>
+                                <div className='d-line'></div>
+                            </div>
+                        </div>
                     </div>
                     <div className='content re'>
-                        <div className='line-r line absolute no-bg dark-gray'></div>
-                        <div className='line-l line absolute no-bg dark-gray'></div>
-                        <div className='grid'>
-                        {post.relatedPosts.map(({_key, _createdAt, title, slug}) => {
-                            const date = _createdAt;
-                            
-                                return (
-                                    <div className='column' key={_key} >
-                                        <div className='line-t line dark-gray no-bg'></div>
-                                        <Link to={`/blog/${slug.current}`}>
-                                            <div className='text'>
-                                                <div className='up'>
-                                                    <p>{date}</p>
-                                                    <h2>{title}</h2>
+                        <div className='line-r line absolute no-bg dark-gray hide-m'></div>
+                        <div className='line-l line absolute no-bg dark-gray hide-m'></div>
+                        <div className='grid hide-m'>
+                            {post.relatedPosts.map(({_key, _createdAt, title, slug},i) => {
+                                const date = _createdAt;
+                                
+                                    return (
+                                        <div className='column' key={_key+i}>
+                                            <div className='line-t line dark-gray no-bg'></div>
+                                            <Link to={`/blog/${slug.current}`} >
+                                                <div className='text' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
+                                                    <div className='up'>
+                                                        <p>{date}</p>
+                                                        <h2>{title}</h2>
+                                                    </div>
+                                                    <div className='bot'>
+                                                        <p>Read More ↗</p>
+                                                    </div>
                                                 </div>
-                                                <div className='bot'>
-                                                    <p>Read More ↗</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                        <div className='line-r line no-bg dark-gray no-bg' ></div>
-                                        <div className='line-b line no-bg dark-gray no-bg'></div>
-                                    </div>
+                                            </Link>
+                                            <div className='line-r line no-bg dark-gray no-bg' ></div>
+                                            <div className='line-b line no-bg dark-gray no-bg'></div>
+                                        </div>
 
-                                    )
-                                })}
+                                        )
+                                    })}
+                        </div>
+                        <div className="grid">
+                            <div className="lode-btn">
+                                <Link className="m-link" to='/blog'>Load more articles ↓</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,8 +157,75 @@ export default function SinglePostPage({ data: { post } }) {
 }
 
 const PostContainer = styled.section`
+    overflow: hidden;
+    .mobie-area{
+        background: #F4F3EF;
+        padding-top: 50px;
+        @media (min-width: 860px) {
+            display: none;
+        }
+        .column{
+            &.left{
+               .top{
+                   position: relative;
+                   .text{
+                       padding: 19px;
+                       position: absolute;
+                       bottom: 0;
+                       left: 0;
+                       padding-bottom: 32px;
+                       h1{
+                        font-size: 3rem;
+                        color: white;
+                        text-transform: uppercase;
+                       }
+                   }
+               } 
+               .text{
+                   padding: 16px 19px;
+                   p{
+                    font-size: 1rem;  
+                    margin-bottom: 5px;
+                }
+                    strong{
+                       font-size: 1rem;  
+                       font-family: var(--reg) !important;
+                       font-weight: 400;
+                       span{
+                           font-weight: 700;
+                       }
+                   }
+               }
+            }
+            &.two{
+                padding: 0 19px;
+                .d-line{
+                    position: relative;
+                    &:after,
+                    &:before{
+                    position: absolute;
+                    bottom: 0;
+                    content: "";
+                    width: 47%;
+                    height: 1px;
+                    left: 0;
+                    background: #575D63;
+
+                    }
+                    &:after{
+                    right: 0 !important;
+                    left: unset;
+                    }
+                }
+            }
+        }
+    }
+    overflow: hidden;
     position: relative;
     color: var(--green);
+    @media (max-width: 860px) {
+        background: #F4F3EF;
+    }
     .share-cont {
         .overlay-s {
             position: fixed;
@@ -213,8 +314,9 @@ const PostContainer = styled.section`
         padding-bottom: 25px;
         position: relative;
         @media (max-width: 860px) {
+            padding-bottom: 56px;
             grid-template-columns: 1fr;
-            width: var(--width-l-m);
+            width: var(--width-4);
         }
         .two {
             grid-column: 2/4;
@@ -246,9 +348,11 @@ const PostContainer = styled.section`
                 top: 0;
             }
             .img {
-                margin-top: 25px;
                 @media (max-width: 860px) {
                     height: 250px;
+                }
+                @media (min-width: 860px) {
+                    margin-top: 25px;
                 }
             }
             .content {
@@ -337,7 +441,36 @@ const PostContainer = styled.section`
             .solo .line-t {
                 top: 0;
             }
+            .lode-btn{
+
+                padding: 0 19px;
+                padding-top: 56px;
+                padding-bottom: 32px;
+                @media (min-width: 480px) {
+                font-size: 28px;
+                padding-top: 85px;
+                padding-bottom: 56px;
+                }
+                .m-link{
+                    font-size: 24px;
+                    text-transform: capitalize;
+                    font-family: var(--reg);
+                    color: #575D63; 
+                    @media (min-width: 480px) {
+                    font-size: 28px;
+                    }
+                }
+                @media (min-width: 860px) {
+                    display: none;
+                }
+            }
         }
+    }
+    .m-0{
+        margin: 0;
+    }
+    .p-0{
+        padding: 0;
     }
 `
   

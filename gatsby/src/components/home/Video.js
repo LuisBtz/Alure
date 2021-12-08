@@ -18,21 +18,48 @@ const Video = ({ data }) => {
                 <source src={videoMp4} type="video/mp4" />
             </video>
             <div className='texto'>
-                <div className='column'>
-                    <img src={data.sanitySettingsPage.icon.asset.url} alt={data.sanitySettingsPage.icon.enAlt} />
+                <div className="hero-mobile">
+                    <div className="hero-mobile__column">
+                        <div className='column' >
+                            <div className="icon" data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
+                                <img src={data.sanitySettingsPage.icon.asset.url} alt={data.sanitySettingsPage.icon.enAlt} />
+                            </div>
+                        </div>
+                        <div className='column'>
+                            <div className="smalltext" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800"><a href='#about'>{smallText}</a></div>
+                        </div>
+                    </div>
+                    <div className="hero-mobile__column hero-mobile__column--two">
+                        <div className='column'> </div>
+                        <div className='column'></div>
+                    </div>
+                    <div className="hero-mobile__texts">
+                        <div className='column' data-aos="fade-up" data-aos-delay="1200" data-aos-duration="800">
+                            <h1>{mainText}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div className='column hide-m'>
+                    <div className="icon" data-aos="fade-left" data-aos-delay="800" data-aos-duration="800">
+                        <img  src={data.sanitySettingsPage.icon.asset.url} alt={data.sanitySettingsPage.icon.enAlt} />
+                    </div>
                     <div className='line-b line hide-m' ></div>
                     <div className='line-r line hide-m' ></div>
                 </div>
-                <div className='column'>
-                    <a href='#about'>{smallText}</a>
+                <div className='column hide-m'>
+                        <div className="btn" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="800">
+                             <a href='#about'>{smallText}</a>
+                        </div>
                     <div className='line-b line bottom-25-m' ></div>
                     <div className='line-r line hide-m' ></div>
                 </div>
                 <div className='column hide-m'>
                     <div className='line-b line' ></div>
                 </div>
-                <div className='column lead'>
-                    <h1>{mainText}</h1>
+                <div className='column lead hide-m'>
+                        <div data-aos="fade-up" data-aos-delay="1200" data-aos-duration="800">
+                            <h1>{mainText}</h1>
+                        </div>
                     <div className='line-b line hide-d' ></div>
                     <div className='line-r line hide-m' ></div>
                 </div>
@@ -55,7 +82,86 @@ const Video = ({ data }) => {
 }
 
 const VideoContenedor = styled.section`
-video {
+position: relative;
+    .hero-mobile{
+        @media (min-width: 860px) {
+            display: none;
+
+        }
+            display: flex;
+            flex-direction: column;
+        
+        &__column{
+            position: relative;
+            display: flex;
+            height: 220px;
+            justify-content: space-between;
+            align-items: flex-end;
+            .column{
+                overflow: hidden;
+                width: 47%;
+                border-bottom: 1px solid #fff;
+                a{
+                    font-size: 14px;
+                    line-height: 16px;
+                }
+                img{
+                    margin-bottom: 32px;
+                }
+                .smalltext{
+                    margin-bottom: 45px;
+                }
+            }
+            &:before{
+                position: absolute;
+                content: "";
+                height: 200px;
+                width: 1px;
+                background: #fff !important;
+                /* 
+
+                border: thin solid #fff; */
+                /* border-color: #fff;
+                border-width: 1px;
+                border-style: solid; */
+                bottom:7px;
+                left: 50%;
+                transform: translateX(50%);
+            }
+            &--two{
+                &:before{
+                    display: none;
+                }
+            }
+        }
+        &__texts{
+            position: relative;
+            .column{
+                h1{
+                    padding: 13px 0;
+                    font-size: 13vw !important;
+                        text-transform: uppercase;
+                }
+            }
+            &:after,
+            &:before{
+                position: absolute;
+                bottom: 0;
+                content: "";
+                width: 47%;
+                height: 1px;
+                left: 0;
+                background: #fff;
+
+            }
+            &:after{
+                right: 0 !important;
+                left: unset;
+            }
+        }
+    }
+
+    video {
     object-fit: cover;
     width: 100vw;
     height: 100vh;
@@ -63,43 +169,46 @@ video {
     top: 0;
     left: 0;
     @media (max-width: 860px) {
-        height: 100vh;
-        min-height: -webkit-fill-available;
+        height: 100%;
     }
 }
 
 .texto {
     width: var(--width-l);
-    height: 100vh;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0 100px;
     position: relative;
-    /* @media (max-width: 1000px) {
-        width: var(--width-l-m);
-        gap: 0 30px;
-    } */
-    @media (max-width: 860px) {
-        grid-template-columns: 1fr;
-        padding-top: 50px;
-        grid-auto-flow: dense;
+    @media (min-width: 860px) {
         height: 100vh;
+    }
+    @media (max-width: 860px) {
+        width: var(--width-l-m);
+        grid-template-columns: 1fr;
+        padding: 52px 0;
+        grid-auto-flow: dense;
         min-height: -webkit-fill-available;
     }
     .lead {
-        grid-column: 1/3;
-        @media (max-width: 860px) {
-            grid-column: auto;
-            grid-row: 1;
+        @media (min-width: 860px) {
+            grid-column: 1/3;
+
         }
         h1 {
-            margin-top: 50px;
+            
             font-size: var(--headline-1);
             text-transform: uppercase;
             line-height: 0.9;
             @media (max-width: 860px) {
                 font-size: 13vw;
+            }
+            @media (max-width: 375px) {
+                font-size: 36px;
+                line-height: 42px;
+            }
+            @media (min-width: 860px) {
+                margin-top: 50px;
             }
         }
     }
@@ -110,24 +219,29 @@ video {
         }
     }
     .column {
-        height: 50vh;
-        @media (max-width: 860px) {
-            height: auto;
+        @media (min-width: 860px ) {
+            height: 50vh;
         }
-        img {
-            width: 70px;
-            position: absolute;
-            bottom: 20px;
-        }
-        a {
-            position: absolute;
-            bottom: 20px;
-            @media (max-width: 860px ) {
-                position: static;
+        .icon{
+            img {
+                width: 70px;
             }
+            @media (min-width: 860px ) {
+                position: absolute;
+                bottom: 20px;
+            }
+        }
+        .btn{
+            overflow: hidden;
+            @media (min-width: 860px ) {
+                position: absolute;
+                bottom: 20px;
+            
+        }
         }
     }
 }
+
 `
 
 export default Video;

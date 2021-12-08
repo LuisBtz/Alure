@@ -7,7 +7,6 @@ import Seo from '../components/layout/seo'
 import Services from '../components/home/Services'
 import Blog from '../components/home/Blog'
 import Next from '../components/home/Next'
-
 export const data = graphql`
   query {
     sanityHomePage {
@@ -108,15 +107,14 @@ const greenFooter = true
 // markup
 const IndexPage = ({data}) => {
 
-
   return (
     <Layout greenFooter={greenFooter}>
       <Seo  title='home' /*description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} */ />
-      <Video data={data} />
-      <About data={data} />
-      <Services data={data} />
-      <Blog data={data} />
-      <Next />
+      <Video data={data}/>
+      <About data={data}/>
+      <Services data={data}/>
+      <Blog data={data}/>
+      <Next/>
     </Layout>
   )
 }

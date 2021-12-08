@@ -20,7 +20,7 @@ const text = 'STAY CONNECTED STAY INSPIRED'
                 <GatsbyImage
                     style={{ height: "100%", width: "100%" }}
                     image={getDataImage}
-                    alt={altImage}
+                    alt={altImage+"h"}
                 />
             </div>
             <div className='content'>
@@ -28,18 +28,20 @@ const text = 'STAY CONNECTED STAY INSPIRED'
                 <div className='line-l line absolute no-bg'></div>
                 <div className='grid'>
                     <div className='line mid hide-m'></div>
-                    <div className='column two'>
+                    <div className='column two hide-m'>
                         <div className='line-r line no-bg hide-m' ></div>
+                        <div data-aos="fade-left" data-aos-delay="800" data-aos-duration="800">
                         <h1>{text}</h1>
+                        </div>
                     </div>
-                    <div className='column'>
+                    <div className='column hide-m'>
                     </div>
-                    {data.allSanityBlog.edges.slice(0, 3).map(({node}) => {
+                    {data.allSanityBlog.edges.slice(0, 3).map(({node},i) => {
                             return (
-                                <div className='column solo blog' key={node._key}>
+                                <div className='column solo blog hide-m' key={node._key+i}>
                                     <div className='overlay'></div>
                                     <div className='line-t line'></div>
-                                    <Link to={`/blog/${node.slug.current}`} className='text'>
+                                    <Link to={`/blog/${node.slug.current}`} className='text' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
                                         <div className='top'>
                                             <p>{node._createdAt}</p>
                                             <h2>{node.title}</h2>
@@ -53,7 +55,42 @@ const text = 'STAY CONNECTED STAY INSPIRED'
                                 </div>
                             )
                     })}
+                    <div className="mobile-area">
+                        <div className="m-s-one">
+                            <div className='column two'>
+                                <div data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
 
+                                <h1>{text}</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="m-s-two">
+                            <div className='column' >
+                                <div data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
+                                <p>Stay in touch with our latest articles and news</p>
+
+                                </div>
+                            </div>
+                            <div className='column'></div>
+                        </div>
+                        <div className="m-s-three">
+                            {data.allSanityBlog.edges.slice(0, 1).map(({node},i) => {
+                                return (
+                                    <div className='column solo blog' key={node._key+"hb2"+i}>
+                                        <Link to={`/blog/${node.slug.current}`} className='text' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
+                                            <div className='top'>
+                                                <p>{node._createdAt}</p>
+                                                <h2>{node.title}</h2>
+                                            </div>
+                                            <div className='bot'>
+                                                <p>Read More ↗</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
                 </div>
             </div>
         </HeroContainer>
@@ -61,6 +98,85 @@ const text = 'STAY CONNECTED STAY INSPIRED'
 }
 
 const HeroContainer = styled.section`
+    .mobile-area{
+        @media (min-width: 860px) {
+            display: none;
+        }
+        .m-s-one{
+            .column{
+                overflow: hidden;
+                h1{
+                   padding-bottom: 64px;
+                }
+            }
+        }
+        .m-s-two{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            .column{
+                overflow: hidden;
+                border-top: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+                width: 47%;
+                height: 220px;
+                display: flex;
+                align-items: end;
+                p{
+                    padding-bottom: 32px;
+                }
+            }
+            &:before{
+                position: absolute;
+                content: "";
+                height: 200px;
+                width: 1px;
+                background: #fff !important;
+                bottom:7px;
+                left: 50%;
+                transform: translateX(50%);
+            }
+        }
+        .m-s-three{
+            position: relative;
+            .column{
+                overflow: hidden;
+              .text{
+                  padding: 32px 0;
+              } 
+              .top{
+                  padding: 0;
+                  p{
+                    padding: 0 !important;
+                  }
+                  h2{
+                      font-size: 24px;
+                  }
+              } 
+              .bot{
+                  padding-bottom: 0 !important;
+                  p{
+                    padding-top: 48px;
+                  }
+              }
+            }
+            &:after,
+            &:before{
+                position: absolute;
+                bottom: 0;
+                content: "";
+                width: 47%;
+                height: 1px;
+                left: 0;
+                background: #fff;
+
+            }
+            &:after{
+                right: 0 !important;
+                left: unset;
+            }
+        }
+    }
     position: relative;
     height: 100vh;
     overflow: hidden;
@@ -97,6 +213,7 @@ const HeroContainer = styled.section`
         position: relative;
         @media (max-width: 860px) {
             padding-top: 100px;
+            padding-bottom: 60px;
             width: var(--width-l-m);
             gap: 0 30px;
             grid-template-columns: 1fr;

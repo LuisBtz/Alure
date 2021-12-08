@@ -30,17 +30,19 @@ const About = ( {data} ) => {
                 <div className='grid'>
                     <div className='column h10-m'>
                         <div className='line-t line'></div>
-                        <Link className='padding-top-50' to='/about'>{link}</Link>
+                            <Link className='padding-top-50' to='/about' data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">{link}</Link>
                         <div className='line-r line hide-m' ></div>
                     </div>
                     <div className='column h20-m'>
                         <div className='line-t line'></div>
-                        <h2 className='padding-top-50'>{title1}</h2>
+                        <div data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
+                            <h2 className='padding-top-50'>{title1}</h2>
+                        </div>
                         <div className='line-r line hide-m'></div>
                     </div>
                     <div className='column h25-m'>
                         <div className='line-t line hide-m'></div>
-                        <p className='padding-top-50 '>{subtitle1}</p>
+                        <p className='padding-top-50' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">{subtitle1}</p>
                     </div>
                     <div className='column solo hide-m'>
                         <div className='line-t line hide-m'></div>
@@ -49,15 +51,44 @@ const About = ( {data} ) => {
                     </div>
                     <div className='column solo h20-m'>
                         <div className='line-t line'></div>
-                        <h2 className='padding-top-50'>{title2}</h2>
+                        <h2 className='padding-top-50' data-aos="fade-up" data-aos-delay="1200" data-aos-duration="800">{title2}</h2>
                         <div className='line-r line hide-m'></div>
                         <div className='line-b line hide-m'></div>
                     </div>
                     <div className='column solo h25-m padding-bottom-50-m'>
                         <div className='line-t line hide-m'></div>
-                        <p className='padding-top-50'>{subtitle2}</p>
+                        <p className='padding-top-50' data-aos="fade-up" data-aos-delay="1400" data-aos-duration="800">{subtitle2}</p>
                         <div className='line-b line '></div>
                     </div>
+                </div>
+                <div className="about-mobile">
+                    <div className="about-mobile__line">
+                        <div className='column '>
+                        </div>
+                        <div className="line"></div>
+                        <div className='column ' data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+                            <Link className='padding-top-50' to='/about'>{link}</Link>
+                        </div>
+                    </div>
+                    <div className="about-mobile__line about-mobile__line--two">
+                        <div className='column ' data-aos="fade-up" data-aos-delay="700" data-aos-duration="800">
+                            <h2>{title1}</h2>
+                        </div>
+                        <div className="line"></div>
+                        <div className='column ' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
+                            <p>{subtitle1}</p>
+                        </div>
+                    </div>
+                    <div className="about-mobile__line about-mobile__line--two">
+                        <div className='column solo ' data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
+                            <h2 className='title-two'>WE <br /> SPECIALIZE IN</h2>
+                        </div>
+                        <div className="line"></div>
+                        <div className='column solo' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
+                        <p>{subtitle2}</p>
+                    </div>
+                    </div>
+                    <div className="b-line"></div>
                 </div>
             </div>
         </AboutContainer>
@@ -65,6 +96,101 @@ const About = ( {data} ) => {
 }
 
 const AboutContainer = styled.section`
+.about-mobile{
+    display: block;
+    width: var(--width-l-m);
+    margin: 0 auto;
+    position: relative;
+    padding: 52px 0;
+    @media (min-width: 860px) {
+        display: none;
+    }
+    &__line{
+        display: flex;
+        height: 220px;
+        overflow: hidden;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+        &.h-0{
+            height: unset;
+        }
+        .column{
+            width: 47%;
+            padding-bottom: 32px;
+            h2{
+                font-family: Akzidenz-Grotesk BQ;
+                font-size: 32px;
+                line-height: 37px;
+            }
+            .title-two{
+                font-size: 36px;
+                line-height: 42px;
+                text-transform: uppercase;
+            }
+            a{
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+        .line{
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(-50%,-50%);
+            background: #fff;
+            height: 192px;
+            width: 1px;
+        }
+        &:after,
+        &:before{
+            position: absolute;
+            top: 0;
+            content: "";
+            width: 47%;
+            height: 1px;
+            left: 0;
+            background: #fff;
+
+        }
+        &:after{
+            right: 0 !important;
+            left: unset;
+        }
+        &--two{
+            align-items: flex-start;
+            .column{
+                padding-top: 32px;
+                padding-bottom: 0;
+                p{
+                    font-size: 18px;
+                    line-height: 21px;
+                    @media (min-width: 480px) {
+                        padding-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .b-line{
+        position: relative;
+        &:after,
+        &:before{
+            position: absolute;
+            top: 0;
+            content: "";
+            width: 47%;
+            height: 1px;
+            left: 0;
+            background: #fff;
+
+        }
+        &:after{
+            right: 0 !important;
+            left: unset;
+        }
+    }
+}
     position: relative;
     height: 100vh;
     @media (max-width: 860px) {
@@ -104,8 +230,7 @@ const AboutContainer = styled.section`
             gap: 0 30px;
         } */
         @media (max-width: 860px) {
-            grid-template-columns: 1fr;
-            width: var(--width-l-m);
+            display: none;
         }
         .column {
             height: 50vh;

@@ -10,12 +10,12 @@ const Posts = ({data}) => {
             <div className='line-l line absolute no-bg dark-gray'></div>
 
             <div className='grid'>
-                {data.allSanityBlog.edges.slice(3).map(({node}) => {
+                {data.allSanityBlog.edges.slice(3).map(({node},i) => {
                     const altImage = node.blogImage.enAlt;
                     const getDataImage = getImage(node.blogImage.asset);
                     
                         return (
-                            <div className='column solo' key={node._key}>
+                            <div className='column solo hide-m' key={node._key+"bb"+i}>
                                 <div className='top'>
                                     <div className='line-t line dark-gray no-bg'></div>
                                     <div className='img'>
@@ -28,7 +28,7 @@ const Posts = ({data}) => {
                                         </Link>
                                         <div className='line'></div>
                                     </div>
-                                    <Link to={`/blog/${node.slug.current}`} className='text'>
+                                    <Link to={`/blog/${node.slug.current}`} className='text' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
                                         <div className='top'>
                                             <p>{node._createdAt}</p>
                                             <h2>{node.title}</h2>
@@ -43,6 +43,34 @@ const Posts = ({data}) => {
                             </div>
                         )
                 })}
+                <div className="mobile-area">
+                {data.allSanityBlog.edges.slice(0, 3).map(({node},i) => {
+                    const altImage = node.blogImage.enAlt;
+                    const getDataImage = getImage(node.blogImage.asset);
+                    
+                        return (
+                            <Link to={`/blog/${node.slug.current}`} key={node._key+i} >
+                            <div className='column solo p-0'>
+                            <div className="overlay"></div>
+                            <div className='img p-0'>
+                            <GatsbyImage
+                            style={{ height: "100%", width: "100%" }}
+                            image={getDataImage}
+                            alt={altImage}
+                            />
+                            </div>
+                            <div className='text-wrapper' data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">
+                            <div className='top'>
+                            <p>{node._createdAt}</p>
+                            <h2>{node.title}</h2>
+                            </div>
+                            <p>Read More ↗</p>
+                            </div>
+                            </div>
+                            </Link>
+                        )
+                })}
+                </div>
             </div>
         </PostsContainer>
     )
@@ -51,7 +79,84 @@ const Posts = ({data}) => {
 const PostsContainer = styled.section`
     position: relative;
     color: var(--dark-gray);
-    background-color: white;
+    background: #F4F3EF;
+    @media (min-width: 860px) {
+        background-color: white;
+    }
+    .mobile-area{
+        padding: 48px 0 52px ;
+        @media (min-width: 860px) {
+            display: none;
+        }
+        .column{
+            position: relative;
+            .img{
+                height: 224px;
+                    @media (min-width:575px) {
+                    height: 328px;
+                }
+                im{
+                    object-fit: cover;
+                }
+            }
+            .text-wrapper{
+                z-index: 111;
+                padding: 0 19px;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                p{
+                    font-size: 16px;
+                    @media (min-width: 480px) {
+                        font-size: 18px;
+                    }
+                }
+                .top{
+                    h2{
+                        font-size: 24px;
+                        padding-top: 24px;
+                        padding-bottom: 32px;
+                        @media (min-width: 480px) {
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+            .overlay{
+                position: absolute;
+                top: 100%;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                background-color: var(--green);
+                z-index: 2;
+                transition: top 250ms ease-in-out;
+            }
+            &:hover{
+               .overlay{
+                top: 0 !important;
+               } 
+            }
+            &:after,
+            &:before{
+                position: absolute;
+                bottom: 0;
+                content: "";
+                width: 47%;
+                height: 1px;
+                left: 0;
+                background: #fff;
+                z-index: 999;
+
+            }
+            &:after{
+                right: 0 !important;
+                left: unset;
+            }
+        }
+    }
     .grid {
         width: var(--width-l);
         margin: 0 auto;   
@@ -60,7 +165,7 @@ const PostsContainer = styled.section`
         gap: 0 100px;
         position: relative;
         @media (max-width: 860px) {
-                width: var(--width-l-m);
+                width: var(--width-4);
                 grid-template-columns: 1fr;
             }
         .two {
@@ -138,6 +243,9 @@ const PostsContainer = styled.section`
         .solo .line-b {
             bottom: 25px;
         }
+    }
+    .p-0{
+        padding: 0 !important;
     }
 `
 

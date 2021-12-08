@@ -11,10 +11,10 @@ const Logos = ({data}) => {
                 <div className='line-r line absolute dark-gray no-bg'></div>
                 <div className='line-l line absolute dark-gray no-bg'></div>
                 <div className='grid'>
-                    <div className='column solo'>
-                        <p>Selected clients, brands & partners</p>
+                    <div className='column solo m-s-one'>
+                        <p data-aos="fade-left" data-aos-delay="800" data-aos-duration="800">Selected clients, brands & partners</p>
                         <div className='line-r line dark-gray no-bg hide-m' ></div>
-                        <div className='line-b line no-bg dark-gray' ></div>
+                        <div className='line-b line no-bg dark-gray hide-m' ></div>
                     </div>
                     <div className='column solo hide-m'>
                         <div className='line-r line dark-gray no-bg' ></div>
@@ -28,7 +28,7 @@ const Logos = ({data}) => {
                 {data.sanityClientsPage.clients.map(({ link, logo, _key}) => {
                     const getDataImage = getImage(logo.asset);
                         return (
-                            <div className='column-img' key={_key}>
+                            <div className='column-img' key={_key} data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
                                 <a href={link} target='_blank' rel="noreferrer">
                                     <GatsbyImage
                                         image={getDataImage}
@@ -47,12 +47,16 @@ const Logos = ({data}) => {
 
 const LogosContainer = styled.section`
         background-color: var(--gray);
+        overflow: hidden;
         position: relative;
         width: 100%;
         color: var(--dark-gray);
         @media (max-width: 860px) {
             height: 100% !important;
+            background: #F4F3EF;
             color: var(--dark-gray);
+            padding-bottom: 52px;
+            overflow: hidden;
         }
         .grid {
             width: var(--width-l);
@@ -62,10 +66,23 @@ const LogosContainer = styled.section`
             gap: 0 100px;
             position: relative;
             @media (max-width: 860px) {
-                width: var(--width-l-m);
+                width: var(--width-4);
                 gap: 0 30px;
                 grid-template-columns: 1fr;
                 height: auto;
+                .m-s-one{
+                    padding: 0 19px;
+                    background: var(--green);
+                    p{
+                        padding: 0;
+                        text-align: start;
+                        font-size: 36px;
+                        text-transform: uppercase;
+                        font-family: var(--bold);
+                        color: white;
+                        margin:48px 0 38px;
+                    }
+                }
             }
         }
         .column.solo {
@@ -76,14 +93,13 @@ const LogosContainer = styled.section`
             justify-content: end;
             @media (max-width: 860px) {
                 height: auto !important;
-                padding-top: 25px;
-                text-align: center;
             }
             p {
                 margin-bottom: 25px;
             }
         }
         .logos {
+            overflow: hidden;
             display: grid;
             grid-template-columns: repeat(7, auto);
             grid-auto-flow: dense;
@@ -94,9 +110,27 @@ const LogosContainer = styled.section`
             padding-top: 50px;
             padding-bottom: 50px;
             @media (max-width: 860px) {
-                gap: 50px 0;
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
                 height: auto;
+                position: relative;
+                &:after,
+                &:before{
+                position: absolute;
+                bottom: 0;
+                content: "";
+                width: 47%;
+                height: 1px;
+                left: 0;
+                background: #575D63;
+
+                }
+                &:after{
+                right: 0 !important;
+                left: unset;
+                }
             }
             .column-img:nth-child(1) {
                 grid-row: 1;
@@ -174,6 +208,9 @@ const LogosContainer = styled.section`
                 width: 150px;
                 align-self: center;
                 justify-self: center;
+                @media (max-width: 860px) {
+                    width: 100px;
+                }
             }
         }
 `

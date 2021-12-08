@@ -6,10 +6,10 @@ const Next = () => {
     return(
         <NextContainer>
             <div className='content'>
-                <div className='line-r line absolute dark-gray'></div>
-                <div className='line-l line absolute dark-gray'></div>
+                <div className='line-r line absolute dark-gray hide-m'></div>
+                <div className='line-l line absolute dark-gray hide-m'></div>
                 <div className='grid'>
-                    <div className='column'>
+                    <div className='column' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
                         <p>Next Up</p>
                         <Link to='/about'>about us</Link>
                         <div className='line-r line dark-gray hide-m' ></div>
@@ -27,8 +27,11 @@ const Next = () => {
 }
 
 const NextContainer = styled.section`
-    color: var(--green);
     position: relative;
+    color: var(--green);
+    @media (max-width: 860px) {
+        background: white;
+    }
     .grid {
         width: var(--width-l);
         margin: 0 auto;   
@@ -41,7 +44,8 @@ const NextContainer = styled.section`
         } */
         @media (max-width: 860px) {
             grid-template-columns: 1fr;
-            
+            width: var(--width-l-m);
+            padding: 24px 0 32px;
         }
         a {
             color: var(--dark-gray);
@@ -50,12 +54,27 @@ const NextContainer = styled.section`
             font-size: var(--headline-1);
             margin-top: 25px;
             display: block;
+            @media (max-width: 860px) {
+                font-size: 42px;
+                line-height: 37px;
+                margin-top: 16px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                color: #575D63;  
+                font-family: var(--bold); 
+            }
         }
         p {
-            padding-top: 25px;
+            line-height: 14px;
+            color: #575D63;
+            @media (min-width: 860px) {
+                padding-top: 25px;
+            }
         }
         .column {
-            height: 165px;
+            @media (min-width: 860px) {
+                height: 165px;
+            }
             h2 {
                 font-size: var(--headline-1);
                 text-transform: uppercase;

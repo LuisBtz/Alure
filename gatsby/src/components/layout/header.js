@@ -36,17 +36,17 @@ const [menu, showMenu] = useState(false);
                             <li><Link to='/services'>Services</Link></li>
                             <li><Link to='/clients'>Clients</Link></li>
                             <li><Link to='/blog'>Blog</Link></li>
-                            <li><Link to='contact'>Contact</Link></li>                    </ul>
+                            <li><Link to='/contact'>Contact</Link></li>                    </ul>
                     </div>
                 <div className='cont'>
                     <div className='column'>
-                        <Link to='/' className='home'>
+                        <Link to='/' className='home' data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
                             <img src={data.sanitySettingsPage.alure.asset.url} alt={data.sanitySettingsPage.alure.enAlt} />
                         </Link>
                         <div className='line-b line' ></div>
                     </div>
                     <div className='column'>
-                        <Link to='/' className='home'>
+                        <Link to='/' className='home' data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
                             <img src={data.sanitySettingsPage.agency.asset.url} alt={data.sanitySettingsPage.agency.enAlt} />
                         </Link>
                         <div className='line-b line' ></div>
@@ -58,11 +58,11 @@ const [menu, showMenu] = useState(false);
                             <div className='line'></div>
                         </button>
                         <ul>
-                            <li><Link to='/about'>About</Link></li>
-                            <li><Link to='/services'>Services</Link></li>
-                            <li><Link to='/clients'>Clients</Link></li>
-                            <li><Link to='/blog'>Blog</Link></li>
-                            <li><Link to='contact'>Contact</Link></li>
+                            <li data-aos="fade-up" data-aos-delay="600" data-aos-duration="800"><Link to='/about'>About</Link></li>
+                            <li data-aos="fade-up" data-aos-delay="700" data-aos-duration="800"><Link to='/services'>Services</Link></li>
+                            <li data-aos="fade-up" data-aos-delay="800" data-aos-duration="800"><Link to='/clients'>Clients</Link></li>
+                            <li data-aos="fade-up" data-aos-delay="900" data-aos-duration="800"><Link to='/blog'>Blog</Link></li>
+                            <li data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800"><Link to='/contact'>Contact</Link></li>
                         </ul>
                         <div className='line-b line' ></div>
                     </div>
@@ -98,7 +98,7 @@ const HeaderContainer = styled.nav`
     .contenedor {
         width: 100%;
         position: fixed;
-        z-index: 3;
+        z-index: 9999;
         height: 50px;
     .show {
         right: 0 !important;
@@ -145,7 +145,12 @@ const HeaderContainer = styled.nav`
             width: var(--width-l-m);
             gap: 30px
         }
+        @media (max-width: 860px) {
+            
+            transform: translateX(-50%)
+        }
     .column {
+        overflow: hidden;
         display: flex;
         .click {
             .line {

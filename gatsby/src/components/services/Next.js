@@ -9,7 +9,7 @@ const Next = () => {
                 <div className='line-r line absolute no-bg dark-gray'></div>
                 <div className='line-l line absolute no-bg dark-gray'></div>
                 <div className='grid'>
-                    <div className='column'>
+                    <div className='column' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
                         <p>Next Up</p>
                         <Link to='/clients'>CLIENTS</Link>
                         <div className='line-r line dark-gray no-bg hide-m' ></div>
@@ -29,6 +29,9 @@ const Next = () => {
 const NextContainer = styled.section`
     color: var(--green);
     position: relative;
+    @media (max-width: 860px) {
+        background: #F4F3EF;
+    }
     .grid {
         width: var(--width-l);
         margin: 0 auto;   
@@ -37,6 +40,7 @@ const NextContainer = styled.section`
         gap: 0 100px;
         position: relative;
         @media (max-width: 860px) {
+            width: var(--width-l-m);
             grid-template-columns: 1fr;
         }
         a {
@@ -46,6 +50,12 @@ const NextContainer = styled.section`
             font-size: var(--headline-1);
             margin-top: 25px;
             display: block;
+            @media (max-width: 860px) {
+        font-size: 36px;
+        text-transform: uppercase;
+        font-family: var(--bold);
+        margin-top: 16px;
+            }
         }
         p {
             padding-top: 25px;

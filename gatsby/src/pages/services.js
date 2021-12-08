@@ -191,10 +191,10 @@ const ServicesPage = ({data}) => {
       <Seo title='services' /*  description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} */ />
       <Hero data={data} />
       <Contact data={data} />
-      <Sales data={data} />
+       <Sales data={data} />
       <Public data={data} />
       <PublicServices data={data} />
-      <Next />
+     <Next />
     </Layout>
   )
 }
