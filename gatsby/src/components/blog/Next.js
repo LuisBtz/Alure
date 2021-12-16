@@ -60,7 +60,7 @@ const NextContainer = styled.section`
             padding-top: 25px;
         }
         .column {
-            height: 280px;
+            height: auto;
             h2 {
                 font-size: var(--headline-1);
                 text-transform: uppercase;

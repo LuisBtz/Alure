@@ -41,7 +41,7 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
         <FooterContainer >
             <div className={greenFooter ? 'contenedor green' : 'contenedor green-white'}>
                 <div className='content'>
-                    <div className='line-r line absolute'></div>
+                    <div className='line-r line absolute no-bg'></div>
                     <div className='line-l line absolute'></div>
                     <div className='grid'>
                         <div className='column column-m'>
@@ -121,6 +121,12 @@ overflow: hidden;
         color: var(--dark-gray);
         a {
             color: var(--dark-gray);
+        }
+        .line {
+            color: var(--dark-gray);
+            background-color: var(--dark-gray);
+            border-color: var(--dark-gray);
+            background-color: transparent;
         }
         @media (max-width: 860px) {
             background-color: var(--green);

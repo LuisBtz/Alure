@@ -66,7 +66,7 @@ const NextContainer = styled.section`
             padding-top: 25px;
         }
         .column {
-            height: 280px;
+            height: auto;
             @media (max-width: 860px) {
                 height: auto;
             }

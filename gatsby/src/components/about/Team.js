@@ -336,6 +336,7 @@ const TeamContainer = styled.section`
                     flex-direction: column;
                     justify-content: space-between;
                     overflow: hidden;
+                   
                     .line-t {
                         top: 0;
                     }
@@ -396,6 +397,12 @@ const SliderContainer = styled(Slider)`
         width: auto;
         font-size: inherit;
         line-height: inherit;
+        @media (min-width: 1440px) {
+            font-size: 1.3vw !important;
+        }
+        @media (min-width: 1640px) {
+            font-size: 1vw !important;
+        }
         &::before {
             display: none;
         }

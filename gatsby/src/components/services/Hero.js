@@ -236,6 +236,9 @@ const HeroContainer = styled.section`
                 @media (max-width: 860px) {
                     padding-bottom: 20px;
                 }
+                @media (min-width: 1440px) {
+                    width: 5vw;
+                }
             }
             .text {
                 height: 100%;

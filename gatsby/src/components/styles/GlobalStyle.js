@@ -335,4 +335,17 @@ p, a, li, .paragraph {
     }
 } */
 
+
+@media (min-width: 1440px) {
+  a, p, button {
+    font-size: 1.3vw;
+  }
+}
+@media (min-width: 1640px) {
+  a, p, button {
+    font-size: 1vw;
+  }
+}
+
+
 `

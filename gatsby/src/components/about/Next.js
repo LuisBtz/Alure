@@ -6,7 +6,7 @@ const Next = () => {
     return(
         <NextContainer>
             <div className='content'>
-                <div className='line-r line dark-gray absolute'></div>
+                <div className='line-r line dark-gray absolute no-bg'></div>
                 <div className='line-l line dark-gray absolute'></div>
                 <div className='grid'>
                     <div className='column' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
@@ -61,7 +61,7 @@ const NextContainer = styled.section`
             padding-top: 25px;
         }
         .column {
-            height: 165px;
+            height: auto;
             h2 {
                 font-size: var(--headline-2);
                 text-transform: uppercase;

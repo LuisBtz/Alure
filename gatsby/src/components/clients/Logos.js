@@ -132,6 +132,10 @@ const LogosContainer = styled.section`
                 left: unset;
                 }
             }
+            @media (min-width: 1440px) {
+                justify-content: space-evenly;
+                width: 70%;
+            }
             .column-img:nth-child(1) {
                 grid-row: 1;
                 grid-column: 1;

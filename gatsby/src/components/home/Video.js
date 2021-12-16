@@ -225,6 +225,9 @@ position: relative;
         .icon{
             img {
                 width: 70px;
+                @media (min-width: 1440px) {
+                    width: 100%;
+                }
             }
             @media (min-width: 860px ) {
                 position: absolute;
@@ -241,6 +244,8 @@ position: relative;
         }
     }
 }
+
+
 
 `
 

@@ -93,10 +93,22 @@ form {
         ::-webkit-input-placeholder {
             color: white;
             opacity: 0.25;
+            @media (min-width: 1440px) {
+                font-size: 1.3vw;
+            }
+            @media (min-width: 1640px) {
+                font-size: 1vw;
+            }
         }
         :-ms-input-placeholder {
             color: white;
             opacity: 0.25;
+            @media (min-width: 1440px) {
+                font-size: 1.3vw;
+            }
+            @media (min-width: 1640px) {
+                font-size: 1vw;
+            }
         }
     }
     input:focus, button:focus {

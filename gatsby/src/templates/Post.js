@@ -75,7 +75,7 @@ export default function SinglePostPage({ data: { post } }) {
                             </div>
                             <div className='bot'>
                                 <button  onClick={() => showShare(!share)} >Share this article ↗</button>
-                                <div className='line-b line dark-gray hide-m'></div>
+                                <div className='line-b line dark-gray hide-m no-bg'></div>
                             </div>
                         </div>
                         <div className='column two hide-m'>
@@ -283,6 +283,7 @@ const PostContainer = styled.section`
                     font-size: 3rem !important;
                 }
             }
+            
             h1 {
                 font-size: 6vw;
                 line-height: 0.9;
@@ -295,6 +296,9 @@ const PostContainer = styled.section`
             justify-content: flex-end;
             @media (max-width: 860px) {
                 height: 100px;
+            }
+            @media (min-width: 1440px) {
+                margin-top: 100px;
             }
             .text {
                 position: relative;

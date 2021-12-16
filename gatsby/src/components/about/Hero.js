@@ -106,6 +106,7 @@ const HeroContainer = styled.section`
                 }
                 img{
                     margin-bottom: 32px;
+                   
                 }
                 &.smalltext{
                     p{
@@ -176,6 +177,7 @@ const HeroContainer = styled.section`
             bottom: 0;
             right: 0;
         }
+        
     }
     .content {
         position: absolute;
@@ -221,6 +223,9 @@ const HeroContainer = styled.section`
                 width: 70px;
                 @media (min-width: 860px) {
                     margin-top: 25px;
+                }
+                @media (min-width: 1440px) {
+                    width: 5vw;
                 }
             }
             a {

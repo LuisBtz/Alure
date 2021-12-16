@@ -100,6 +100,9 @@ const HeaderContainer = styled.nav`
         position: fixed;
         z-index: 9999;
         height: 50px;
+        @media (min-width: 1440px) {
+            height: 100px;
+        }
     .show {
         right: 0 !important;
     }
@@ -141,6 +144,9 @@ const HeaderContainer = styled.nav`
         grid-template-columns: repeat(3, 1fr);
         gap: 100px;
         height: 50px;
+        @media (min-width: 1440px) {
+            height: 100px;
+        }
         @media (max-width: 1000px) {
             width: var(--width-l-m);
             gap: 30px
@@ -191,8 +197,16 @@ const HeaderContainer = styled.nav`
             width: auto;
             align-self: center;
             height: 30px;
+            @media (min-width: 1440px) {
+                height: auto;
+                width: auto;
+            }
             img {
                 height: 100%;
+                @media (min-width: 1440px) {
+                    height: 55px;
+                    width: auto;
+                }
             }
         }
         ul {
