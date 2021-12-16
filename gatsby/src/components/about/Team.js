@@ -397,7 +397,7 @@ const SliderContainer = styled(Slider)`
         width: auto;
         font-size: inherit;
         line-height: inherit;
-        @media (min-width: 1440px) {
+        @media (min-width: 1500px) {
             font-size: 1.3vw !important;
         }
         @media (min-width: 1640px) {

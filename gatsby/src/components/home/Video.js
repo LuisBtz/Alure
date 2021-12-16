@@ -225,7 +225,7 @@ position: relative;
         .icon{
             img {
                 width: 70px;
-                @media (min-width: 1440px) {
+                @media (min-width: 1500px) {
                     width: 100%;
                 }
             }

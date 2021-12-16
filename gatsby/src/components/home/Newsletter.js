@@ -93,7 +93,7 @@ color: var(--dark-gray);
 @media (max-width: 860px) {
     display: none;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1500px) {
   padding: 80px;
   width: calc(33vw - 16px);
 }
@@ -115,7 +115,7 @@ form {
         ::-webkit-input-placeholder {
             color: var(--dark-gray);
             opacity: 0.25;
-            @media (min-width: 1440px) {
+            @media (min-width: 1500px) {
                 font-size: 1.3vw;
             }
             @media (min-width: 1640px) {
@@ -125,7 +125,7 @@ form {
         :-ms-input-placeholder {
             color: var(--dark-gray);
             opacity: 0.25;
-            @media (min-width: 1440px) {
+            @media (min-width: 1500px) {
                 font-size: 1.3vw;
             }
             @media (min-width: 1640px) {

@@ -336,7 +336,7 @@ p, a, li, .paragraph {
 } */
 
 
-@media (min-width: 1440px) {
+@media (min-width: 1500px) {
   a, p, button {
     font-size: 1.3vw;
   }

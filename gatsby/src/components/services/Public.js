@@ -259,7 +259,7 @@ const PublicContainer = styled.section`
                 }
                 h4 {
                     font-size: 1.2rem;
-                    @media (min-width: 1440px) {
+                    @media (min-width: 1500px) {
                             font-size: 1.3vw;
                     }
                     @media (min-width: 1640px) {

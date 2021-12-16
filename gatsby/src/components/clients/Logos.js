@@ -132,7 +132,7 @@ const LogosContainer = styled.section`
                 left: unset;
                 }
             }
-            @media (min-width: 1440px) {
+            @media (min-width: 1500px) {
                 justify-content: space-evenly;
                 width: 70%;
             }

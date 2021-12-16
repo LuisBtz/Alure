@@ -93,7 +93,7 @@ form {
         ::-webkit-input-placeholder {
             color: white;
             opacity: 0.25;
-            @media (min-width: 1440px) {
+            @media (min-width: 1500px) {
                 font-size: 1.3vw;
             }
             @media (min-width: 1640px) {
@@ -103,7 +103,7 @@ form {
         :-ms-input-placeholder {
             color: white;
             opacity: 0.25;
-            @media (min-width: 1440px) {
+            @media (min-width: 1500px) {
                 font-size: 1.3vw;
             }
             @media (min-width: 1640px) {

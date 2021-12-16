@@ -224,7 +224,7 @@ const HeroContainer = styled.section`
                 @media (min-width: 860px) {
                     margin-top: 25px;
                 }
-                @media (min-width: 1440px) {
+                @media (min-width: 1500px) {
                     width: 5vw;
                 }
             }
