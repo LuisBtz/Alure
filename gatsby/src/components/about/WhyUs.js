@@ -6,6 +6,10 @@ const WhyUs = ({data}) => {
 
     const altImage = data.sanityAboutPage.whyUsBackgroundImage.enAlt;
     const getDataImage = getImage(data.sanityAboutPage.whyUsBackgroundImage.asset);
+
+    const altImageMovil = data.sanityAboutPage.whyUsBackgroundImageMovil.enAlt;
+    const getDataImageMovil = getImage(data.sanityAboutPage.whyUsBackgroundImageMovil.asset);
+
     const whyUsTitle = data.sanityAboutPage.whyUsTitle.en;
     const ourPhilosophyTitle = data.sanityAboutPage.ourPhilosophyTitle.en;
     const ourPhilosophyText = data.sanityAboutPage.ourPhilosophyText.en;
@@ -17,11 +21,18 @@ const WhyUs = ({data}) => {
 
     return(
         <WhyUsContainer>
-            <div className='image'>
+            <div className='image desk'>
                 <GatsbyImage
                     style={{ height: "100%", width: "100%" }}
                     image={getDataImage}
-                    alt={altImage+"w"}
+                    alt={altImage}
+                />
+            </div>
+            <div className='image movil'>
+                <GatsbyImage
+                    style={{ height: "100%", width: "100%" }}
+                    image={getDataImageMovil}
+                    alt={altImageMovil}
                 />
             </div>
             <div className='content'>
@@ -214,6 +225,18 @@ const WhyUsContainer = styled.section`
             left: 0;
             bottom: 0;
             right: 0;
+        }
+    }
+    .image.desk {
+        display: block;
+        @media (max-width: 860px) {
+            display: none;
+        }
+    }
+    .image.movil {
+        display: none;
+        @media (max-width: 860px) {
+            display: block;
         }
     }
     .content {

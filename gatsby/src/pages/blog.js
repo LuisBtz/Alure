@@ -19,6 +19,16 @@ export const data = graphql`
           )
         }
       }
+      blogBackgroundImageMovil {
+        enAlt
+        asset {
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            outputPixelDensities: 1.5
+            placeholder: DOMINANT_COLOR
+          )
+        }
+      }
     }
     
     allSanityBlog {

@@ -8,16 +8,27 @@ const Services = ({data}) => {
 
     const altImage = data.sanityHomePage.servicesSectionBackground.enAlt;
     const getDataImage = getImage(data.sanityHomePage.servicesSectionBackground.asset);
+    
+    const altImageMovil = data.sanityHomePage.servicesSectionBackgroundMovil.enAlt;
+    const getDataImageMovil = getImage(data.sanityHomePage.servicesSectionBackgroundMovil.asset);
+
     const title = data.sanityHomePage.servicesTitleSection.en;
     const link = data.sanityHomePage.servicesSectionLinkText.en;
 
     return (
         <ServicesContainer>
-            <div className='image'>
+            <div className='image desk'>
                 <GatsbyImage
                     style={{ height: "100%", width: "100%" }}
                     image={getDataImage}
                     alt={altImage}
+                />
+            </div>
+            <div className='image movil'>
+                <GatsbyImage
+                    style={{ height: "100%", width: "100%" }}
+                    image={getDataImageMovil}
+                    alt={altImageMovil}
                 />
             </div>
             <div className='content'>
@@ -187,6 +198,18 @@ const ServicesContainer = styled.section`
             left: 0;
             bottom: 0;
             right: 0;
+        }
+    }
+    .image.desk {
+        display: block;
+        @media (max-width: 860px) {
+            display: none;
+        }
+    }
+    .image.movil {
+        display: none;
+        @media (max-width: 860px) {
+            display: block;
         }
     }
     .content {

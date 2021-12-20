@@ -24,6 +24,11 @@ export default {
             type: 'imageType'
         },
         {
+            name: 'heroImageMovil',
+            title: 'Hero Movil Image',
+            type: 'imageType'
+        },
+        {
             name: 'principalTextHero',
             title: 'Principal Text Hero',
             type: 'singleText'

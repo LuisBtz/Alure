@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import Newsletter from './Newsletter';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 
@@ -8,6 +9,14 @@ const Video = ({ data }) => {
 
     const videoMp4 = data.sanityHomePage.videoHero.mp4File.asset.url;
     const videoWebm = data.sanityHomePage.videoHero.webmFile.asset.url;
+    
+    
+    
+    const heroMovil = data.sanityHomePage.movilHeroImage.asset;
+    const heroMovilAlt = data.sanityHomePage.movilHeroImage.enAlt;
+    const getDataImage = getImage(heroMovil);
+
+
 
     const mainText = data.sanityHomePage.singleTextHero.en;
     const smallText = data.sanityHomePage.heroSmallTextHero.en;
@@ -17,6 +26,13 @@ const Video = ({ data }) => {
                 <source src={videoWebm} type="video/webm" />
                 <source src={videoMp4} type="video/mp4" />
             </video>
+            <div className='image movil'>
+                <GatsbyImage
+                    style={{ height: "100%", width: "100%" }}
+                    image={getDataImage}
+                    alt={heroMovilAlt}
+                />
+            </div>
             <div className='texto'>
                 <div className="hero-mobile">
                     <div className="hero-mobile__column">
@@ -83,6 +99,18 @@ const Video = ({ data }) => {
 
 const VideoContenedor = styled.section`
 position: relative;
+    .movil.image {
+        display: none;
+        @media (max-width: 860px) {
+            display: block;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
     .hero-mobile{
         @media (min-width: 860px) {
             display: none;
@@ -170,6 +198,7 @@ position: relative;
     left: 0;
     @media (max-width: 860px) {
         height: 100%;
+        display: none;
     }
 }
 

@@ -22,6 +22,16 @@ export const data = graphql`
           }
         }
       }
+      movilHeroImage {
+        enAlt
+        asset {
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            outputPixelDensities: 1.5
+            placeholder: DOMINANT_COLOR
+          )
+        }
+      }
       singleTextHero {
         en
       }
@@ -29,6 +39,16 @@ export const data = graphql`
         en
       }
       aboutSectionBackground {
+        enAlt
+        asset {
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            outputPixelDensities: 1.5
+            placeholder: DOMINANT_COLOR
+          )
+        }
+      }
+      aboutSectionBackgroundMovil {
         enAlt
         asset {
           gatsbyImageData(
@@ -54,6 +74,16 @@ export const data = graphql`
         en
       }
       servicesSectionBackground {
+        enAlt
+        asset {
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            outputPixelDensities: 1.5
+            placeholder: DOMINANT_COLOR
+          )
+        }
+      }
+      servicesSectionBackgroundMovil {
         enAlt
         asset {
           gatsbyImageData(

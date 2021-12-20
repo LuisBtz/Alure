@@ -24,6 +24,11 @@ export default {
           type: 'imageType'
       },
       {
+          name: 'heroImageMovil',
+          title: 'Hero Movil Image',
+          type: 'imageType'
+      },
+      {
         name: 'principalTextHero',
         title: 'Principal Text Hero',
         type: 'singleText'
@@ -76,6 +81,11 @@ export default {
       {
         name: 'whyUsBackgroundImage',
         title: 'Why Us Background Image',
+        type: 'imageType'
+      },
+      {
+        name: 'whyUsBackgroundImageMovil',
+        title: 'Why Us Movil Background Image',
         type: 'imageType'
       },
       {

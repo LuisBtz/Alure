@@ -6,6 +6,10 @@ const Sales = ({data}) => {
 
     const altImage = data.sanityServicesPage.salesServicesImages.enAlt;
     const getDataImage = getImage(data.sanityServicesPage.salesServicesImages.asset);
+
+    const altImageMovil = data.sanityServicesPage.salesServicesImagesMovil.enAlt;
+    const getDataImageMovil = getImage(data.sanityServicesPage.salesServicesImagesMovil.asset);
+
     const salesServicesTitle = data.sanityServicesPage.salesServicesTitle.en;
     const salesServicesText = data.sanityServicesPage.salesServicesText.en;
     const salesServicesService1 = data.sanityServicesPage.salesServicesService1.en;
@@ -88,8 +92,8 @@ const Sales = ({data}) => {
                             <div className="bg-image">
                                 <GatsbyImage
                                 style={{ height: "100%", width: "100%" }}
-                                image={getDataImage}
-                                alt={altImage}
+                                image={getDataImageMovil}
+                                alt={altImageMovil}
                                 />
                             </div>
                         </div>
@@ -227,6 +231,18 @@ const SalesContainer = styled.section`
             bottom: 0;
             right: 0;
             display: none;
+        }
+    }
+    .image.desk {
+        display: block;
+        @media (max-width: 860px) {
+            display: none;
+        }
+    }
+    .image.movil {
+        display: none;
+        @media (max-width: 860px) {
+            display: block;
         }
     }
     .content {

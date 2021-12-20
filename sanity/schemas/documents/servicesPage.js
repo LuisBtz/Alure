@@ -23,6 +23,11 @@ export default {
             type: 'imageType'
         },
         {
+            name: 'heroImageMovil',
+            title: 'Hero Movil Image',
+            type: 'imageType'
+        },
+        {
           name: 'principalTextHero',
           title: 'Principal Text Hero',
           type: 'singleText'
@@ -83,6 +88,11 @@ export default {
             type: 'imageType'
         },
         {
+            name: 'salesServicesImagesMovil',
+            title: 'Movil Sales Services Image',
+            type: 'imageType'
+        },
+        {
             name: 'salesServicesService1',
             title: 'Sales Services Service #1',
             type: 'singleText'
@@ -140,6 +150,11 @@ export default {
         {
             name: 'publicRelationsSectionImages',
             title: 'Public Relations Section Image',
+            type: 'imageType'
+        },
+        {
+            name: 'publicRelationsSectionImagesMovil',
+            title: 'Public Relations Section Movil Image',
             type: 'imageType'
         },
         {

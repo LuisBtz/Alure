@@ -21,6 +21,16 @@ export const data = graphql`
           )
         }
       }
+      heroImageMovil {
+        enAlt
+        asset {
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            outputPixelDensities: 1.5
+            placeholder: DOMINANT_COLOR
+          )
+        }
+      }
       principalTextHero {
         en
       }

@@ -59,6 +59,11 @@ export default {
             name: 'blogBackgroundImage',
             title: 'Blog Background Image',
             type: 'imageType'
+        },
+        {
+            name: 'blogBackgroundImageMovil',
+            title: 'Blog Movil Background Image',
+            type: 'imageType'
         }
     ],
 }

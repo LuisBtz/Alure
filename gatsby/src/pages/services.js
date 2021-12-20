@@ -23,6 +23,16 @@ export const data = graphql`
         }
         enAlt
       }
+      heroImageMovil {
+        enAlt
+        asset {
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            outputPixelDensities: 1.5
+            placeholder: DOMINANT_COLOR
+          )
+        }
+      }
       linksTextHero {
         en
       }
@@ -83,6 +93,16 @@ export const data = graphql`
         )
       }
     }
+    salesServicesImagesMovil {
+      enAlt
+      asset {
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          outputPixelDensities: 1.5
+          placeholder: DOMINANT_COLOR
+        )
+      }
+    }
     salesServicesService1 {
       en
     }
@@ -133,6 +153,20 @@ publicRelationsSectionImages {
     )
   }
 }
+
+
+publicRelationsSectionImagesMovil {
+      enAlt
+      asset {
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          outputPixelDensities: 1.5
+          placeholder: DOMINANT_COLOR
+        )
+      }
+    }
+    
+
 linksTextPublicRelationsSection2 {
   en
 }

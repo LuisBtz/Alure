@@ -4,8 +4,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const PublicServices = ({data}) => {
 
-    const altImage = data.sanityServicesPage.salesServicesImages.enAlt;
-    const getDataImage = getImage(data.sanityServicesPage.salesServicesImages.asset);
+    const altImageMovil = data.sanityServicesPage.publicRelationsSectionImagesMovil.enAlt;
+    const getDataImageMovil = getImage(data.sanityServicesPage.publicRelationsSectionImagesMovil.asset);
+
     const publicRelationsServicesTitle = data.sanityServicesPage.publicRelationsServicesTitle.en;
     const publicRelationsServicesText = data.sanityServicesPage.publicRelationsServicesText.en;
     const linksTextPublicRelationsServices = data.sanityServicesPage.linksTextPublicRelationsServices.en;
@@ -77,8 +78,8 @@ const PublicServices = ({data}) => {
                             <div className="bg-image">
                                 <GatsbyImage
                                 style={{ height: "100%", width: "100%" }}
-                                image={getDataImage}
-                                alt={altImage+"p"}
+                                image={getDataImageMovil}
+                                alt={altImageMovil}
                                 />
                             </div>
                         </div>

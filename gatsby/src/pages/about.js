@@ -28,6 +28,16 @@ export const data = graphql`
           )
         }
       }
+      heroImageMovil {
+        enAlt
+        asset {
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            outputPixelDensities: 1.5
+            placeholder: DOMINANT_COLOR
+          )
+        }
+      }
       ourMissionTitle {
         en
       }
@@ -53,6 +63,16 @@ export const data = graphql`
       en
     }
     whyUsBackgroundImage {
+        asset {
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            outputPixelDensities: 1.5
+            placeholder: DOMINANT_COLOR
+          )
+        }
+      }
+      whyUsBackgroundImageMovil {
+        enAlt
         asset {
           gatsbyImageData(
             layout: FULL_WIDTH

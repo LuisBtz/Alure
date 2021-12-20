@@ -10,17 +10,28 @@ const Hero = ( {data} ) => {
 
 const altImage = data.sanityAboutPage.heroImage.enAlt;
 const getDataImage = getImage(data.sanityAboutPage.heroImage.asset);
+
+const altImageMovil = data.sanityAboutPage.heroImageMovil.enAlt;
+const getDataImageMovil = getImage(data.sanityAboutPage.heroImageMovil.asset);
+
 const text = data.sanityAboutPage.principalTextHero.en;
 const link = data.sanityAboutPage.linksTextHero.en;
 
 
     return (
         <HeroContainer>
-            <div className='image'>
+            <div className='image desk'>
                 <GatsbyImage
                     style={{ height: "100%", width: "100%" }}
                     image={getDataImage}
                     alt={altImage}
+                />
+            </div>
+            <div className='image movil'>
+                <GatsbyImage
+                    style={{ height: "100%", width: "100%" }}
+                    image={getDataImageMovil}
+                    alt={altImageMovil}
                 />
             </div>
             <div className='content'>
@@ -178,6 +189,18 @@ const HeroContainer = styled.section`
             right: 0;
         }
         
+    }
+    .image.desk {
+        display: block;
+        @media (max-width: 860px) {
+            display: none;
+        }
+    }
+    .image.movil {
+        display: none;
+        @media (max-width: 860px) {
+            display: block;
+        }
     }
     .content {
         position: absolute;

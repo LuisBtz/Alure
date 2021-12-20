@@ -8,6 +8,10 @@ const About = ( {data} ) => {
 
     const altImage = data.sanityHomePage.aboutSectionBackground.enAlt;
     const getDataImage = getImage(data.sanityHomePage.aboutSectionBackground.asset);
+
+    const altImageMovil = data.sanityHomePage.aboutSectionBackgroundMovil.enAlt;
+    const getDataImageMovil = getImage(data.sanityHomePage.aboutSectionBackgroundMovil.asset);
+
     const title1 = data.sanityHomePage.title1AboutSection.en;
     const title2 = data.sanityHomePage.title2AboutSection.en;
     const subtitle1 = data.sanityHomePage.subtitle1AboutSection.en;
@@ -17,11 +21,18 @@ const About = ( {data} ) => {
 
     return(
         <AboutContainer id='about'>
-            <div className='image'>
+            <div className='image desk'>
                 <GatsbyImage
                     style={{ height: "100%", width: "100%" }}
                     image={getDataImage}
                     alt={altImage}
+                />
+            </div>
+            <div className='image movil'>
+                <GatsbyImage
+                    style={{ height: "100%", width: "100%" }}
+                    image={getDataImageMovil}
+                    alt={altImageMovil}
                 />
             </div>
             <div className='content'>
@@ -205,6 +216,18 @@ const AboutContainer = styled.section`
             left: 0;
             bottom: 0;
             right: 0;
+        }
+    }
+    .image.desk {
+        display: block;
+        @media (max-width: 860px) {
+            display: none;
+        }
+    }
+    .image.movil {
+        display: none;
+        @media (max-width: 860px) {
+            display: block;
         }
     }
     .content {

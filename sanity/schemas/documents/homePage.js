@@ -24,6 +24,11 @@ export default {
         type: 'videoType'
       },
       {
+        name: 'movilHeroImage',
+        title: 'Hero Image For Movil',
+        type: 'imageType'
+      },
+      {
         name: 'singleTextHero',
         title: 'Headline Hero',
         type: 'singleText'
@@ -36,6 +41,11 @@ export default {
       {
         name: 'aboutSectionBackground',
         title: 'About Section Background',
+        type: 'imageType'
+      },
+      {
+        name: 'aboutSectionBackgroundMovil',
+        title: 'About Section Movil Background',
         type: 'imageType'
       },
       {
@@ -69,6 +79,11 @@ export default {
         type: 'imageType'
       },
       {
+        name: 'servicesSectionBackgroundMovil',
+        title: 'Services Section Movil Background',
+        type: 'imageType'
+      },
+      {
         name: 'servicesTitleSection',
         title: 'Services Title Section',
         type: 'singleText'
@@ -81,6 +96,11 @@ export default {
       {
         name: 'blogSectionBackground',
         title: 'Blog Section Background',
+        type: 'imageType'
+      },
+      {
+        name: 'blogSectionBackgroundMovil',
+        title: 'Blog Section Movil Background',
         type: 'imageType'
       },
       {
