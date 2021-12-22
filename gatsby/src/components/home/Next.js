@@ -51,11 +51,11 @@ const NextContainer = styled.section`
             color: var(--dark-gray);
             font-family: var(--bold);
             text-transform: uppercase;
-            font-size: var(--headline-1);
+            font-size: 36px;
             margin-top: 25px;
             display: block;
             @media (max-width: 860px) {
-                font-size: 42px;
+                font-size: 36px;
                 line-height: 37px;
                 margin-top: 16px;
                 font-weight: 700;

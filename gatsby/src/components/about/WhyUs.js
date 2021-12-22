@@ -106,6 +106,7 @@ const WhyUs = ({data}) => {
                             <p>{commitmentText}</p>
                             </div>
                             </div>
+                            <div className="line-m"></div>
                             <div className='column'>
                             <div className='text' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
                             <h3>{teamworkTitle}</h3>
@@ -150,20 +151,12 @@ const WhyUsContainer = styled.section`
                 .text{
                     padding-bottom: 32px;
                     h3{ 
-                        font-size: 36px;
+                        font-size: 24px;
                         font-family: var(--reg);
                         position: relative;
                         margin-bottom:75px;
                         margin-top: 32px;
-                        &:before{
-                            content: "";
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            width: 223px;
-                            height: 2px;
-                            background: white;
-                        }
+                        text-decoration: underline;
                     }
                 }
             }
@@ -178,33 +171,26 @@ const WhyUsContainer = styled.section`
             .text{
                 justify-content: unset !important;
                 h3{
-                    margin-top: 32px;
+                    margin-top: 24px;
                     margin-bottom: 15px;
                     text-transform: capitalize !important;
                     font-family: var(--reg) !important;
+                    font-size: 24px !important;
                     position: relative;
-                    &:before{
-                        position: absolute;
-                        bottom:0;
-                        background: #fff;
-                        width: 104px;
-                        content: "";
-                        height: 2px;
-                    }
+                    text-decoration: underline;
                 }
-            }
-            &:before{
-                position: absolute;
-                content: "";
-                height: 85%;
-                width: 1px;
-                background: #fff !important;
-                top:50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
             }
         }
     }
+    .line-m{
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(-50%,-50%);
+            background: #ffffff;
+            height: calc(100% - 50px);
+            width: 1px;
+        }
 }
     position: relative;
     height: 100vh;
@@ -270,6 +256,9 @@ const WhyUsContainer = styled.section`
         position: relative;
         @media (max-width: 860px) {
                 height: auto;
+                p {
+                font-size: 16px;
+            }
             }
         .line-t {
             top: 0;

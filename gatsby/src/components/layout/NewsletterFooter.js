@@ -122,6 +122,26 @@ form {
         border-bottom: solid 1px white;
     }
 }
+
+@media (max-width: 680px) {
+  p {
+    font-size: 14px;
+  }
+  form {
+    input {
+        ::placeholder,
+        ::-webkit-input-placeholder {
+            font-size: 14px;
+        }
+        :-ms-input-placeholder {
+            font-size: 14px;
+        }
+    }
+    button {
+      font-size: 14px;
+    }
+}
+}
 `
 
 export default NewsletterFooter

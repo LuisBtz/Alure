@@ -46,7 +46,9 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
                     <div className='grid'>
                         <div className='column column-m'>
                             <div className='text'>
-                                <p>{description}</p>
+                                <div className='desk'>
+                                    <p>{description}</p>
+                                </div>
                                 <div className='copy'>
                                     <BlockContent 
                                         blocks={data.sanitySettingsPage._rawCopyright}
@@ -63,9 +65,9 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
                                         <p>Contact</p>
                                     </div>
                                     <ul>
-                                        <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.email}>Email ↗</a></li>
-                                        <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.instagram}>Instagram ↗</a></li>
-                                        <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.facebook}>Facebook ↗</a></li>
+                                        <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.instagram}>Instagram ↑</a></li>
+                                        <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.email}>Email ↑</a></li>
+                                        <li><a target='_blank' rel="noreferrer" href={data.sanitySettingsPage.facebook}>Facebook ↑</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -112,6 +114,11 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
 
 const FooterContainer = styled.footer`
 overflow: hidden;
+    .desk {
+        @media (max-width: 680px) {
+            display: none;
+        }
+    }
     .green {
         background-color: var(--green);
         color: white;
@@ -175,6 +182,9 @@ overflow: hidden;
                 }
             }
             @media (max-width: 860px) {
+                a, p {
+                    font-size: 14px;
+                }
             &.pb-mobile{
                 padding-bottom: 0;
             }
@@ -184,7 +194,7 @@ overflow: hidden;
                 }
                         position: relative;
                         p{
-                            font-size: 1.5rem;
+                            font-size: 14px;
                             font-family: var(--bold);
                         }
                         &:after{
@@ -215,7 +225,7 @@ overflow: hidden;
                     width: 50%;
                     text-align: left;
                     p{
-                    font-size: 16px;
+                    font-size: 14px;
                     line-height: 19px;
                     color: rgba(255,255,255,0.4);
                     letter-spacing: 1px;

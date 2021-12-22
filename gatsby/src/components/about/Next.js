@@ -55,10 +55,14 @@ const NextContainer = styled.section`
                     text-transform: uppercase;
                     font-family: var(--bold);
                     margin-top: 16px;
+                    padding-bottom: 20px;
                     }
         }
         p {
             padding-top: 25px;
+            @media (max-width: 860px) {
+                font-size: 16px;
+            }
         }
         .column {
             height: auto;

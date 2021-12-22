@@ -179,18 +179,19 @@ const BlogContainer = styled.section`
             }
             a {
                 display: block;
+                font-size: 14px;
             }
             h3 {
-                font-size: var(--headline-2);
+                font-size: 16px;
                 @media (max-width: 860px) {
                     padding-bottom: 50px;
                 }
             }
             h2 {
-                font-size: var(--headline-1);
+                font-size: 24px;
             }
             p {
-                font-size: 2.5rem;
+                font-size: 16px;
                 line-height: 1;
             }
         }

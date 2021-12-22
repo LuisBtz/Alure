@@ -150,7 +150,7 @@ const HeroContainer = styled.section`
                     h3{
                         padding: 30px 0;
                         @media (max-width: 575px) {
-                            font-size: var(--headline-1) !important;
+                            font-size: 24px !important;
                         }
                     }
                 }

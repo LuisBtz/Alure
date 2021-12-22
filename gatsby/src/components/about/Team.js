@@ -213,6 +213,8 @@ const TeamContainer = styled.section`
                 margin-bottom: 0;
                 @media (min-width: 375px) {
                     font-size: 16px;
+                    display: block;
+                    margin-top: 15px;
                 }
             }
             .image{
@@ -298,6 +300,7 @@ const TeamContainer = styled.section`
             @media (max-width: 860px) {
                 padding: 0;
                 margin: 0;
+                font-size: 16px;
             }
         }
     }
@@ -445,17 +448,17 @@ color: var(--dark-gray);
     justify-content: space-between;
     h3 {
         margin-top: 25px;
-        font-size: var(--headline-2);
+        font-size: 24px;
     }
     strong {
         position: absolute;
         top: 30px;
         left: calc(50% + 50px);
         font-weight: normal;
-        font-size: var(--headline-3);
+        font-size: 16px;
         @media (max-width: 860px) {
             position: static;
-            margin-top: 15px;
+            margin-top: 25px;
             margin-bottom: 15px;
         }
     }

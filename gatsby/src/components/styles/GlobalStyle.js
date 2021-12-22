@@ -1,12 +1,12 @@
 import { createGlobalStyle } from "styled-components"
 
-import akzeot from '../../assets/fonts/AkzidenzGroteskBQ-MdCndAlt.eot';
-import akzwoff from '../../assets/fonts/AkzidenzGroteskBQ-MdCndAlt.woff';
-import akzwoff2 from '../../assets/fonts/AkzidenzGroteskBQ-MdCndAlt.woff2';
+import akzeot from '../../assets/fonts/AkzidenzGroteskBQ-BdCndAlt.eot';
+import akzwoff from '../../assets/fonts/AkzidenzGroteskBQ-BdCndAlt.woff';
+import akzwoff2 from '../../assets/fonts/AkzidenzGroteskBQ-BdCndAlt.woff2';
 
-import suseot from '../../assets/fonts/SuisseBPIntl-Antique.eot';
-import suswoff from '../../assets/fonts/SuisseBPIntl-Antique.woff';
-import suswoff2 from '../../assets/fonts/SuisseBPIntl-Antique.woff2';
+import suseot from '../../assets/fonts/SuisseBPIntl-Medium.eot';
+import suswoff from '../../assets/fonts/SuisseBPIntl-Medium.woff';
+import suswoff2 from '../../assets/fonts/SuisseBPIntl-Medium.woff2';
 
 import suslieot from '../../assets/fonts/SuisseBPIntl-Light.eot';
 import susliwoff from '../../assets/fonts/SuisseBPIntl-Light.woff';
@@ -14,28 +14,28 @@ import susliwoff2 from '../../assets/fonts/SuisseBPIntl-Light.woff2';
 
 export const GlobalStyle = createGlobalStyle`
 @font-face {
-    font-family: 'Akzidenz-Grotesk BQ';
+    font-family: 'Akzidenz Bold';
     src: url('${akzeot}');
     src: url('${akzeot}?#iefix') format('embedded-opentype'),
         url('${akzwoff2}') format('woff2'),
         url('${akzwoff}') format('woff');
-    font-weight: 500;
+    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Suisse BP Intl Antique';
+    font-family: 'Suisse Medium';
     src: url('${suseot}');
     src: url('${suseot}?#iefix') format('embedded-opentype'),
         url('${suswoff2}') format('woff2'),
         url('${suswoff}') format('woff');
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Suisse BP Intl Light';
+    font-family: 'Suisse Light';
     src: url('${suslieot}');
     src: url('${suslieot}?#iefix') format('embedded-opentype'),
         url('${susliwoff2}') format('woff2'),
@@ -46,9 +46,9 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 :root {
-    --bold: 'Akzidenz-Grotesk BQ', sans-serif;
-    --custom: 'Suisse BP Intl Antique', sans-serif;
-    --reg: 'Suisse BP Intl Light', sans-serif;
+    --bold: 'Akzidenz Bold', sans-serif;
+    --custom: 'Suisse Medium', sans-serif;
+    --reg: 'Suisse Light', sans-serif;
     --headline-1: 5vw;
     --headline-2: 3vw;
     --headline-3: 2vw;

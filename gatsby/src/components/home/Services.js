@@ -128,7 +128,7 @@ const ServicesContainer = styled.section`
             }
             h3{
                 font-size: 24px;
-                line-height: 28px;
+                line-height: 24px;
             }
             &.w-100{
                 width: 100%;
@@ -246,7 +246,8 @@ const ServicesContainer = styled.section`
                 display: block;
             }
             h3 {
-                font-size: var(--headline-2);
+                font-size: 24px;
+                font-family: var(--custom);
             }
             p {
                 font-size: 2.5vw;

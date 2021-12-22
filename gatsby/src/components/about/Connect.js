@@ -120,7 +120,7 @@ const ConnectContainer = styled.section`
                             bottom: 0;
                             left: 0;
                             width: 100%;
-                            height: 2px;
+                            height: 1px;
                             background: #575D63;
                             content:"";
                         }
@@ -164,7 +164,7 @@ position: relative;
         h3 {
                 font-size: var(--headline-2);
                     @media (max-width: 860px) {
-                    font-size: 36px;
+                    font-size: 24px;
                     text-transform: uppercase;
                     font-family: var(--bold);
                     }
@@ -236,7 +236,7 @@ position: relative;
                             bottom: 0;
                             left: 0;
                             width: 100%;
-                            height: 2px;
+                            height: 1px;
                             background: #575D63;
                             content:"";
                         }
@@ -245,6 +245,7 @@ position: relative;
                 p{
                     @media (max-width: 860px) {
                         padding-top: 40px;
+                        font-size: 16px;
                     }
                 }
             }
@@ -261,6 +262,7 @@ position: relative;
         .padding-bottom-100-m{
             @media (max-width: 860px) {
                 padding-bottom: 130px;
+                font-size: 36px;
             }  
         }
     }

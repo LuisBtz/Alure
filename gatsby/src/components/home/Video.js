@@ -167,8 +167,8 @@ position: relative;
             .column{
                 h1{
                     padding: 13px 0;
-                    font-size: 13vw !important;
-                        text-transform: uppercase;
+                    font-size: 40px !important;
+                    text-transform: uppercase;
                 }
             }
             &:after,

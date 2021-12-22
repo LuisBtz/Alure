@@ -92,7 +92,7 @@ const About = ( {data} ) => {
                     </div>
                     <div className="about-mobile__line about-mobile__line--two">
                         <div className='column solo ' data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
-                            <h2 className='title-two'>WE <br /> SPECIALIZE IN</h2>
+                            <h2 className='title-two'>{title2}</h2>
                         </div>
                         <div className="line"></div>
                         <div className='column solo' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
@@ -130,8 +130,8 @@ const AboutContainer = styled.section`
             width: 47%;
             padding-bottom: 32px;
             h2{
-                font-family: Akzidenz-Grotesk BQ;
-                font-size: 32px;
+                font-family: var(--bold);
+                font-size: 36px;
                 line-height: 37px;
             }
             .title-two{
@@ -174,7 +174,7 @@ const AboutContainer = styled.section`
                 padding-top: 32px;
                 padding-bottom: 0;
                 p{
-                    font-size: 18px;
+                    font-size: 16px;
                     line-height: 21px;
                     @media (min-width: 480px) {
                         padding-right: 20px;
@@ -262,13 +262,14 @@ const AboutContainer = styled.section`
             }
             a {
                 display: block;
+                font-size: 14px;
             }
             h2 {
                 font-size: var(--headline-1);
                 text-transform: uppercase;
             }
             p {
-                font-size: var(--headline-2);
+                font-size: 16px;
                 line-height: 1;
             }
         }
