@@ -119,6 +119,7 @@ const HeroContainer = styled.section`
             p{
                 padding: 0;
                 padding-bottom:32px ;
+                font-size: 14px;
             }
            } 
            &:before{
@@ -137,7 +138,7 @@ const HeroContainer = styled.section`
             overflow: hidden;
             .column{
                 h3{
-                    font-size: 6vw;
+                    font-size: 24px;
                     padding: 56px 0;
                 }
                 

@@ -190,16 +190,17 @@ const SalesContainer = styled.section`
                         justify-content: start;
                         align-items: baseline;
                         font-size: 14px;
+                        height: 65px;
                         @media (min-width: 480px) {
                             align-items: center;
                             font-size: 16px;
                         }
                         span{
                             margin-right: 10px;
-                            min-width: 6px;
-                            max-width: 6px;
-                            min-height: 6px;
-                            max-height: 6px;
+                            min-width: 3px;
+                            max-width: 3px;
+                            min-height: 3px;
+                            max-height: 3px;
                             background: white;
                             border-radius: 500px;
                             @media (max-width: 480px) {
@@ -286,11 +287,11 @@ const SalesContainer = styled.section`
                     h4{
                         margin-top: 0;
                         color: #575D63;
-                        font-size: 1.4rem;
+                        font-size: 16px;
                     }
                 }
                 p{
-                    font-size: 1.4rem;
+                    font-size: 14px;
                     line-height: 16px;
                     color: #575D63; 
                 }

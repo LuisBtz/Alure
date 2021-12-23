@@ -203,7 +203,7 @@ const ClientsContainer = styled.section`
             }
             p{
                 color: white;
-                font-size: 18px;
+                font-size: 16px;
             }
         }
     }
@@ -379,6 +379,7 @@ margin-left: 50px;
     justify-content: space-between;
     p {
         margin-bottom: 25px;
+        font-size: 16px;
     }
     span {
         font-family: var(--bold);
@@ -387,6 +388,7 @@ margin-left: 50px;
         margin-top: 40px;
         @media (max-width: 860px) {
             color: #000;
+            font-size: 64px;
         }
     }
 }
@@ -404,9 +406,14 @@ margin-left: 50px;
         h3 {
             font-size: var(--headline-3);
             @media (max-width: 860px) {
-                font-size: 6vw;
+                font-size: 16px;
                 color: #000;
                 margin-bottom: 5px;
+            }
+        }
+        p {
+            @media (max-width: 860px) {
+                font-size: 14px;
             }
         }
         .text{

@@ -194,7 +194,7 @@ overflow: hidden;
                 }
                         position: relative;
                         p{
-                            font-size: 14px;
+                            font-size: 18px;
                             font-family: var(--bold);
                         }
                         &:after{
@@ -267,7 +267,7 @@ overflow: hidden;
                .text{
                    width: 50%;
                    p{
-                    font-size: 16px;
+                    font-size: 14px;
                     line-height: 19px;
                     color: rgba(255,255,255,0.4);
                     letter-spacing: 1px;
@@ -283,7 +283,7 @@ overflow: hidden;
                     text-align: left;
                     padding-bottom: 18px;
                     a{
-                        font-size: 16px;
+                        font-size: 14px;
                         line-height: 19px;
                     }
                    }

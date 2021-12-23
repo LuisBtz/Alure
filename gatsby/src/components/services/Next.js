@@ -49,6 +49,7 @@ const NextContainer = styled.section`
             text-transform: uppercase;
             font-size: var(--headline-1);
             margin-top: 25px;
+            padding-bottom: 32px;
             display: block;
             @media (max-width: 860px) {
         font-size: 36px;

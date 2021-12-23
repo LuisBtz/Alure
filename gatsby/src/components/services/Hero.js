@@ -126,6 +126,7 @@ const HeroContainer = styled.section`
                     padding-bottom: 32px !important;
                     p{
                         padding: 0;
+                        font-size: 14px;
                     }
                 }
                 &.column-icon{
@@ -158,7 +159,7 @@ const HeroContainer = styled.section`
                 position: relative;
                 .column{
                     h1{
-                        font-size: 13vw !important;
+                        font-size: 36px !important;
                         text-transform: uppercase;
                         padding: 10px 0 16px !important;
                     }

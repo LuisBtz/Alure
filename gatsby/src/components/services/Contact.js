@@ -165,7 +165,7 @@ const ContactContainer = styled.section`
                     @media (max-width: 860px) {
                         position: relative;
                         margin-top: 0;
-                        font-size: 8vw !important;
+                        font-size: 24px !important;
                         font-family: var(--reg);
                         margin-bottom: 37px;
                         &:before{
@@ -181,7 +181,7 @@ const ContactContainer = styled.section`
                 }
                 p{
                     @media (max-width: 860px) {
-                        font-size: 18px;
+                        font-size: 16px;
                         padding-bottom: 32px;
                     }
                 }
@@ -202,7 +202,7 @@ const ContactContainer = styled.section`
             h3 {
                 @media (max-width: 860px) {
                     margin-top: 0;
-                    font-size: 13vw !important;
+                    font-size: 36px !important;
                     text-transform: uppercase;
                     font-family: var(--bold);
                     margin-bottom: 62px;

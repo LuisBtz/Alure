@@ -64,6 +64,7 @@ const NextContainer = styled.section`
         }
         p {
             padding-top: 25px;
+            font-size: 14px;
         }
         .column {
             height: auto;

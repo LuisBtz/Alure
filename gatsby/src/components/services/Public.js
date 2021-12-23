@@ -115,7 +115,7 @@ const PublicContainer = styled.section`
                 .text{
                     h3{
                         margin:0 ;
-                        font-size: 13vw !important;
+                        font-size: 36px !important;
                         text-transform: uppercase;
                         font-family: var(--bold);
                     }
@@ -132,7 +132,7 @@ const PublicContainer = styled.section`
                 .text{
                     h4{
                         margin-top: 0;
-                        font-size: 8vw !important;
+                        font-size: 24px !important;
                         font-family: var(--reg);
                         margin-bottom: 37px; 
                         color: #575D63;
@@ -168,15 +168,7 @@ const PublicContainer = styled.section`
                .text{
                    h4{
                        position: relative;
-                       &:before{
-                        position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 2px;
-                            content: "";
-                            background: #575D63;
-                       }
+                       text-decoration: underline;
                    }
                } 
             }
