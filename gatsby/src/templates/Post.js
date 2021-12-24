@@ -175,24 +175,23 @@ const PostContainer = styled.section`
                        left: 0;
                        padding-bottom: 32px;
                        h1{
-                        font-size: 3rem;
+                        font-size: 36px;
                         color: white;
-                        text-transform: uppercase;
                        }
                    }
                } 
                .text{
                    padding: 16px 19px;
                    p{
-                    font-size: 1rem;  
+                    font-size: 14px;  
                     margin-bottom: 5px;
                 }
                     strong{
-                       font-size: 1rem;  
-                       font-family: var(--reg) !important;
-                       font-weight: 400;
+                       font-size: 14px;  
+                       font-weight: normal;
+                       font-family: var(--reg);
                        span{
-                           font-weight: 700;
+                           font-weight: normal;
                        }
                    }
                }
@@ -369,6 +368,12 @@ const PostContainer = styled.section`
                 justify-content: space-between;
                 h2 {
                     margin-top: 25px;
+                    font-size: 24px;
+                    font-family: var(--reg);
+                }
+                strong {
+                    font-family: var(--bold);
+                    font-size: 36px;
                 }
             }
         }

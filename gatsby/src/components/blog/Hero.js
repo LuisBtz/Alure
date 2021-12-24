@@ -67,6 +67,18 @@ const text = 'STAY CONNECTED STAY INSPIRED'
                             )
                     })}
                     <div className="mobile-area">
+                        <div className="m-s-two">
+                            <div className='column' >
+                                <div data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
+                                    <img className='icon' src={data.sanitySettingsPage.icon.asset.url} alt={data.sanitySettingsPage.icon.enAlt} />
+                                </div>
+                            </div>
+                            <div className='column'>
+                                <div data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
+                                    <p>Stay in touch with us ↓</p>
+                                </div>
+                            </div>
+                        </div>
                         <div className="m-s-one">
                             <div className='column two'>
                                 <div data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
@@ -75,14 +87,10 @@ const text = 'STAY CONNECTED STAY INSPIRED'
                                 </div>
                             </div>
                         </div>
-                        <div className="m-s-two">
-                            <div className='column' >
-                                <div data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
-                                <p>Stay in touch with our latest articles and news</p>
-
-                                </div>
+                        <div className="m-s-two alone">
+                            <div className='column' ></div>
+                            <div className='column'>
                             </div>
-                            <div className='column'></div>
                         </div>
                         <div className="m-s-three">
                             {data.allSanityBlog.edges.slice(0, 1).map(({node},i) => {
@@ -94,7 +102,7 @@ const text = 'STAY CONNECTED STAY INSPIRED'
                                                 <h2>{node.title}</h2>
                                             </div>
                                             <div className='bot'>
-                                                <p>Read More ↗</p>
+                                                <p>Read More ↑</p>
                                             </div>
                                         </Link>
                                     </div>
@@ -117,7 +125,8 @@ const HeroContainer = styled.section`
             .column{
                 overflow: hidden;
                 h1{
-                   padding-bottom: 64px;
+                    padding-top: 50px;
+                   padding-bottom: 130px;
                 }
             }
         }
@@ -127,7 +136,6 @@ const HeroContainer = styled.section`
             position: relative;
             .column{
                 overflow: hidden;
-                border-top: 1px solid #fff;
                 border-bottom: 1px solid #fff;
                 width: 47%;
                 height: 220px;
@@ -148,6 +156,27 @@ const HeroContainer = styled.section`
                 transform: translateX(50%);
             }
         }
+        
+        .m-s-two.alone{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            .column{
+                overflow: hidden;
+                border-bottom: 1px solid #fff;
+                width: 47%;
+                height: 0;
+                display: flex;
+                align-items: end;
+                p{
+                    padding-bottom: 0;
+                }
+            }
+            &:before{
+                display: none;
+            }
+        }
+
         .m-s-three{
             position: relative;
             .column{
@@ -168,6 +197,7 @@ const HeroContainer = styled.section`
                   padding-bottom: 0 !important;
                   p{
                     padding-top: 48px;
+                    font-size: 14px;
                   }
               }
             }
@@ -235,7 +265,7 @@ const HeroContainer = styled.section`
         gap: 0 100px;
         position: relative;
         @media (max-width: 860px) {
-            padding-top: 100px;
+            padding-top: 50px;
             padding-bottom: 60px;
             width: var(--width-l-m);
             gap: 0 30px;
@@ -257,7 +287,7 @@ const HeroContainer = styled.section`
                 width: 50%;
                 line-height: 0.9;
                 @media (max-width: 860px) {
-                    font-size: 3rem;
+                    font-size: 36px;
                     width: 100%;
                 }
             }
@@ -291,7 +321,6 @@ const HeroContainer = styled.section`
             h2 {
                 font-family: var(--reg);
                 font-size: var(--headline-2);
-                text-transform: uppercase;
                 line-height: 1;
             }
             p {
@@ -319,6 +348,7 @@ const HeroContainer = styled.section`
                         @media (max-width: 860px) {
                             margin-bottom: 25px;
                             padding-top: 25px;
+                            font-size: 16px;
                         }
                     }
                 }

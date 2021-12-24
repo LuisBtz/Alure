@@ -29,6 +29,12 @@ export const data = graphql`
           )
         }
       }
+      #Settings
+      icon {
+        asset {
+          url
+        }
+      }
     }
     
     allSanityBlog {

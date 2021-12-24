@@ -36,7 +36,7 @@ const Posts = ({data}) => {
                                     </Link>
                                 </div>
                                 <Link className='bot' to={`/blog/${node.slug.current}`} >
-                                    <p>Read More ↗</p>
+                                    <p>Read More ↑</p>
                                     <div className='line-r line no-bg dark-gray no-bg' ></div>
                                     <div className='line-b line no-bg dark-gray no-bg'></div>
                                 </Link>
@@ -64,7 +64,7 @@ const Posts = ({data}) => {
                             <p>{node._createdAt}</p>
                             <h2>{node.title}</h2>
                             </div>
-                            <p>Read More ↗</p>
+                            <p>Read More ↑</p>
                             </div>
                             </div>
                             </Link>
@@ -107,7 +107,7 @@ const PostsContainer = styled.section`
                 left: 0;
                 transform: translateY(-50%);
                 p{
-                    font-size: 16px;
+                    font-size: 14px;
                     @media (min-width: 480px) {
                         font-size: 18px;
                     }
@@ -215,7 +215,6 @@ const PostsContainer = styled.section`
             h2 {
                 font-family: var(--reg);
                 font-size: var(--headline-2);
-                text-transform: uppercase;
                 line-height: 1;
             }
             .text {

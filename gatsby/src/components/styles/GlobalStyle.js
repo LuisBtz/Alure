@@ -115,6 +115,7 @@ a {
 b,
 strong {
   font-family: var(--custom);
+  font-weight: normal;
 }
 
 h1 {
