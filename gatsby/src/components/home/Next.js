@@ -59,7 +59,6 @@ const NextContainer = styled.section`
                 line-height: 37px;
                 margin-top: 16px;
                 font-weight: 700;
-                letter-spacing: 2px;
                 color: #575D63;  
                 font-family: var(--bold); 
             }

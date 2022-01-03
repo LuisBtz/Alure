@@ -106,8 +106,7 @@ const BlogContainer = styled.section`
             width: calc(100% - 30px);
         } */
         @media (max-width: 860px) {
-            width: var(--width-4);
-            grid-template-columns: 1fr;
+            display: none;
         }
         .background-white {
             position: relative;
