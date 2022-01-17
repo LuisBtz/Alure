@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from 'styled-components'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Header = ({solidHeader}) => {
 
@@ -12,6 +13,16 @@ const Header = ({solidHeader}) => {
                     url
                 }
                 enAlt
+            }
+            iconColor {
+                enAlt
+                asset {
+                    gatsbyImageData(
+                    layout: FULL_WIDTH
+                    outputPixelDensities: 1.5
+                    placeholder: DOMINANT_COLOR
+                    )
+                }
             }
             agency {
                 enAlt
@@ -25,6 +36,9 @@ const Header = ({solidHeader}) => {
 
 const [menu, showMenu] = useState(false);
 
+const altImage = data.sanitySettingsPage.iconColor.enAlt;
+const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
+
 
     return(
         <HeaderContainer>
@@ -32,11 +46,19 @@ const [menu, showMenu] = useState(false);
                 
                     <div className={menu ? 'menu-mov show' : 'menu-mov'} >
                         <ul>
-                            <li><Link to='/about'>About</Link></li>
-                            <li><Link to='/services'>Services</Link></li>
-                            <li><Link to='/clients'>Clients</Link></li>
-                            <li><Link to='/blog'>Blog</Link></li>
-                            <li><Link to='/contact'>Contact</Link></li>                    </ul>
+                            <div className='imgMov'>
+                                <GatsbyImage
+                                    style={{ height: "100%", width: "100%" }}
+                                    image={getDataImage}
+                                    alt={altImage}
+                                /> 
+                            </div>                           
+                            <li><Link activeClassName="active" to='/about'>About</Link></li>
+                            <li><Link activeClassName="active" to='/services'>Services</Link></li>
+                            <li><Link activeClassName="active" to='/clients'>Clients</Link></li>
+                            <li><Link activeClassName="active" to='/blog'>Blog</Link></li>
+                            <li><Link activeClassName="active" to='/contact'>Contact</Link></li>                    
+                        </ul>
                     </div>
                 <div className='cont'>
                     <div className='column'>
@@ -111,24 +133,45 @@ const HeaderContainer = styled.nav`
         height: 100vh;
         right: -100%;
         top: 0;
-        background-color: var(--green);
+        background-color: var(--white);
         width: 100vw;
         transition: right 350ms ease-in-out;
         ul {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             height: 100%;
             padding-top: 100px;
             padding-bottom: 100px;
             padding-right: 50px;
-            li {
+            padding-left: 50px;
+            .imgMov {
+                width: 80px;
+                padding-bottom: 25px;
                 text-align: right;
+                align-self: flex-end;
+            }
+            li {
+                text-align: left;
                 a {
-                    font-size: 3rem;
-                    font-family: var(--bold);
+                    padding-top: 25px;
+                    padding-bottom: 25px;
+                    display: block;
+                    font-size: 36px;
+                    font-family: var(--reg);
+                    border-top: solid 1px black;
+                    color: black;
                     &:hover {
                         text-decoration: underline;
+                    }
+                }
+                a.active {
+                    font-family: var(--custom);
+                    font-weight: normal;
+                }
+                &:last-child {
+                    a {
+                        border-bottom: solid 1px black;
                     }
                 }
             }
@@ -160,6 +203,7 @@ const HeaderContainer = styled.nav`
         display: flex;
         .click {
             .line {
+                background-color: black !important;
                 &:nth-child(2) {
                     opacity: 0;
                 }
