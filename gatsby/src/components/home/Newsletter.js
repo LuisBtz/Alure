@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import addToMailchimp from "gatsby-plugin-mailchimp"
 
@@ -44,36 +44,45 @@ class Newsletter extends React.Component {
     this.setState({ name: event.target.value })
   }
 
+
+
+
+  
+
   render() {
 
     return (
-      <NewsletterWrapper >
-
+      
+      <NewsletterWrapper>
+        <div className='container'>
         <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="800" className="detail">{this.state.message}</p>
-
-
-        <div className='links' data-aos="fade-up" data-aos-delay="700" data-aos-duration="800">
-            <form className="subscribe" onSubmit={this.handleSubmit}>
-                <input
-                    type="email"
-                    value={this.state.email}
-                    onChange={this.handleEmailChange}
-                    name="EMAIL"
-                    id="mce-EMAIL"
-                    className="subscribe-email"
-                    placeholder="Email"
-                    required
-                />
-            <button className="btn_sent" type="submit">Subscribe</button>
-            </form>
+          <div className='links' data-aos="fade-up" data-aos-delay="700" data-aos-duration="800">
+              <form className="subscribe" onSubmit={this.handleSubmit}>
+                  <input
+                      type="email"
+                      value={this.state.email}
+                      onChange={this.handleEmailChange}
+                      name="EMAIL"
+                      id="mce-EMAIL"
+                      className="subscribe-email"
+                      placeholder="Email"
+                      required
+                  />
+              <button className="btn_sent" type="submit">Subscribe</button>
+              </form>
+          </div>
+          <div className='text' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
+              <ul>
+                  <li ><a target='_blank' rel="noreferrer" href='mailto:HELLO@ALURE.AGENCY'>Email ↗</a></li>
+                  <li ><a target='_blank' rel="noreferrer" href='https://www.instagram.com/alureagency/?hl=es'>Instagram ↗</a></li>
+                  <li ><a target='_blank' rel="noreferrer" href='https://www.facebook.com/alureagency'>Facebook ↗</a></li>
+              </ul>
+              <button className='close'>
+                <p>close <span>x</span></p>
+              </button>
+          </div>
         </div>
-        <div className='text'>
-            <ul>
-                <li data-aos="fade-up" data-aos-delay="800" data-aos-duration="800"><a target='_blank' rel="noreferrer" href='HELLO@ALURE.AGENCY'>Email ↗</a></li>
-                <li data-aos="fade-up" data-aos-delay="900" data-aos-duration="800"><a target='_blank' rel="noreferrer" href='https://www.instagram.com/alureagency/?hl=es'>Instagram ↗</a></li>
-                <li data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800"><a target='_blank' rel="noreferrer" href='https://www.facebook.com/alureagency'>Facebook ↗</a></li>
-            </ul>
-        </div>
+        
 
       </NewsletterWrapper>
 
@@ -94,7 +103,7 @@ color: var(--dark-gray);
     display: none;
 }
 @media (min-width: 1500px) {
-  padding: 80px;
+  padding: 50px;
   width: calc(33vw - 16px);
 }
 p {
@@ -116,7 +125,7 @@ form {
             color: var(--dark-gray);
             opacity: 0.25;
             @media (min-width: 1500px) {
-                font-size: 1.3vw;
+                font-size: 1vw;
             }
             @media (min-width: 1640px) {
                 font-size: 1vw;
@@ -126,7 +135,7 @@ form {
             color: var(--dark-gray);
             opacity: 0.25;
             @media (min-width: 1500px) {
-                font-size: 1.3vw;
+                font-size: 1vw;
             }
             @media (min-width: 1640px) {
                 font-size: 1vw;
@@ -145,6 +154,8 @@ form {
     }
 }
 .text {
+  display: flex;
+  justify-content: space-between;
     ul {
         margin-top: 65px;
         li {
@@ -154,6 +165,18 @@ form {
                 color: var(--dark-gray);
             }
         }
+    }
+    .close {
+      align-self: flex-end;
+      cursor: pointer;
+      p {
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-size: 13px;
+        span {
+          text-transform: lowercase;
+        }
+      }
     }
 }
 `
