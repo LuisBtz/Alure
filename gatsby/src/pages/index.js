@@ -139,7 +139,7 @@ const IndexPage = ({data}) => {
 
   return (
     <Layout greenFooter={greenFooter}>
-      <Seo  title='home' /*description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} */ />
+      <Seo  title='Public Relations, Marketing and Sales Representation Agency' /*description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} */ />
       <Video data={data}/>
       <About data={data}/>
       <Services data={data}/>

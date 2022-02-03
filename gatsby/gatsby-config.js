@@ -35,6 +35,7 @@ module.exports = {
       },
       __key: "images",
     },
+    
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
