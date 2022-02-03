@@ -1,9 +1,7 @@
 import React from 'react';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
-
-
-
+import { motion } from "framer-motion";
 
 
 const Hero = ( {data} ) => {
@@ -43,7 +41,14 @@ const link = data.sanityServicesPage.linksTextHero.en;
                     </div>
                     <div className='column  hide-m'>
                         <div className='text'>
-                            <p data-aos="fade-left" data-aos-delay="800" data-aos-duration="800">{link}</p>
+                        <motion.div
+                                    whileHover={{ 
+                                        translateX: 5, 
+                                        translateY: 3
+                                    }}
+                                    >
+                                <a href="#next" data-aos="fade-left" data-aos-delay="800" data-aos-duration="800">{link}</a>
+                            </motion.div>
                             <div className='line-r line hide-m' ></div>
                         </div>
                     </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { motion } from "framer-motion";
 
 
 const About = ( {data} ) => {
@@ -41,7 +42,14 @@ const About = ( {data} ) => {
                 <div className='grid'>
                     <div className='column h10-m'>
                         <div className='line-t line'></div>
+                        <motion.div
+                                whileHover={{ 
+                                    translateX: 5, 
+                                    translateY: 3
+                                }}
+                                >
                             <Link className='padding-top-50' to='/about' data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">{link}</Link>
+                        </motion.div>
                         <div className='line-r line hide-m' ></div>
                     </div>
                     <div className='column h20-m'>
@@ -53,7 +61,7 @@ const About = ( {data} ) => {
                     </div>
                     <div className='column h25-m'>
                         <div className='line-t line hide-m'></div>
-                        <p className='padding-top-50' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">{subtitle1}</p>
+                        <p className='padding-top-50 subtitle-desk' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">{subtitle1}</p>
                     </div>
                     <div className='column solo hide-m'>
                         <div className='line-t line hide-m'></div>
@@ -68,7 +76,7 @@ const About = ( {data} ) => {
                     </div>
                     <div className='column solo h25-m padding-bottom-50-m'>
                         <div className='line-t line hide-m'></div>
-                        <p className='padding-top-50' data-aos="fade-up" data-aos-delay="1400" data-aos-duration="800">{subtitle2}</p>
+                        <p className='padding-top-50 subtitle-desk' data-aos="fade-up" data-aos-delay="1400" data-aos-duration="800" >{subtitle2}</p>
                         <div className='line-b line '></div>
                     </div>
                 </div>
@@ -87,7 +95,7 @@ const About = ( {data} ) => {
                         </div>
                         <div className="line"></div>
                         <div className='column ' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
-                            <p>{subtitle1}</p>
+                            <p className='subtitle-desk'>{subtitle1}</p>
                         </div>
                     </div>
                     <div className="about-mobile__line about-mobile__line--two">
@@ -96,7 +104,7 @@ const About = ( {data} ) => {
                         </div>
                         <div className="line"></div>
                         <div className='column solo' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
-                        <p>{subtitle2}</p>
+                        <p className='subtitle-desk'>{subtitle2}</p>
                     </div>
                     </div>
                     <div className="b-line"></div>
@@ -269,7 +277,6 @@ const AboutContainer = styled.section`
                 text-transform: uppercase;
             }
             p {
-                font-size: 16px;
                 line-height: 1;
             }
         }

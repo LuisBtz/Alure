@@ -284,7 +284,7 @@ const HeroContainer = styled.section`
             h1 {
                 padding-bottom: 25px;
                 font-size: var(--headline-1);
-                width: 50%;
+                width: 55%;
                 line-height: 0.9;
                 @media (max-width: 860px) {
                     font-size: 36px;

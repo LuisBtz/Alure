@@ -2,7 +2,7 @@ import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-
+import { motion } from "framer-motion";
 
 const Services = ({data}) => {
 
@@ -46,11 +46,18 @@ const Services = ({data}) => {
                     </div>
 
                     <div className='column'>
-                        <Link className='padding-top-50' to='/services' data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">{link}</Link>
+                        <motion.div
+                                whileHover={{ 
+                                    translateX: 5, 
+                                    translateY: 3
+                                }}
+                                >
+                            <Link className='padding-top-50' to='/services' data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">{link}</Link>
+                        </motion.div>
                         <div className='line-r line' data-sal="slide-up"></div>
                     </div>
                     <div className='column two padding-bottom-50-m' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
-                        <h3 className='padding-top-50' >{title}</h3>
+                        <h3 className='padding-top-50 subtitle-desk' >{title}</h3>
                     </div>
                     <div className='column solo hide-m'>
                         <div className='line-b line' data-sal="slide-up"></div>
@@ -244,10 +251,6 @@ const ServicesContainer = styled.section`
             }
             a {
                 display: block;
-            }
-            h3 {
-                font-size: 24px;
-                font-family: var(--custom);
             }
             p {
                 font-size: 2.5vw;

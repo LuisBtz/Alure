@@ -18,7 +18,7 @@ const PublicServices = ({data}) => {
     const publicRelationsServicesService6 = data.sanityServicesPage.publicRelationsServicesService6.en;
 
     return(
-        <PublicServicesContainer>
+        <PublicServicesContainer id='public'>
             <div className='image'>
             </div>
             <div className='content'>
@@ -281,12 +281,11 @@ const PublicServicesContainer = styled.section`
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                h3, h4 {
+                h3 {
                     margin-top: 50px;
                     font-size: var(--headline-2);
                 }
                 h4 {
-                    font-size: 1.2rem;
                     @media (min-width: 1500px) {
                             font-size: 1.3vw;
                     }
@@ -327,6 +326,16 @@ const PublicServicesContainer = styled.section`
             .text {
             }
         }
+
+@media (min-width: 680px) {
+    h4, .list p {
+        font-size: 24px;
+        font-family: var(--reg);
+    }
+    h4 {
+        margin-top: 50px;
+    }
+}
 `
 
 export default PublicServices;

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from 'styled-components'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { motion } from "framer-motion";
+
 
 const Header = ({solidHeader}) => {
 
@@ -39,6 +41,35 @@ const [menu, showMenu] = useState(false);
 const altImage = data.sanitySettingsPage.iconColor.enAlt;
 const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
 
+
+
+
+const [isMouse, toggleMouse] = React.useState(false);
+const toggleMouseMenu = () => {
+  toggleMouse(!isMouse);
+};
+
+
+const subMenuAnimate = {
+    enter: {
+      opacity: 1,
+      rotateX: 0,
+      transition: {
+        duration: 0.35
+      },
+      display: "block"
+    },
+    exit: {
+      opacity: 0,
+      rotateX: 0,
+      transition: {
+        duration: 0.35,
+      },
+      transitionEnd: {
+        display: "none"
+      }
+    }
+  };
 
     return(
         <HeaderContainer>
@@ -81,7 +112,26 @@ const getDataImage = getImage(data.sanitySettingsPage.iconColor.asset);
                         </button>
                         <ul>
                             <li data-aos="fade-up" data-aos-delay="600" data-aos-duration="800"><Link to='/about'>About</Link></li>
-                            <li data-aos="fade-up" data-aos-delay="700" data-aos-duration="800"><Link to='/services'>Services</Link></li>
+                            <li className='services' data-aos="fade-up" data-aos-delay="700" data-aos-duration="800">
+                            <motion.div
+                                className="menu-item"
+                                onMouseEnter={toggleMouseMenu}
+                                onMouseLeave={toggleMouseMenu}
+                            >
+                                <Link to='/services'>Services</Link>
+                                <motion.div
+                                    className="sub-menu"
+                                    initial="exit"
+                                    animate={isMouse ? "enter" : "exit"}
+                                    variants={subMenuAnimate}
+                                >
+                                    <ul>
+                                        <li><Link to='/services#sales'>Sales Representation & Marketing</Link></li>
+                                        <li><Link to='/services#public'>Public Relations</Link></li>
+                                    </ul>
+                                </motion.div>
+                            </motion.div>
+                            </li>
                             <li data-aos="fade-up" data-aos-delay="800" data-aos-duration="800"><Link to='/clients'>Clients</Link></li>
                             <li data-aos="fade-up" data-aos-delay="900" data-aos-duration="800"><Link to='/blog'>Blog</Link></li>
                             <li data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800"><Link to='/contact'>Contact</Link></li>
@@ -199,7 +249,6 @@ const HeaderContainer = styled.nav`
             transform: translateX(-50%)
         }
     .column {
-        overflow: hidden;
         display: flex;
         .click {
             .line {
@@ -259,6 +308,62 @@ const HeaderContainer = styled.nav`
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            li {
+                position: relative;
+                ul {
+                    position: absolute;
+                    top: 35px;
+                    display: flex;
+                    flex-direction: column;
+                    border: solid 1px white;
+                    width: 180px;
+                    li {
+                        list-style: none;
+                        position: relative;
+                        opacity: 0.5;
+                        padding: 10px 25px;
+                        width: 100%;
+                        background-color: rgba(0,0,0,0.2);
+                        display: block;
+                        &:nth-child(1) {
+                            padding-bottom: 0;
+                        }
+                        &:nth-child(2) {
+                            padding-top: 0;
+                        }
+                        &:hover {
+                            opacity: 1;
+                        }
+                        &:before {
+                            content: '•';
+                            position: absolute;
+                            left: 10px;
+                            top: 10px;
+                        }
+                        a {
+                            padding: 0;
+                            width: 100%;
+                            display: block;
+                            cursor: pointer;
+                            &:hover {
+                                background: none;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+                a {
+                    padding: 18px 10px;
+                    box-sizing: border-box;
+                    &:hover {
+                        box-sizing: border-box;
+                        background-color: rgba(0,0,0,0.2);
+                        border-left: solid 1px white;
+                        border-right: solid 1px white;
+                    }
+                }
+            }
+            
             @media (max-width: 860px) {
                 display: none;
             }

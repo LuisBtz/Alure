@@ -368,12 +368,15 @@ const PostContainer = styled.section`
                 justify-content: space-between;
                 h2 {
                     margin-top: 25px;
-                    font-size: 24px;
+                    margin-bottom: 25px;
+                    font-size: 50px;
+                    line-height: 1;
                     font-family: var(--reg);
                 }
                 strong {
-                    font-family: var(--bold);
-                    font-size: 36px;
+                    font-family: var(--custom);
+                    font-size: 24px;
+                    line-height: 1;
                 }
             }
         }

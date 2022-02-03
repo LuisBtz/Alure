@@ -11,7 +11,7 @@ const Connect = ({data}) => {
     const impactTitle = data.sanityAboutPage.impactTitle.en;
     const impactText = data.sanityAboutPage.impactText.en;
     return(
-        <ConnectContainer>
+        <ConnectContainer id='next'>
             <div className='content'>
                 <div className='line-r line absolute no-bg dark-gray-m'></div>
                 <div className='line-l line absolute dark-gray no-bg'></div>
@@ -140,11 +140,15 @@ const ConnectContainer = styled.section`
         }
 
 }
+
+
         @media (max-width: 860px) {
             padding: 52px 0;
             z-index: 1;
             background: #F4F3EF;
         }
+
+        
 position: relative;
     color: var(--dark-gray);
     .grid {
@@ -279,6 +283,19 @@ position: relative;
     .o-v-h{
         overflow: hidden;
     }
+
+    @media (min-width: 680px) {
+            h3 {
+                font-size: 50px !important;
+            }
+            p {
+                font-size: 24px;
+                line-height: 1;
+            }
+            .grid .two .text {
+                padding-bottom: 25px;
+            }
+        }
 `
 
 export default Connect

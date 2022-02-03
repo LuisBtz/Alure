@@ -8,6 +8,7 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "aos": "^2.3.4",
     "dotenv": "^10.0.0",
+    "framer-motion": "^6.2.3",
     "gatsby": "^3.12.1",
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
     "gatsby-plugin-image": "^1.12.0",

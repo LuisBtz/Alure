@@ -24,7 +24,7 @@ const Sales = ({data}) => {
 
 
     return(
-        <SalesContainer>
+        <SalesContainer id='sales'>
             <div className='image'>
                 <GatsbyImage
                     style={{ height: "100%", width: "100%" }}
@@ -325,7 +325,6 @@ const SalesContainer = styled.section`
                     margin-top: 50px;
                 }
                 h4 {
-                    font-size: 1.2rem;
                     @media (min-width: 1500px) {
                             font-size: 1.3vw;
                     }
@@ -375,6 +374,13 @@ const SalesContainer = styled.section`
             .text {
             }
         }
+
+    @media (min-width: 680px) {
+        h4, .list p {
+            font-size: 24px;
+            font-family: var(--reg);
+        }
+    }
 `
 
 export default Sales;

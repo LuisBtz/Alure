@@ -1,10 +1,7 @@
 import React from 'react';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
-
-
-
-
+import { motion } from "framer-motion";
 
 const Hero = ( {data} ) => {
 
@@ -63,7 +60,7 @@ const link = data.sanityAboutPage.linksTextHero.en;
                     </div>
                     <div className='column two hide-m'>
                         <div data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
-                        <h3>{text}</h3>
+                        <h3 className='subtitle-desk'>{text}</h3>
                         </div>
                         <div className='line-r line hide-m' ></div>
                     </div>
@@ -71,7 +68,14 @@ const link = data.sanityAboutPage.linksTextHero.en;
                     </div>
                     <div className='column solo hide-m'>
                         <div className='line-t line hide-m'></div>
-                        <p data-aos="fade-left" data-aos-delay="1000" data-aos-duration="800">{link}</p>
+                        <motion.div
+                                    whileHover={{ 
+                                        translateX: 5, 
+                                        translateY: 3
+                                    }}
+                                    >
+                                <a data-aos="fade-left" data-aos-delay="1000" data-aos-duration="800" href="#next">{link}</a>
+                            </motion.div>
                         <div className='line-r line hide-m' ></div>
                         <div className='line-b line no-bg'></div>
                     </div>
@@ -235,7 +239,6 @@ const HeroContainer = styled.section`
             }
             h3 {
                 padding-bottom: 25px;
-                font-size: var(--headline-2);
             }
         }
         .column {
@@ -258,7 +261,7 @@ const HeroContainer = styled.section`
                 font-size: 4rem;
                 text-transform: uppercase;
             }
-            p {
+            a {
                 padding-top: 25px;
             }
         }

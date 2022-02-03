@@ -329,6 +329,14 @@ p, a, li, .paragraph {
   }
 }
 
+.subtitle-desk {
+  @media (min-width: 860px) {
+    font-size: 50px;
+    font-family: var(--reg);
+    line-height: 0.9;
+  }
+}
+
 
 /* @media (max-width: 1000px) {
     .line-r {

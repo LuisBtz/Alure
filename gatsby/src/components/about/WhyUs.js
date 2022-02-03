@@ -297,6 +297,20 @@ const WhyUsContainer = styled.section`
                 }
             }
         }
+
+@media (min-width: 680px) {
+    h3.color-white {
+        margin-top: 50px;
+    }
+    .two .text {
+        padding-bottom: 25px;
+    }
+    p {
+                font-size: 24px;
+                line-height: 1;
+            }
+}
+
 `
 
 export default WhyUs;

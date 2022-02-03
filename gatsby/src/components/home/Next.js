@@ -27,8 +27,8 @@ const Next = () => {
 }
 
 const NextContainer = styled.section`
-    position: relative;
     color: var(--green);
+    position: relative;
     @media (max-width: 860px) {
         background: white;
     }
@@ -39,41 +39,35 @@ const NextContainer = styled.section`
         grid-template-columns: repeat(3, 1fr);
         gap: 0 100px;
         position: relative;
-        /* @media (max-width: 1000px) {
-            width: var(--width-l-m);
-        } */
         @media (max-width: 860px) {
             grid-template-columns: 1fr;
             width: var(--width-l-m);
-            padding: 24px 0 32px;
         }
         a {
             color: var(--dark-gray);
             font-family: var(--bold);
             text-transform: uppercase;
-            font-size: 36px;
+            font-size: var(--headline-1);
             margin-top: 25px;
             display: block;
             @media (max-width: 860px) {
-                font-size: 36px;
-                line-height: 37px;
-                margin-top: 16px;
-                font-weight: 700;
-                color: #575D63;  
-                font-family: var(--bold); 
-            }
+                    font-size: 36px;
+                    text-transform: uppercase;
+                    font-family: var(--bold);
+                    margin-top: 16px;
+                    padding-bottom: 20px;
+                    }
         }
         p {
-            line-height: 14px;
-            color: #575D63;
-            @media (min-width: 860px) {
-                padding-top: 25px;
+            padding-top: 25px;
+            @media (max-width: 860px) {
+                font-size: 16px;
             }
         }
         .column {
             height: auto;
             h2 {
-                font-size: var(--headline-1);
+                font-size: var(--headline-2);
                 text-transform: uppercase;
                 padding-bottom: 25px;
             }

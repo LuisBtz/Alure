@@ -4,7 +4,6 @@ import Newsletter from './Newsletter';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
-
 const Video = ({ data }) => {
 
     const videoMp4 = data.sanityHomePage.videoHero.mp4File.asset.url;
@@ -63,9 +62,15 @@ const Video = ({ data }) => {
                     <div className='line-r line hide-m' ></div>
                 </div>
                 <div className='column hide-m'>
-                        <div className="btn" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="800">
-                             <a href='#about'>{smallText}</a>
-                        </div>
+                    <div
+                        className="btn link" 
+                        data-aos="fade-left" 
+                        data-aos-delay="1000" 
+                        data-aos-duration="800"
+                        whileHover={{ scale: 1.2 }}
+                        >
+                        <a href='#about'>{smallText}</a>
+                    </div>
                     <div className='line-b line bottom-25-m' ></div>
                     <div className='line-r line hide-m' ></div>
                 </div>
@@ -251,6 +256,7 @@ position: relative;
         @media (min-width: 860px ) {
             height: 50vh;
         }
+        
         .icon{
             img {
                 width: 70px;
@@ -268,7 +274,11 @@ position: relative;
             @media (min-width: 860px ) {
                 position: absolute;
                 bottom: 20px;
-            
+                transition: all 150ms ease-in-out;
+                    &:hover {
+                        transform: translate(5px, 2px);
+                    }
+                
         }
         }
     }

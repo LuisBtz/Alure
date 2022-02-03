@@ -98,11 +98,11 @@ const Team = () => {
                 <div className='grid m-bg'>
                     <div className='column'>
                         <div className='line-t line dark-gray no-bg hide-m'></div>
-                        <h3 data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">{title}</h3>
+                        <h3 className='subtitle-desk' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">{title}</h3>
                     </div>
                     <div className='column bottom'>
                         <div className='line-t line dark-gray no-bg hide-m'></div>
-                        <p data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">{description}</p>
+                        <p data-aos="fade-up" data-aos-delay="800" data-aos-duration="800" className='l-text'>{description}</p>
                         <div className='line-b line no-bg dark-gray hide-m'></div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@ const Team = () => {
                                 <div className='line-t line dark-gray no-bg'></div>
                             </div>
                             <div className='column two hide-m o-v-h' data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
-                                <h3>{membersName}</h3>
+                                <h3 className='subtitle-desk'>{membersName}</h3>
                                 <strong>{membersPosition.en}</strong>
                                 <p>{membersDescription.en}</p>
                             </div>
@@ -276,9 +276,6 @@ const TeamContainer = styled.section`
     @media (max-width: 860px) {
         height: 100% !important;
     }
-    h3 {
-        font-size: var(--headline-2);
-    }
     .column {
         position: relative;
         height: 50vh;
@@ -387,6 +384,13 @@ const TeamContainer = styled.section`
             background: #04262D;
         } 
     }
+
+    p.l-text {
+        @media (min-width: 680px) {
+                font-size: 24px;
+                line-height: 1;
+        }
+    }
 `
 
 const SliderContainer = styled(Slider)`
@@ -448,12 +452,12 @@ color: var(--dark-gray);
     justify-content: space-between;
     h3 {
         margin-top: 25px;
-        font-size: 24px;
     }
     strong {
         position: absolute;
         top: 30px;
         left: calc(50% + 50px);
+        font-family: var(--reg);
         font-weight: normal;
         font-size: 16px;
         @media (max-width: 860px) {

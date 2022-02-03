@@ -9,12 +9,19 @@ class Newsletter extends React.Component {
   constructor() {
     super()
     this.state = {
+      showButton: true,
       message: "Subscribe to our newsletter for the latest updates & news directly to your mail.",
       name: "",
       email: "",
       result: null,
     }
+    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
+
+  handleButtonClick(event) {
+    this.setState(() => ({ showButton: false }));
+}
+
 
   handleSubmit = e => {
     e.preventDefault()
@@ -54,6 +61,8 @@ class Newsletter extends React.Component {
     return (
       
       <NewsletterWrapper>
+{this.state.showButton && 
+
         <div className='container'>
         <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="800" className="detail">{this.state.message}</p>
           <div className='links' data-aos="fade-up" data-aos-delay="700" data-aos-duration="800">
@@ -77,13 +86,14 @@ class Newsletter extends React.Component {
                   <li ><a target='_blank' rel="noreferrer" href='https://www.instagram.com/alureagency/?hl=es'>Instagram ↗</a></li>
                   <li ><a target='_blank' rel="noreferrer" href='https://www.facebook.com/alureagency'>Facebook ↗</a></li>
               </ul>
-              <button className='close'>
-                <p>close <span>x</span></p>
-              </button>
+                <button className='close' onClick={this.handleButtonClick}>
+                  <p>close <span>x</span></p>
+                </button>
+              
           </div>
         </div>
         
-
+}
       </NewsletterWrapper>
 
     )
@@ -96,15 +106,20 @@ right: 25px;
 top: 50%;
 transform: translateY(-50%);
 width: calc(33vw - 20px);
-padding: 25px 50px;
 background-color: var(--gray);
 color: var(--dark-gray);
 @media (max-width: 860px) {
     display: none;
 }
 @media (min-width: 1500px) {
-  padding: 50px;
-  width: calc(33vw - 16px);
+    width: calc(33vw - 16px);
+  }
+
+.container {
+  padding: 25px 50px;
+  @media (min-width: 1500px) {
+    padding: 50px;
+  }
 }
 p {
     margin-bottom: 20px;

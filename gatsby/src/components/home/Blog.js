@@ -2,6 +2,7 @@ import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { motion } from "framer-motion";
 
 const Blog = ({data}) => {
 
@@ -31,7 +32,14 @@ const Blog = ({data}) => {
                     <div className='column background-white'>
                         <div className='line-t line dark-gray'></div>
                         <div className='text' data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
-                            <Link to='/blog'>{link}</Link>
+                            <motion.div
+                                    whileHover={{ 
+                                        translateX: 5, 
+                                        translateY: 3
+                                    }}
+                                    >
+                                <Link to='/blog'>{link}</Link>
+                            </motion.div>
                             <h3>{subtitle}</h3>
                         </div>
                     </div>
@@ -181,13 +189,17 @@ const BlogContainer = styled.section`
                 font-size: 14px;
             }
             h3 {
-                font-size: 16px;
+                font-size: 40px;
                 @media (max-width: 860px) {
+                    font-size: auto;
                     padding-bottom: 50px;
                 }
             }
             h2 {
-                font-size: 24px;
+                font-size: 50px;
+                line-height: 1;
+                font-family: var(--bold);
+                font-weight: normal;
             }
             p {
                 font-size: 16px;

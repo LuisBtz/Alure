@@ -293,6 +293,14 @@ const PublicContainer = styled.section`
                 }
             }
         }
+
+
+@media (min-width: 680px) {
+    .grid .column  p.padding-top-50, .two .text p {
+        font-size: 24px;
+        font-family: var(--reg);
+    }
+}
 `
 
 export default Public;

@@ -17,7 +17,7 @@ const Contact = ({data}) => {
     const getDataImage = getImage(salesSectionNetworkImage.asset);
 
     return(
-        <ContactContainer>
+        <ContactContainer id='next'>
             <div className='de'></div>
             <div className='content'>
                 <div className='line-r line absolute dark-gray no-bg'></div>
