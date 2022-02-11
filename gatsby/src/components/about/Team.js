@@ -390,6 +390,9 @@ const TeamContainer = styled.section`
                 font-size: 24px;
                 line-height: 1;
         }
+        @media (min-width: 1500px) {
+            font-size: 1vw;
+    }
     }
 `
 
@@ -423,6 +426,8 @@ const SliderContainer = styled(Slider)`
     .slick-next {
         right: calc(50% + 50px);
     }
+
+    
 `
 
 const Slide = styled.div`

@@ -187,6 +187,9 @@ const BlogContainer = styled.section`
             a {
                 display: block;
                 font-size: 14px;
+                @media (min-width: 1500px) {
+                    font-size: 1vw;
+                }
             }
             h3 {
                 font-size: 40px;
@@ -200,6 +203,9 @@ const BlogContainer = styled.section`
                 line-height: 1;
                 font-family: var(--bold);
                 font-weight: normal;
+                @media (min-width: 1500px) {
+                    font-size: 4vw;
+                }
             }
             p {
                 font-size: 16px;
@@ -248,6 +254,7 @@ const BlogContainer = styled.section`
             }
         }
     }
+
 
 `
 

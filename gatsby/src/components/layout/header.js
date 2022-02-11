@@ -317,6 +317,9 @@ const HeaderContainer = styled.nav`
                     flex-direction: column;
                     border: solid 1px white;
                     width: 180px;
+                    @media (min-width: 1500px) {
+                        top: 65px;
+                    }
                     li {
                         list-style: none;
                         position: relative;
@@ -355,6 +358,9 @@ const HeaderContainer = styled.nav`
                 a {
                     padding: 18px 10px;
                     box-sizing: border-box;
+                    @media (min-width: 1500px) {
+                        padding: 35px 10px;
+                    }
                     &:hover {
                         box-sizing: border-box;
                         background-color: rgba(0,0,0,0.2);

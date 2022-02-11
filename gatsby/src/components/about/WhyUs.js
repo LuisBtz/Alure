@@ -311,6 +311,12 @@ const WhyUsContainer = styled.section`
             }
 }
 
+@media (min-width: 1500px) {
+    p {
+        font-size: 1vw;
+    }
+}
+
 `
 
 export default WhyUs;

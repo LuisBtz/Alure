@@ -380,6 +380,9 @@ margin-left: 50px;
     p {
         margin-bottom: 25px;
         font-size: 16px;
+        @media (min-width: 1500px) {
+                font-size: 1vw;
+        }
     }
     span {
         font-family: var(--bold);
@@ -434,6 +437,7 @@ margin-left: 50px;
         background: white;
     }   
 }
+
 ` 
 
 

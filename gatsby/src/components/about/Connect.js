@@ -296,6 +296,12 @@ position: relative;
                 padding-bottom: 25px;
             }
         }
+
+@media (min-width: 1500px) {
+    p {
+        font-size: 1vw;
+    }
+}
 `
 
 export default Connect
