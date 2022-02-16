@@ -252,6 +252,7 @@ const HeroContainer = styled.section`
             h1 {
                 font-size: var(--headline-1);
                 padding-bottom: 50px;
+                text-transform: uppercase;
             }
         }
         .column {
