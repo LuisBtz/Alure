@@ -25,6 +25,7 @@ export const data = graphql`
       movilHeroImage {
         enAlt
         asset {
+          url
           gatsbyImageData(
             layout: FULL_WIDTH
             outputPixelDensities: 1.5
@@ -139,7 +140,7 @@ const IndexPage = ({data}) => {
 
   return (
     <Layout greenFooter={greenFooter}>
-      <Seo  title='Public Relations, Marketing and Sales Representation Agency' /*description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} */ />
+      <Seo  title={data.sanityHomePage.singleTextHero.en} description={data.sanityHomePage.servicesTitleSection.en} image={data.sanityHomePage.movilHeroImage.asset.url} />
       <Video data={data}/>
       <About data={data}/>
       <Services data={data}/>
